@@ -42,6 +42,7 @@ public class TcpChannel {
 
     public byte[] read(final int count) {
         byte[] bytes = new byte[count];
+        boolean nothingToRead = true;
         int c;
 
         try {
@@ -50,9 +51,17 @@ public class TcpChannel {
                 if ((c = mInputStream.read()) != -1) {
                     bytes[i] = (byte) c;
                 }
+                else {
+                    break;
+                }
+                nothingToRead = false;
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+
+        if(nothingToRead){
+            return null;
         }
         return bytes;
 
