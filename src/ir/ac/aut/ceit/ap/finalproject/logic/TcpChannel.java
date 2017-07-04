@@ -69,7 +69,7 @@ public class TcpChannel {
 
     }
 
-    public void closeChannel(){
+    public void closeChannel() {
         try {
             mInputStream.close();
             mOutputStream.close();
