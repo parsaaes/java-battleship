@@ -5,19 +5,20 @@ import java.net.Socket;
 import java.net.SocketAddress;
 import java.util.Queue;
 
-/**
- * Created by NP on 7/4/2017.
- */
+
 public class NetworkHandler extends Thread {
     private TcpChannel mTcpChannel;
     private Queue<byte[]> mSendQueue;
     private Queue<byte[]> mReceivedQueue;
     private ReceivedMessageConsumer mConsumerThread;
+    INetworkHandlerCallback iNetworkHandlerCallback;
     public NetworkHandler(SocketAddress socketAddress, INetworkHandlerCallback iNetworkHandlerCallback){
-
+        mTcpChannel = new TcpChannel(socketAddress,300);
+        this.iNetworkHandlerCallback = iNetworkHandlerCallback;
     }
     public NetworkHandler(Socket socket, INetworkHandlerCallback iNetworkHandlerCallback){
-
+        mTcpChannel = new TcpChannel(socket,300);
+        this.iNetworkHandlerCallback = iNetworkHandlerCallback;
     }
     private class ReceivedMessageConsumer extends Thread {
         /**
