@@ -15,14 +15,21 @@ public class TcpChannel {
     private OutputStream mOutputStream;
     private InputStream mInputStream;
 
-public TcpChannel(SocketAddress socketAddress, int timeout) throws IOException {
+public TcpChannel(SocketAddress socketAddress, int timeout) {
     mSocket = new Socket();
-    mSocket.setSoTimeout(timeout);
-    mSocket.connect(socketAddress);
+    try {
+        mSocket.setSoTimeout(timeout);
+    } catch (SocketException e) {
+        e.printStackTrace();
+    }
+    try {
+        mSocket.connect(socketAddress);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
 }
 public TcpChannel(Socket socket,int timeout)  {
     mSocket = socket;
-
     try {
         mSocket.setSoTimeout(timeout);
     } catch (SocketException e) {
