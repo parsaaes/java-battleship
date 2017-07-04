@@ -42,6 +42,24 @@ public class TcpChannel {
         return mSocket.isConnected() && !mSocket.isClosed();
     }
 
+    public byte[] read(final int count) {
+        byte[] bytes = new byte[count];
+
+        try {
+            mInputStream = mSocket.getInputStream();
+            for (int i = 0; i < bytes.length; i++) {
+                int c;
+                if((c=mInputStream.read())!= -1 ) {
+                    bytes[i] = (byte)c;
+                }
+
+                    }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return bytes;
+    }
+
     public void write(byte[] data) {
         try {
             mOutputStream = mSocket.getOutputStream();
