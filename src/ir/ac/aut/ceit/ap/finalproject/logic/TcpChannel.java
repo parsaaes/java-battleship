@@ -1,5 +1,6 @@
 package ir.ac.aut.ceit.ap.finalproject.logic;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
@@ -10,8 +11,12 @@ public class TcpChannel {
     private Socket mSocket;
     private OutputStream mOutputStream;
     private InputStream mInputStream;
-//
-//    public TcpChannel(SocketAddress socketAddress, int timeout)
+
+public TcpChannel(SocketAddress socketAddress, int timeout) throws IOException {
+    mSocket = new Socket();
+    mSocket.setSoTimeout(timeout);
+    mSocket.connect(socketAddress);
+}
 //    public TcpChannel(Socket socket, int timeout)
 //    /** * Try to read specific count from input stream. */
 //    public byte[] read(final int count)
