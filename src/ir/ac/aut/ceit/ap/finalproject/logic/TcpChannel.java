@@ -15,27 +15,32 @@ public class TcpChannel {
     private OutputStream mOutputStream;
     private InputStream mInputStream;
 
-public TcpChannel(SocketAddress socketAddress, int timeout) {
-    mSocket = new Socket();
-    try {
-        mSocket.setSoTimeout(timeout);
-    } catch (SocketException e) {
-        e.printStackTrace();
+    public TcpChannel(SocketAddress socketAddress, int timeout) {
+        mSocket = new Socket();
+        try {
+            mSocket.setSoTimeout(timeout);
+        } catch (SocketException e) {
+            e.printStackTrace();
+        }
+        try {
+            mSocket.connect(socketAddress);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-    try {
-        mSocket.connect(socketAddress);
-    } catch (IOException e) {
-        e.printStackTrace();
+
+    public TcpChannel(Socket socket, int timeout) {
+        mSocket = socket;
+        try {
+            mSocket.setSoTimeout(timeout);
+        } catch (SocketException e) {
+            e.printStackTrace();
+        }
     }
-}
-public TcpChannel(Socket socket,int timeout)  {
-    mSocket = socket;
-    try {
-        mSocket.setSoTimeout(timeout);
-    } catch (SocketException e) {
-        e.printStackTrace();
+
+    public boolean isConnected() {
+        return mSocket.isConnected() && !mSocket.isClosed();
     }
-}
 //    public TcpChannel(Socket socket, int timeout)
 //    /** * Try to read specific count from input stream. */
 //    public byte[] read(final int count)
