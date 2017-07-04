@@ -1,11 +1,14 @@
 package ir.ac.aut.ceit.ap.finalproject.logic;
 
+import sun.rmi.transport.tcp.TCPChannel;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketAddress;
+import java.net.SocketException;
 
 public class TcpChannel {
     private Socket mSocket;
@@ -16,6 +19,15 @@ public TcpChannel(SocketAddress socketAddress, int timeout) throws IOException {
     mSocket = new Socket();
     mSocket.setSoTimeout(timeout);
     mSocket.connect(socketAddress);
+}
+public TcpChannel(Socket socket,int timeout)  {
+    mSocket = socket;
+
+    try {
+        mSocket.setSoTimeout(timeout);
+    } catch (SocketException e) {
+        e.printStackTrace();
+    }
 }
 //    public TcpChannel(Socket socket, int timeout)
 //    /** * Try to read specific count from input stream. */
