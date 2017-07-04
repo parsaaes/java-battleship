@@ -20,6 +20,10 @@ public class NetworkHandler extends Thread {
         mTcpChannel = new TcpChannel(socket,300);
         this.iNetworkHandlerCallback = iNetworkHandlerCallback;
     }
+    public void sendMessage(BaseMessage baseMessage) {
+        mSendQueue.add(baseMessage.getSerialized());
+    }
+
     private class ReceivedMessageConsumer extends Thread {
         /**
          *
