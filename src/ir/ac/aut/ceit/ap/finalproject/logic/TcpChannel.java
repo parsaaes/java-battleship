@@ -41,8 +41,16 @@ public class TcpChannel {
     public boolean isConnected() {
         return mSocket.isConnected() && !mSocket.isClosed();
     }
-//    public TcpChannel(Socket socket, int timeout)
-//    /** * Try to read specific count from input stream. */
+
+    public void write(byte[] data) {
+        try {
+            mOutputStream = mSocket.getOutputStream();
+            mOutputStream.write(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 //    public byte[] read(final int count)
 //    /** * Write bytes on output stream. */
 //    public void write(byte[] data)
