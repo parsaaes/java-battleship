@@ -1,5 +1,7 @@
 package ir.ac.aut.ceit.ap.finalproject.logic;
 
+import com.sun.javaws.jnl.ResourcesDesc;
+
 public class MessageTypes {
 
     /**
@@ -10,4 +12,6 @@ public class MessageTypes {
     /* codes : */
 
     public static final byte REQUEST_LOGIN = 1;
+    public static final byte CHAT_MESSAGE = 2;
+    public static final byte MOVE_MESSAGE = 3;
 }

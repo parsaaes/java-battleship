@@ -12,7 +12,7 @@ public class NetworkHandler extends Thread {
     private TcpChannel mTcpChannel;
     private Queue<byte[]> mSendQueue = new LinkedList<>();
     private Queue<byte[]> mReceivedQueue = new LinkedList<>();
-    private ReceivedMessageConsumer mConsumerThread;
+    private ReceivedMessageConsumer mConsumerThread =new ReceivedMessageConsumer();
     INetworkHandlerCallback iNetworkHandlerCallback;
 
     public NetworkHandler(SocketAddress socketAddress, INetworkHandlerCallback iNetworkHandlerCallback) {
@@ -32,6 +32,7 @@ public class NetworkHandler extends Thread {
     @Override
     public void run() {
         threadIsAlive = true;
+        mConsumerThread.start();
         while (mTcpChannel.isConnected() && threadIsAlive) {
             if (!mSendQueue.isEmpty()) {
                 mTcpChannel.write(mSendQueue.poll());
@@ -71,6 +72,19 @@ public class NetworkHandler extends Thread {
     }
 
     private class ReceivedMessageConsumer extends Thread {
+        public byte getType(byte[] bytes) {
+            switch (bytes[5]) {
+                case MessageTypes.REQUEST_LOGIN:
+                case MessageTypes.CHAT_MESSAGE:
+                case MessageTypes.MOVE_MESSAGE:
+                    return bytes[5];
+                default:
+                    System.out.println("Unknown type!!!");
+
+            }
+            return -1;
+        }
+
         /**
          * While channel is connected and stop is not called: *
          * if there exists message in receivedQueue, then create a message object
@@ -79,6 +93,32 @@ public class NetworkHandler extends Thread {
          */
         @Override
         public void run() {
+            while (mTcpChannel.isConnected() && threadIsAlive) {
+                if (!mReceivedQueue.isEmpty()) {
+                    byte[] messageBytes = mReceivedQueue.poll();
+                    switch (getType(messageBytes)) {
+                        case MessageTypes.REQUEST_LOGIN:
+                            RequestLoginMessage requestLoginMessage = new RequestLoginMessage(messageBytes);
+                            iNetworkHandlerCallback.onMessageReceived(requestLoginMessage);
+                            System.out.println("Request");
+                            break;
+                        case MessageTypes.CHAT_MESSAGE:
+                            //
+                            break;
+                        case MessageTypes.MOVE_MESSAGE:
+                            //
+                            break;
+                        default:
+                            System.out.println("Unknown type!!!");
+                    }
+                } else {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
         }
     }
 
