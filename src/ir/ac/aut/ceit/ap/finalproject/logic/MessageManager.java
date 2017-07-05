@@ -34,6 +34,20 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         }
     }
 
+    public void sendRequestLogin(String to, String username, String password){
+        RequestLoginMessage requestLoginMessage = new RequestLoginMessage(username,password);
+        // s
+        for (NetworkHandler networkHandler : mNetworkHandlerList) {
+            if(networkHandler.getUsername().equals(to)){
+                networkHandler.sendMessage(requestLoginMessage);
+            }
+        }
+    }
+
+    private void consumeRequestLogin(RequestLoginMessage message) {
+        System.out.println(message.getUsername() + " - " + message.getPassword() );
+    }
+
     @Override
     public void onNewConnectionReceived(NetworkHandler networkHandler) {
         mNetworkHandlerList.add(networkHandler);
@@ -44,7 +58,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
     public void onMessageReceived(BaseMessage baseMessage) {
         switch (baseMessage.getMessageType()) {
             case MessageTypes.REQUEST_LOGIN:
-                //consumeRequestLogin((RequestLoginMessage) baseMessage);
+                consumeRequestLogin((RequestLoginMessage) baseMessage);
                 break;
 
         }

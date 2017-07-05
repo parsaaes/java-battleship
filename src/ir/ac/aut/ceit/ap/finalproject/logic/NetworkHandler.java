@@ -14,6 +14,7 @@ public class NetworkHandler extends Thread {
     private Queue<byte[]> mReceivedQueue = new LinkedList<>();
     private ReceivedMessageConsumer mConsumerThread =new ReceivedMessageConsumer();
     INetworkHandlerCallback iNetworkHandlerCallback;
+    private String username;
 
     public NetworkHandler(SocketAddress socketAddress, INetworkHandlerCallback iNetworkHandlerCallback) {
         mTcpChannel = new TcpChannel(socketAddress, 300);
@@ -23,6 +24,10 @@ public class NetworkHandler extends Thread {
     public NetworkHandler(Socket socket, INetworkHandlerCallback iNetworkHandlerCallback) {
         mTcpChannel = new TcpChannel(socket, 300);
         this.iNetworkHandlerCallback = iNetworkHandlerCallback;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public void sendMessage(BaseMessage baseMessage) {
@@ -99,6 +104,7 @@ public class NetworkHandler extends Thread {
                     switch (getType(messageBytes)) {
                         case MessageTypes.REQUEST_LOGIN:
                             RequestLoginMessage requestLoginMessage = new RequestLoginMessage(messageBytes);
+                            username = requestLoginMessage.getUsername();
                             iNetworkHandlerCallback.onMessageReceived(requestLoginMessage);
                             System.out.println("Request");
                             break;
