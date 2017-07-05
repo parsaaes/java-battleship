@@ -41,6 +41,7 @@ public class TcpChannel {
     }
 
     public byte[] read(final int count) {
+        //System.out.println("this is count -->" + count);
         byte[] bytes = new byte[count];
         boolean nothingToRead = true;
         int c;
@@ -48,13 +49,24 @@ public class TcpChannel {
         try {
             mInputStream = mSocket.getInputStream();
             for (int i = 0; i < bytes.length; i++) {
-                if ((c = mInputStream.read()) != -1) {
-                    bytes[i] = (byte) c;
+                //System.out.println(i);
+                // System.out.println(mInputStream.available() + " is available");
+
+                if(mInputStream.available() != 0 ) {
+
+                    if ((c = mInputStream.read()) != -1) {
+                        bytes[i] = (byte) c;
+                    }
+                    else {
+                        break;
+                    }
+                    nothingToRead = false;
                 }
                 else {
                     break;
                 }
-                nothingToRead = false;
+
+
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -16,13 +16,21 @@ public class NetworkHandler extends Thread {
     INetworkHandlerCallback iNetworkHandlerCallback;
     private String username;
 
+    public Queue<byte[]> getmReceivedQueue() {
+        return mReceivedQueue;
+    }
+
+    public Queue<byte[]> getmSendQueue() {
+        return mSendQueue;
+    }
+
     public NetworkHandler(SocketAddress socketAddress, INetworkHandlerCallback iNetworkHandlerCallback) {
-        mTcpChannel = new TcpChannel(socketAddress, 300);
+        mTcpChannel = new TcpChannel(socketAddress, 3000);
         this.iNetworkHandlerCallback = iNetworkHandlerCallback;
     }
 
     public NetworkHandler(Socket socket, INetworkHandlerCallback iNetworkHandlerCallback) {
-        mTcpChannel = new TcpChannel(socket, 300);
+        mTcpChannel = new TcpChannel(socket, 3000);
         this.iNetworkHandlerCallback = iNetworkHandlerCallback;
     }
 
@@ -30,8 +38,13 @@ public class NetworkHandler extends Thread {
         return username;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public void sendMessage(BaseMessage baseMessage) {
         mSendQueue.add(baseMessage.getSerialized());
+        System.out.println("added to sendQui");
     }
 
     @Override
@@ -41,10 +54,10 @@ public class NetworkHandler extends Thread {
         while (mTcpChannel.isConnected() && threadIsAlive) {
             if (!mSendQueue.isEmpty()) {
                 mTcpChannel.write(mSendQueue.poll());
-                byte[] bytes = readChannel();
-                if (bytes != null) {
-                    mReceivedQueue.add(bytes);
-                }
+            }
+            byte[] bytes = readChannel();
+            if (bytes != null) {
+                mReceivedQueue.add(bytes);
             }
         }
     }
@@ -61,15 +74,17 @@ public class NetworkHandler extends Thread {
         messageSizeInByte = mTcpChannel.read(4);
         if (messageSizeInByte == null) {
             return null;
-        } else {
+        }
+        else {
             ByteBuffer byteBuffer = ByteBuffer.wrap(messageSizeInByte);
             int size = byteBuffer.getInt();
+            System.out.println("size is " + size);
             resultByte = new byte[size];
             resultByte[0] = messageSizeInByte[0];
             resultByte[1] = messageSizeInByte[1];
             resultByte[2] = messageSizeInByte[2];
             resultByte[3] = messageSizeInByte[3];
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i < size - 4; i++) {
                 resultByte[4 + i] = mTcpChannel.read(1)[0];
             }
         }

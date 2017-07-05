@@ -14,11 +14,19 @@ import java.util.List;
 public class MessageManager implements ServerSocketHandler.IServerSocketHandlerCallback, NetworkHandler.INetworkHandlerCallback {
 
     private ServerSocketHandler mServerSocketHandler;
+
     private List<NetworkHandler> mNetworkHandlerList = new LinkedList<NetworkHandler>();
+
+
+    public void setUser(String user) {
+        mNetworkHandlerList.get(0).setUsername(user);
+    }
 
     public MessageManager(int port) {
         mServerSocketHandler = new ServerSocketHandler(port, this, this);
         mServerSocketHandler.start();
+        System.out.println("serversocket Started");
+
     }
 
     public MessageManager(String ip, int port) {
@@ -44,12 +52,13 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
     }
 
     private void consumeRequestLogin(RequestLoginMessage message) {
-        System.out.println(message.getUsername() + " - " + message.getPassword() );
+        System.out.println("i am consumed :D" + message.getUsername() + " - " + message.getPassword() );
     }
 
     @Override
     public void onNewConnectionReceived(NetworkHandler networkHandler) {
         mNetworkHandlerList.add(networkHandler);
+        networkHandler.start();
     }
 
 
