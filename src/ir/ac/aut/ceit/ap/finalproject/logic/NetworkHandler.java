@@ -39,7 +39,6 @@ public class NetworkHandler extends Thread {
                 if (bytes != null) {
                     mReceivedQueue.add(bytes);
                 }
-
             }
         }
     }

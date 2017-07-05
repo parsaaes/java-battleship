@@ -4,9 +4,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-/**
- * Created by NP on 7/4/2017.
- */
+
 public class ServerSocketHandler extends Thread {
     private ServerSocket mServerSocket;
     private NetworkHandler.INetworkHandlerCallback iNetworkHandlerCallback;
