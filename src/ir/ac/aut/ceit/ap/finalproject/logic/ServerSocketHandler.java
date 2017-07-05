@@ -28,6 +28,7 @@ public class ServerSocketHandler extends Thread {
             try {
 
                 Socket socket = mServerSocket.accept();
+                System.out.println("A Device Connected");
                 if (socket.isConnected()) {
                     NetworkHandler networkHandler = new NetworkHandler(socket, iNetworkHandlerCallback);
                     iServerSocketHandlerCallback.onNewConnectionReceived(networkHandler);
