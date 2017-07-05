@@ -16,6 +16,10 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
     private ServerSocketHandler mServerSocketHandler;
     private List<NetworkHandler> mNetworkHandlerList = new LinkedList<NetworkHandler>();
 
+    public List<NetworkHandler> getmNetworkHandlerList() {
+        return mNetworkHandlerList;
+    }
+
     public MessageManager(int port) {
         mServerSocketHandler = new ServerSocketHandler(port, this, this);
         mServerSocketHandler.start();
@@ -27,6 +31,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
             Socket socket;
             socket = new Socket(ip, port);
             NetworkHandler networkHandler = new NetworkHandler(socket, this);
+            mNetworkHandlerList.add(networkHandler);
             networkHandler.start();
         } catch (IOException e) {
             e.printStackTrace();
@@ -35,9 +40,13 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
     public void sendRequestLogin(String to, String username, String password){
         RequestLoginMessage requestLoginMessage = new RequestLoginMessage(username,password);
+        System.out.println("request login created but not send yet");
         // s
         for (NetworkHandler networkHandler : mNetworkHandlerList) {
-            if(networkHandler.getUsername().equals(to)){
+            networkHandler.setUsername("user1");
+            System.out.println(networkHandler + "is network list we work" + networkHandler.getUsername());
+            if(networkHandler.getUsername() != null && networkHandler.getUsername().equals(to)){
+                System.out.println("its equals! so it should be send now");
                 networkHandler.sendMessage(requestLoginMessage);
             }
         }
