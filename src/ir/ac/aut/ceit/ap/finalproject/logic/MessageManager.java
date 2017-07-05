@@ -15,7 +15,6 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
     private ServerSocketHandler mServerSocketHandler;
     private List<NetworkHandler> mNetworkHandlerList = new LinkedList<NetworkHandler>();
-    ;
 
     public MessageManager(int port) {
         mServerSocketHandler = new ServerSocketHandler(port, this, this);
