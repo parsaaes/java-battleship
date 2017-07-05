@@ -14,16 +14,24 @@ import java.util.List;
 public class MessageManager implements ServerSocketHandler.IServerSocketHandlerCallback, NetworkHandler.INetworkHandlerCallback {
 
     private ServerSocketHandler mServerSocketHandler;
-    private List<NetworkHandler> mNetworkHandlerList = new LinkedList<NetworkHandler>();;
+    private List<NetworkHandler> mNetworkHandlerList = new LinkedList<NetworkHandler>();
+    ;
 
     public MessageManager(int port) {
-        mServerSocketHandler = new ServerSocketHandler(port,this,this);
+        mServerSocketHandler = new ServerSocketHandler(port, this, this);
         mServerSocketHandler.start();
     }
 
-    public MessageManager(String ip , int port){
-        InetSocketAddress inetSocketAddress = new InetSocketAddress(ip,port);
-        NetworkHandler networkHandler = new NetworkHandler(inetSocketAddress,this);
+    public MessageManager(String ip, int port) {
+//        InetSocketAddress inetSocketAddress = new InetSocketAddress(ip,port);
+        try {
+            Socket socket;
+            socket = new Socket(ip, port);
+            NetworkHandler networkHandler = new NetworkHandler(socket, this);
+            networkHandler.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
