@@ -50,7 +50,7 @@ public class TcpChannel {
             mInputStream = mSocket.getInputStream();
             for (int i = 0; i < bytes.length; i++) {
                 //System.out.println(i);
-               // System.out.println(mInputStream.available() + " is available");
+                // System.out.println(mInputStream.available() + " is available");
 
                 if(mInputStream.available() != 0 ) {
 
