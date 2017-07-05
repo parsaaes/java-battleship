@@ -36,15 +36,24 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
     @Override
     public void onNewConnectionReceived(NetworkHandler networkHandler) {
+        mNetworkHandlerList.add(networkHandler);
     }
+
 
     @Override
     public void onMessageReceived(BaseMessage baseMessage) {
+        switch (baseMessage.getMessageType()) {
+            case MessageTypes.REQUEST_LOGIN:
+                //consumeRequestLogin((RequestLoginMessage) baseMessage);
+                break;
 
+        }
     }
+
+
 
     @Override
     public void onSocketClosed() {
-
+        System.out.println("Called onsocketclosed()");
     }
 }

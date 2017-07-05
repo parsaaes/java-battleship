@@ -46,6 +46,7 @@ public class NetworkHandler extends Thread {
     public void stopSelf() {
         threadIsAlive = false;
         mTcpChannel.closeChannel();
+        iNetworkHandlerCallback.onSocketClosed();
     }
 
     private byte[] readChannel() {
