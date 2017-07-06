@@ -61,11 +61,16 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
     private void consumeRequestLogin(RequestLoginMessage message) {
         System.out.println("i am consumed :D " + message.getUsername() + " - " + message.getPassword() );
+        LinkedList<NetworkHandler> linkedList = (LinkedList<NetworkHandler>)mNetworkHandlerList;
+        linkedList.getLast().setUsername(message.getUsername());
+        for (NetworkHandler networkHandler : mNetworkHandlerList) {
+            System.out.println("Device is connected name  :" + networkHandler.getUsername());
+        }
     }
 
     @Override
     public void onNewConnectionReceived(NetworkHandler networkHandler) {
-        networkHandler.setUsername("user1");
+        //networkHandler.setUsername("user1");
         mNetworkHandlerList.add(networkHandler);
         networkHandler.start();
     }
