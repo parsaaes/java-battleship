@@ -22,6 +22,10 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         mNetworkHandlerList.get(0).setUsername(user);
     }
 
+    public List<NetworkHandler> getmNetworkHandlerList() {
+        return mNetworkHandlerList;
+    }
+
     public MessageManager(int port) {
         mServerSocketHandler = new ServerSocketHandler(port, this, this);
         mServerSocketHandler.start();
@@ -35,6 +39,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
             Socket socket;
             socket = new Socket(ip, port);
             NetworkHandler networkHandler = new NetworkHandler(socket, this);
+            mNetworkHandlerList.add(networkHandler);
             networkHandler.start();
         } catch (IOException e) {
             e.printStackTrace();
@@ -46,7 +51,11 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         // s
         for (NetworkHandler networkHandler : mNetworkHandlerList) {
             if(networkHandler.getUsername().equals(to)){
-                networkHandler.sendMessage(requestLoginMessage);
+                networkHandler.setUsername("user1");
+                if(networkHandler.getUsername() != null && networkHandler.getUsername().equals(to)){
+                    System.out.println("its equals! so it should be send now");
+                    networkHandler.sendMessage(requestLoginMessage);
+                }
             }
         }
     }

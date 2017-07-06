@@ -26,7 +26,7 @@ public class LoginFrame {
     private JTextField guestPortTextField = new JTextField();
     private JButton startButton = new JButton("Start");
     private JButton exitButton = new JButton("Exit");
-    private Boolean isHostMode;
+    private Boolean isHostMode = true;
 
     public LoginFrame(){
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,6 +68,9 @@ public class LoginFrame {
 
         JPanel buttonsPanel = new JPanel();
         buttonsPanel.setLayout(new FlowLayout());
+        ButtonHandler buttonHandler = new ButtonHandler();
+        startButton.addActionListener(buttonHandler);
+        exitButton.addActionListener(buttonHandler);
         buttonsPanel.add(exitButton);
         buttonsPanel.add(startButton);
 
