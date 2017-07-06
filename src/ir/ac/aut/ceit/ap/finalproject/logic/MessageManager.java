@@ -50,13 +50,12 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         RequestLoginMessage requestLoginMessage = new RequestLoginMessage(username,password);
         // s
         for (NetworkHandler networkHandler : mNetworkHandlerList) {
-            if(networkHandler.getUsername() != null && networkHandler.getUsername().equals(to)){
-                networkHandler.setUsername("user1");
-                if(networkHandler.getUsername().equals(to)){
-                    System.out.println("its equals! so it should be send now");
-                    networkHandler.sendMessage(requestLoginMessage);
-                }
-            }
+            System.out.println(networkHandler.getUsername());
+
+            System.out.println("its equals! so it should be send now");
+            networkHandler.sendMessage(requestLoginMessage);
+
+
         }
     }
 

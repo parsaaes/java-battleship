@@ -105,6 +105,7 @@ public class LoginFrame {
             if(e.getSource() == startButton) {
                 if(isHostMode){
                     MessageManager messageManager = new MessageManager(Integer.parseInt(hostPortTextField.getText()));
+
                 }
                 else {
                     MessageManager messageManager = new MessageManager(guestIpTextField.getText(),Integer.parseInt(guestPortTextField.getText()));
