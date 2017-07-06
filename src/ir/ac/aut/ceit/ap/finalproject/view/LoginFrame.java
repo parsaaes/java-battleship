@@ -1,8 +1,12 @@
 package ir.ac.aut.ceit.ap.finalproject.view;
 
 
+import ir.ac.aut.ceit.ap.finalproject.logic.MessageManager;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
@@ -89,6 +93,24 @@ public class LoginFrame {
             System.out.println("is host mode ? "+isHostMode);
         }
 
+    }
+
+    private class ButtonHandler implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource() == startButton) {
+                if(isHostMode){
+                    MessageManager messageManager = new MessageManager(Integer.parseInt(hostPortTextField.getText()));
+                }
+                else {
+                    MessageManager messageManager = new MessageManager(guestIpTextField.getText(),Integer.parseInt(guestPortTextField.getText()));
+                }
+            }
+            else if(e.getSource() == exitButton) {
+
+            }
+        }
     }
 
 
