@@ -65,6 +65,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
     @Override
     public void onNewConnectionReceived(NetworkHandler networkHandler) {
+        networkHandler.setUsername("user1");
         mNetworkHandlerList.add(networkHandler);
         networkHandler.start();
     }
