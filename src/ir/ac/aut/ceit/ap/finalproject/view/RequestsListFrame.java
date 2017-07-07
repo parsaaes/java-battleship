@@ -7,11 +7,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 
-public class RequestsListFrame {
+public class RequestsListFrame implements RequestComponent.IRequestListFrameCallback {
     private JFrame jFrame;
     private JPanel jPanel;
+    private IMainFrameServerRespondCallback iMainFrameServerRespondCallback;
     private LinkedList<NetworkHandler> networkHandlerList;
-    public RequestsListFrame() {
+
+    public RequestsListFrame(IMainFrameServerRespondCallback iMainFrameServerRespondCallback) {
+        this.iMainFrameServerRespondCallback = iMainFrameServerRespondCallback;
         jFrame = new JFrame();
         jFrame.setSize(400, 800);
         jPanel = new JPanel();
@@ -24,16 +27,17 @@ public class RequestsListFrame {
         this.networkHandlerList = networkHandlerList;
         jFrame.setVisible(true);
     }
+
     public void updateList() {
         System.out.println("UPDATE LIST CALLED !!!");
         jFrame.getContentPane().removeAll();
         jPanel = new JPanel();
         jFrame.add(jPanel, BorderLayout.CENTER);
         jPanel.setLayout(new GridLayout(10, 1));
-        if(networkHandlerList != null) {
+        if (networkHandlerList != null) {
             for (NetworkHandler networkHandler : networkHandlerList) {
-                if(networkHandler != null) {
-                    RequestComponent requestComponent = new RequestComponent(networkHandler.getUsername());
+                if (networkHandler != null) {
+                    RequestComponent requestComponent = new RequestComponent(networkHandler.getUsername(),(RequestComponent.IRequestListFrameCallback)this);
                     System.out.println(networkHandler.getUsername() + "IT SHOULD BE ADDED TO LIST");
                     jPanel.add(requestComponent);
                 }
@@ -43,5 +47,14 @@ public class RequestsListFrame {
         jPanel.revalidate();
         jFrame.repaint();
         jFrame.revalidate();
+    }
+
+    @Override
+    public void onServerRespondsConnection(int acceptStatus,String name) {
+        iMainFrameServerRespondCallback.onServerRespondedRequest(acceptStatus,name);
+    }
+
+    public interface IMainFrameServerRespondCallback {
+        public void onServerRespondedRequest(int status, String name);
     }
 }

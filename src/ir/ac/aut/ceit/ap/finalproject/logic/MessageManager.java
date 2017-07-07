@@ -17,9 +17,17 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
     private List<NetworkHandler> mNetworkHandlerList = new LinkedList<NetworkHandler>();
 
     private IGUICallback iGUICallback;
-
+    private NetworkHandler acceptedNetworkHandler;
     public void setiGUICallback(IGUICallback iGUICallback) {
         this.iGUICallback = iGUICallback;
+    }
+
+    public NetworkHandler getAcceptedNetworkHandler() {
+        return acceptedNetworkHandler;
+    }
+
+    public void setAcceptedNetworkHandler(NetworkHandler acceptedNetworkHandler) {
+        this.acceptedNetworkHandler = acceptedNetworkHandler;
     }
 
     public void setUser(String user) {

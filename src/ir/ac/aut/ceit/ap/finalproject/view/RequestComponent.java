@@ -10,6 +10,9 @@ public class RequestComponent extends JPanel {
     private JLabel nameLabel;
     private JButton declineButton;
     private JButton acceptButton;
+    private int acceptStatus;
+    private IRequestListFrameCallback iRequestListFrameCallback;
+
 
     public void hideMe() {
         acceptButton.setVisible(false);
@@ -18,7 +21,9 @@ public class RequestComponent extends JPanel {
         setVisible(false);
     }
 
-    public RequestComponent(String name) {
+    public RequestComponent(String name,IRequestListFrameCallback iRequestListFrameCallback) {
+        this.iRequestListFrameCallback = iRequestListFrameCallback;
+        acceptStatus = 0;
         nameLabel = new JLabel(name);
         acceptButton = new JButton("Accept");
         declineButton = new JButton("Decline");
@@ -28,7 +33,7 @@ public class RequestComponent extends JPanel {
         add(acceptButton);
         acceptButton.addActionListener(new ButtonHandler());
         declineButton.addActionListener(new ButtonHandler());
-        setBorder(BorderFactory.createMatteBorder(0,0,1,0,Color.lightGray));
+        setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.lightGray));
     }
 
     private class ButtonHandler implements ActionListener {
@@ -37,11 +42,19 @@ public class RequestComponent extends JPanel {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == acceptButton) {
-                JOptionPane.showMessageDialog(null, "Accepted his request");
+                acceptStatus = 1;
+                iRequestListFrameCallback.onServerRespondsConnection(acceptStatus,nameLabel.getText());
+
 
             } else if (e.getSource() == declineButton) {
                 hideMe();
+                acceptStatus = -1;
+                iRequestListFrameCallback.onServerRespondsConnection(acceptStatus,nameLabel.getText());
             }
         }
+    }
+
+    public interface IRequestListFrameCallback {
+        void onServerRespondsConnection(int acceptStatus,String name);
     }
 }

@@ -7,11 +7,11 @@ import ir.ac.aut.ceit.ap.finalproject.logic.NetworkHandler;
 import javax.swing.*;
 import java.util.LinkedList;
 
-public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.IGUICallback {
+public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.IGUICallback, RequestsListFrame.IMainFrameServerRespondCallback {
     LoginFrame loginFrame = new LoginFrame(this);
     MessageManager messageManager;
     GuestWaitingFrame guestWaitingFrame = new GuestWaitingFrame();
-    RequestsListFrame requestsListFrame = new RequestsListFrame();
+    RequestsListFrame requestsListFrame = new RequestsListFrame(this);
 
     public MainFrame() {
         loginFrame.runLoginFrame();
@@ -43,6 +43,27 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         } else {
             JOptionPane.showMessageDialog(null, "Server cancelled your request! \n try again later.");
             System.exit(1);
+        }
+    }
+
+    @Override
+    public void onServerRespondedRequest(int status, String name) {
+        if (status == 1) {
+            for (NetworkHandler networkHandler : this.messageManager.getmNetworkHandlerList()) {
+                if (networkHandler.getUsername().equals(name)) {
+                    this.messageManager.setAcceptedNetworkHandler(networkHandler);
+                    System.out.println("acceptednetwork set!!!");
+                    break;
+                }
+            }
+        } else if (status == -1) {
+            for (NetworkHandler networkHandler : this.messageManager.getmNetworkHandlerList()) {
+                if (networkHandler.getUsername().equals(name)) {
+                    System.out.println("Network handler was declined;;;;");
+                    networkHandler.stopSelf();
+                    break;
+                }
+            }
         }
     }
 }
