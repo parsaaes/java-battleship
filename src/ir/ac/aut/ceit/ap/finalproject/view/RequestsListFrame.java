@@ -10,7 +10,7 @@ import java.util.LinkedList;
 public class RequestsListFrame {
     private JFrame jframe;
     private JPanel jPanel;
-
+    private LinkedList<NetworkHandler> networkHandlerList;
     public RequestsListFrame() {
         jframe = new JFrame();
         jframe.setSize(400, 800);
@@ -21,14 +21,21 @@ public class RequestsListFrame {
     }
 
     public void runFrame(LinkedList<NetworkHandler> networkHandlerList) {
-        if (networkHandlerList != null) {
+        this.networkHandlerList = networkHandlerList;
+        jframe.setVisible(true);
+    }
+    public void updateList() {
+        jframe.removeAll();
+        jPanel = new JPanel();
+        jframe.add(jPanel, BorderLayout.CENTER);
+        jPanel.setLayout(new GridLayout(10, 1));
+        if(networkHandlerList != null) {
             for (NetworkHandler networkHandler : networkHandlerList) {
-                if (networkHandler != null) {
+                if(networkHandler != null) {
                     RequestComponent requestComponent = new RequestComponent(networkHandler.getUsername());
                     jPanel.add(requestComponent);
                 }
             }
         }
-        jframe.setVisible(true);
     }
 }

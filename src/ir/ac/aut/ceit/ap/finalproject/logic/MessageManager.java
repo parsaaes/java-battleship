@@ -2,6 +2,7 @@ package ir.ac.aut.ceit.ap.finalproject.logic;
 
 
 import com.sun.corba.se.spi.activation.Server;
+import ir.ac.aut.ceit.ap.finalproject.view.RequestsListFrame;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -86,6 +87,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         for (NetworkHandler networkHandler : mNetworkHandlerList) {
             System.out.println("[LIST] Device is connected name  : " + networkHandler.getUsername());
         }
+        iGUICallback.getRequestsListFrame().updateList();
         // test
         try {
             Thread.sleep(1000);
@@ -133,5 +135,6 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
     public interface IGUICallback {
         void onHostAccepted(int status);
+        RequestsListFrame getRequestsListFrame();
     }
 }

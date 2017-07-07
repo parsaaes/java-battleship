@@ -31,6 +31,10 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         }
     }
 
+    public RequestsListFrame getRequestsListFrame() {
+        return requestsListFrame;
+    }
+
     @Override
     public void onHostAccepted(int status) {
         guestWaitingFrame.closeFrame();
