@@ -12,7 +12,8 @@ import java.awt.event.ItemListener;
 
 public class LoginFrame {
 
-    private JFrame jFrame = new JFrame();
+    IMainFrameCallBack iMainFrameCallBack;
+    private JFrame jFrame = new JFrame("Battle Ship");
     private JLabel nameLabel = new JLabel("Name : ");
     private JTextField nameTextField = new JTextField();
     private ButtonGroup radioGroup = new ButtonGroup();
@@ -26,9 +27,26 @@ public class LoginFrame {
     private JTextField guestPortTextField = new JTextField();
     private JButton startButton = new JButton("Start");
     private JButton exitButton = new JButton("Exit");
-    private Boolean isHostMode = true;
+    private boolean isHostMode = true;
+    private boolean isFinished = false;
+    private MessageManager messageManager;
 
-    public LoginFrame(){
+
+
+    public boolean isHostMode() {
+        return isHostMode;
+    }
+
+    public boolean isFinished() {
+        return isFinished;
+    }
+
+    public MessageManager getMessageManager() {
+        return messageManager;
+    }
+
+    public LoginFrame(IMainFrameCallBack iMainFrameCallBack){
+        this.iMainFrameCallBack = iMainFrameCallBack;
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setSize(350,400);
         jFrame.setLayout(new GridLayout(7,1));
@@ -104,19 +122,28 @@ public class LoginFrame {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource() == startButton) {
                 if(isHostMode){
-                    MessageManager messageManager = new MessageManager(Integer.parseInt(hostPortTextField.getText()));
-
+                    messageManager = new MessageManager(Integer.parseInt(hostPortTextField.getText()));
+                    iMainFrameCallBack.onMessageMangerCreated(messageManager,"HOST");
                 }
                 else {
-                    MessageManager messageManager = new MessageManager(guestIpTextField.getText(),Integer.parseInt(guestPortTextField.getText()));
+                    messageManager = new MessageManager(guestIpTextField.getText(),Integer.parseInt(guestPortTextField.getText()));
+                    iMainFrameCallBack.onMessageMangerCreated(messageManager,"GUEST");
+                    isFinished = true;
                 }
             }
             else if(e.getSource() == exitButton) {
-
+                jFrame.dispose();
+                System.exit(1);
             }
         }
     }
 
+    public void closeFrame(){
+        jFrame.dispose();
+    }
 
+public interface IMainFrameCallBack {
+        void onMessageMangerCreated(MessageManager messageManager,String type);
+}
 
 }

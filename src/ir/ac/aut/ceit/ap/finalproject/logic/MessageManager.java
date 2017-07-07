@@ -3,11 +3,9 @@ package ir.ac.aut.ceit.ap.finalproject.logic;
 
 import com.sun.corba.se.spi.activation.Server;
 
+import javax.swing.*;
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.*;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -17,6 +15,11 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
     private List<NetworkHandler> mNetworkHandlerList = new LinkedList<NetworkHandler>();
 
+    private IGUICallback iGUICallback;
+
+    public void setiGUICallback(IGUICallback iGUICallback) {
+        this.iGUICallback = iGUICallback;
+    }
 
     public void setUser(String user) {
         mNetworkHandlerList.get(0).setUsername(user);
@@ -41,9 +44,15 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
             NetworkHandler networkHandler = new NetworkHandler(socket, this);
             mNetworkHandlerList.add(networkHandler);
             networkHandler.start();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+        catch (ConnectException e){
+            JOptionPane.showMessageDialog(null,"No Host Found !");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+
+        }
+
     }
 
     public void sendRequestLogin(String to, String username, String password){
@@ -55,7 +64,16 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
             System.out.println("its equals! so it should be send now");
             networkHandler.sendMessage(requestLoginMessage);
 
+        }
+    }
 
+    public void sendServerAccepted(String to , int hostAccepted){
+        ServerAcceptedMessage serverAcceptedMessage = new ServerAcceptedMessage(hostAccepted);
+        for (NetworkHandler networkHandler : mNetworkHandlerList) {
+            if(networkHandler.getUsername().equals(to)){
+                networkHandler.sendMessage(serverAcceptedMessage);
+                break;
+            }
         }
     }
 
@@ -64,8 +82,13 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         LinkedList<NetworkHandler> linkedList = (LinkedList<NetworkHandler>)mNetworkHandlerList;
         linkedList.getLast().setUsername(message.getUsername());
         for (NetworkHandler networkHandler : mNetworkHandlerList) {
-            System.out.println("Device is connected name  :" + networkHandler.getUsername());
+            System.out.println("[LIST] Device is connected name  : " + networkHandler.getUsername());
         }
+    }
+
+    private void consumeServerAccepted(ServerAcceptedMessage serverAcceptedMessage){
+        System.out.println("server accepted message received ");
+        iGUICallback.onHostAccepted(serverAcceptedMessage.getHostAccepted());
     }
 
     @Override
@@ -82,6 +105,9 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
             case MessageTypes.REQUEST_LOGIN:
                 consumeRequestLogin((RequestLoginMessage) baseMessage);
                 break;
+            case MessageTypes.SERVER_ACCEPTED:
+                //consume
+                break;
 
         }
     }
@@ -91,5 +117,11 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
     @Override
     public void onSocketClosed() {
         System.out.println("Called onsocketclosed()");
+        JOptionPane.showMessageDialog(null,"Disconnected");
+        System.exit(1);
+    }
+
+    public interface IGUICallback {
+        void onHostAccepted(int status);
     }
 }

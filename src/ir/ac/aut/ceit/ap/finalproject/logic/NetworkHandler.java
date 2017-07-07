@@ -12,7 +12,7 @@ public class NetworkHandler extends Thread {
     private TcpChannel mTcpChannel;
     private Queue<byte[]> mSendQueue = new LinkedList<>();
     private Queue<byte[]> mReceivedQueue = new LinkedList<>();
-    private ReceivedMessageConsumer mConsumerThread =new ReceivedMessageConsumer();
+    private ReceivedMessageConsumer mConsumerThread = new ReceivedMessageConsumer();
     INetworkHandlerCallback iNetworkHandlerCallback;
     private String username;
 
@@ -95,7 +95,7 @@ public class NetworkHandler extends Thread {
         public byte getType(byte[] bytes) {
             switch (bytes[5]) {
                 case MessageTypes.REQUEST_LOGIN:
-                case MessageTypes.CHAT_MESSAGE:
+                case MessageTypes.SERVER_ACCEPTED:
                 case MessageTypes.MOVE_MESSAGE:
                     return bytes[5];
                 default:
@@ -123,8 +123,13 @@ public class NetworkHandler extends Thread {
                             iNetworkHandlerCallback.onMessageReceived(requestLoginMessage);
                             System.out.println("Request");
                             break;
-                        case MessageTypes.CHAT_MESSAGE:
-                            //
+                        case MessageTypes.SERVER_ACCEPTED:
+                            ServerAcceptedMessage serverAcceptedMessage = new ServerAcceptedMessage(messageBytes);
+                            if(serverAcceptedMessage.hostAccepted == 0){
+                                stopSelf();
+                            }
+                            iNetworkHandlerCallback.onMessageReceived(serverAcceptedMessage);
+                            System.out.println("Server accepted");
                             break;
                         case MessageTypes.MOVE_MESSAGE:
                             //
