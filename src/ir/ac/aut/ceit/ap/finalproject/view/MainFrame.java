@@ -52,6 +52,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             for (NetworkHandler networkHandler : this.messageManager.getmNetworkHandlerList()) {
                 if (networkHandler.getUsername().equals(name)) {
                     this.messageManager.setAcceptedNetworkHandler(networkHandler);
+                    this.messageManager.sendServerAccepted(this.messageManager.getAcceptedNetworkHandler().getUsername(),1);
                     System.out.println("acceptednetwork set!!!");
                     break;
                 }
@@ -60,6 +61,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             for (NetworkHandler networkHandler : this.messageManager.getmNetworkHandlerList()) {
                 if (networkHandler.getUsername().equals(name)) {
                     System.out.println("Network handler was declined;;;;");
+                    this.messageManager.sendServerAccepted(networkHandler.getUsername(),-1);
                     networkHandler.stopSelf();
                     break;
                 }

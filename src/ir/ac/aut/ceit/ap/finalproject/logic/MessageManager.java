@@ -102,7 +102,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        sendServerAccepted(getmNetworkHandlerList().get(0).getUsername(),1);
+        //sendServerAccepted(getmNetworkHandlerList().get(0).getUsername(),1);
 
     }
 
@@ -138,7 +138,6 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
     public void onSocketClosed() {
         System.out.println("Called onsocketclosed()");
         JOptionPane.showMessageDialog(null,"Disconnected");
-        System.exit(1);
     }
 
     public interface IGUICallback {
