@@ -85,8 +85,8 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         }
     }
 
-    public void sendServerAccepted(String to , int hostAccepted){
-        ServerAcceptedMessage serverAcceptedMessage = new ServerAcceptedMessage(hostAccepted);
+    public void sendServerAccepted(String to , int hostAccepted , String serverUserName){
+        ServerAcceptedMessage serverAcceptedMessage = new ServerAcceptedMessage(hostAccepted,serverUserName);
         for (NetworkHandler networkHandler : mNetworkHandlerList) {
             System.out.println("before if");
             if(networkHandler.getUsername().equals(to)){
@@ -117,7 +117,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
     private void consumeServerAccepted(ServerAcceptedMessage serverAcceptedMessage){
         System.out.println("server accepted message received ");
-        iGUICallback.onHostAccepted(serverAcceptedMessage.getHostAccepted());
+        iGUICallback.onHostAccepted(serverAcceptedMessage.getHostAccepted(),serverAcceptedMessage.getServerUserName());
     }
 
     @Override
@@ -150,7 +150,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
     }
 
     public interface IGUICallback {
-        void onHostAccepted(int status);
+        void onHostAccepted(int status,String serverUserName);
         RequestsListFrame getRequestsListFrame();
     }
 }

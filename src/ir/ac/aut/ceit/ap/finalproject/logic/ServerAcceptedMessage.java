@@ -5,10 +5,12 @@ import java.nio.ByteBuffer;
 
 public class ServerAcceptedMessage extends BaseMessage {
 
-    int hostAccepted;
+    private int hostAccepted;
+    private String serverUserName;
 
-    public ServerAcceptedMessage(int hostAccepted){
+    public ServerAcceptedMessage(int hostAccepted , String serverUserName){
         this.hostAccepted = hostAccepted;
+        this.serverUserName = serverUserName;
         serialize();
     }
 
@@ -19,12 +21,14 @@ public class ServerAcceptedMessage extends BaseMessage {
 
     @Override
     protected void serialize() {
-        int messageLength = 4 + 1 + 1 + 4;
+        int serverUserNameLength = serverUserName.getBytes().length;
+        int messageLength = 4 + 1 + 1 + 4 + serverUserNameLength;
         ByteBuffer byteBuffer = ByteBuffer.allocate(messageLength);
         byteBuffer.putInt(messageLength);
         byteBuffer.put(MessageTypes.PROTOCOL_VERSION);
         byteBuffer.put(MessageTypes.SERVER_ACCEPTED);
         byteBuffer.putInt(hostAccepted);
+        byteBuffer.put(serverUserName.getBytes());
         mSerialized = byteBuffer.array();
     }
 
@@ -35,6 +39,10 @@ public class ServerAcceptedMessage extends BaseMessage {
         byte protocolVersion = byteBuffer.get();
         byte messageType = byteBuffer.get();
         hostAccepted = byteBuffer.getInt();
+        int usernameLength = byteBuffer.getInt();
+        byte[] usernameBytes = new byte[usernameLength];
+        byteBuffer.get(usernameBytes);
+        serverUserName = new String(usernameBytes);
     }
 
     @Override
@@ -44,5 +52,9 @@ public class ServerAcceptedMessage extends BaseMessage {
 
     public int getHostAccepted(){
         return hostAccepted;
+    }
+
+    public String getServerUserName() {
+        return serverUserName;
     }
 }

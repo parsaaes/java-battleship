@@ -65,7 +65,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
 
     public void runFrame() {
-        jFrame.setTitle("connected to " + messageManager.getAcceptedNetworkHandler().getUsername());
+        jFrame.setTitle("Playing with " + messageManager.getAcceptedNetworkHandler().getUsername());
         jFrame.setVisible(true);
     }
 
@@ -91,10 +91,11 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     }
 
     @Override
-    public void onHostAccepted(int status) {
+    public void onHostAccepted(int status,String serverUserName) {
         guestWaitingFrame.closeFrame();
         if (status == 1) {
             System.out.println("game is starting");
+            messageManager.getmNetworkHandlerList().get(0).setUsername(serverUserName);
             messageManager.setAcceptedNetworkHandler(messageManager.getmNetworkHandlerList().get(0));
             loginFrame.closeFrame();
             runFrame();
@@ -110,7 +111,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             for (NetworkHandler networkHandler : messageManager.getmNetworkHandlerList()) {
                 if (networkHandler.getUsername().equals(name)) {
                     messageManager.setAcceptedNetworkHandler(networkHandler);
-                    messageManager.sendServerAccepted(messageManager.getAcceptedNetworkHandler().getUsername(), 1);
+                    messageManager.sendServerAccepted(messageManager.getAcceptedNetworkHandler().getUsername(), 1,username);
                     System.out.println("acceptednetwork set!!!");
                     loginFrame.closeFrame();
                     requestsListFrame.closeFrame();
@@ -122,7 +123,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             for (NetworkHandler networkHandler : messageManager.getmNetworkHandlerList()) {
                 if (networkHandler.getUsername().equals(name)) {
                     System.out.println("Network handler was declined;;;;");
-                    messageManager.sendServerAccepted(networkHandler.getUsername(), -1);
+                    messageManager.sendServerAccepted(networkHandler.getUsername(), -1,username);
                     try {
                         Thread.sleep(500);
                     } catch (InterruptedException e) {
