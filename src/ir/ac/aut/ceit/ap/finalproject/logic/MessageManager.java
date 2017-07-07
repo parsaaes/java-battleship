@@ -56,6 +56,15 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         }
         catch (ConnectException e){
             JOptionPane.showMessageDialog(null,"No Host Found !");
+            System.exit(1);
+        }
+        catch (UnknownHostException e){
+            JOptionPane.showMessageDialog(null,"No Host Found !");
+            System.exit(1);
+        }
+        catch (NoRouteToHostException e){
+            JOptionPane.showMessageDialog(null,"No Host Found !");
+            System.exit(1);
         }
         catch (IOException e) {
             e.printStackTrace();

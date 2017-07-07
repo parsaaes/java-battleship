@@ -28,6 +28,10 @@ public class RequestsListFrame implements RequestComponent.IRequestListFrameCall
         jFrame.setVisible(true);
     }
 
+    public void closeFrame(){
+        jFrame.dispose();
+    }
+
     public void updateList() {
         System.out.println("UPDATE LIST CALLED !!!");
         jFrame.getContentPane().removeAll();

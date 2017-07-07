@@ -21,7 +21,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
 
     public MainFrame() {
-       // loginFrame.runLoginFrame();
+        loginFrame.runLoginFrame();
         //loginFrame should be closed
 
         jFrame.setSize(900, 550);
@@ -112,6 +112,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
                     messageManager.sendServerAccepted(messageManager.getAcceptedNetworkHandler().getUsername(), 1);
                     System.out.println("acceptednetwork set!!!");
                     loginFrame.closeFrame();
+                    requestsListFrame.closeFrame();
                     runFrame();
                     break;
                 }
