@@ -5,6 +5,8 @@ import ir.ac.aut.ceit.ap.finalproject.logic.MessageManager;
 import ir.ac.aut.ceit.ap.finalproject.logic.NetworkHandler;
 
 import javax.swing.*;
+import javax.swing.border.MatteBorder;
+import java.awt.*;
 import java.util.LinkedList;
 
 public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.IGUICallback, RequestsListFrame.IMainFrameServerRespondCallback {
@@ -13,10 +15,52 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     GuestWaitingFrame guestWaitingFrame = new GuestWaitingFrame();
     RequestsListFrame requestsListFrame = new RequestsListFrame(this);
     private String username;
+    JFrame jFrame = new JFrame();
+
+
     public MainFrame() {
-        loginFrame.runLoginFrame();
+       // loginFrame.runLoginFrame();
+        //loginFrame should be closed
+
+        jFrame.setSize(900,550);
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        jFrame.setLayout(new BorderLayout());
+
+        JPanel gamePanel = new JPanel();
+        JPanel chatPanel = new JPanel();
+        chatPanel.setLayout(new BorderLayout());
+
+        JTextArea chatArea = new JTextArea();
+        JTextField chatSendArea = new JTextField();
+        JButton chatSendButton = new JButton("Send");
+        chatSendButton.setPreferredSize(new Dimension(60,20));
+        JPanel chatButtonAndField = new JPanel();
+        chatButtonAndField.setLayout(new BorderLayout());
+        chatArea.setEnabled(false);
+        chatPanel.add(chatArea);
+        chatButtonAndField.add(chatSendArea);
+        chatButtonAndField.add(chatSendButton,BorderLayout.EAST);
+
+        chatPanel.add(chatButtonAndField,BorderLayout.SOUTH);
+
+
+        jFrame.add(gamePanel,BorderLayout.WEST);
+        chatPanel.setPreferredSize(new Dimension(275,550));
+        chatPanel.setBorder(new MatteBorder(0,1,0,0,Color.lightGray));
+        jFrame.add(chatPanel,BorderLayout.EAST);
+
+
 
     }
+
+
+    public void runFrame(){
+        jFrame.setVisible(true);
+    }
+
+
+
 
     @Override
     public void onMessageMangerCreated(MessageManager messageManager, String type,String name) {
