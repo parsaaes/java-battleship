@@ -12,22 +12,23 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     MessageManager messageManager;
     GuestWaitingFrame guestWaitingFrame = new GuestWaitingFrame();
     RequestsListFrame requestsListFrame = new RequestsListFrame(this);
-
+    private String username;
     public MainFrame() {
         loginFrame.runLoginFrame();
 
     }
 
     @Override
-    public void onMessageMangerCreated(MessageManager messageManager, String type) {
+    public void onMessageMangerCreated(MessageManager messageManager, String type,String name) {
         this.messageManager = messageManager;
+        this.username =name;
         this.messageManager.setiGUICallback(this);
         if (type.equals("HOST")) {
             System.out.println("gui list should be open");
             requestsListFrame.runFrame((LinkedList<NetworkHandler>) this.messageManager.getmNetworkHandlerList());
         } else {
             guestWaitingFrame.runFrame();
-            this.messageManager.sendRequestLogin("server", "user!!!", "12345");
+            this.messageManager.sendRequestLogin("server", name, "12345");
         }
     }
 

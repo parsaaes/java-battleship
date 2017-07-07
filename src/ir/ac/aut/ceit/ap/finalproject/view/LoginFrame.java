@@ -123,11 +123,11 @@ public class LoginFrame {
             if(e.getSource() == startButton) {
                 if(isHostMode){
                     messageManager = new MessageManager(Integer.parseInt(hostPortTextField.getText()));
-                    iMainFrameCallBack.onMessageMangerCreated(messageManager,"HOST");
+                    iMainFrameCallBack.onMessageMangerCreated(messageManager,"HOST",nameTextField.getText());
                 }
                 else {
                     messageManager = new MessageManager(guestIpTextField.getText(),Integer.parseInt(guestPortTextField.getText()));
-                    iMainFrameCallBack.onMessageMangerCreated(messageManager,"GUEST");
+                    iMainFrameCallBack.onMessageMangerCreated(messageManager,"GUEST",nameTextField.getText());
                     isFinished = true;
                 }
             }
@@ -143,7 +143,7 @@ public class LoginFrame {
     }
 
 public interface IMainFrameCallBack {
-        void onMessageMangerCreated(MessageManager messageManager,String type);
+        void onMessageMangerCreated(MessageManager messageManager,String type,String username);
 }
 
 }
