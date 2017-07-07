@@ -22,7 +22,7 @@ public class ServerAcceptedMessage extends BaseMessage {
     @Override
     protected void serialize() {
         int serverUserNameLength = serverUserName.getBytes().length;
-        int messageLength = 4 + 1 + 1 + 4 + serverUserNameLength;
+        int messageLength = 4 + 1 + 1 + 4 + 4 + serverUserNameLength;
         ByteBuffer byteBuffer = ByteBuffer.allocate(messageLength);
         byteBuffer.putInt(messageLength);
         byteBuffer.put(MessageTypes.PROTOCOL_VERSION);
