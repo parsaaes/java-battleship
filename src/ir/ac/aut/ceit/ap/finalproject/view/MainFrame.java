@@ -65,6 +65,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
 
     public void runFrame() {
+        jFrame.setTitle("connected to " + messageManager.getAcceptedNetworkHandler().getUsername());
         jFrame.setVisible(true);
     }
 
