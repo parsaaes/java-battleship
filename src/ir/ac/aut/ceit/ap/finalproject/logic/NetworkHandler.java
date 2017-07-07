@@ -96,7 +96,7 @@ public class NetworkHandler extends Thread {
             switch (bytes[5]) {
                 case MessageTypes.REQUEST_LOGIN:
                 case MessageTypes.SERVER_ACCEPTED:
-                case MessageTypes.MOVE_MESSAGE:
+                case MessageTypes.CHAT_MESSAGE:
                     return bytes[5];
                 default:
                     System.out.println("Unknown type!!!");
@@ -131,8 +131,10 @@ public class NetworkHandler extends Thread {
                             iNetworkHandlerCallback.onMessageReceived(serverAcceptedMessage);
                             System.out.println("Server accepted");
                             break;
-                        case MessageTypes.MOVE_MESSAGE:
-                            //
+                        case MessageTypes.CHAT_MESSAGE:
+                            ChatMessage chatMessage = new ChatMessage(messageBytes);
+                            iNetworkHandlerCallback.onMessageReceived(chatMessage);
+                            System.out.println("Chat!");
                             break;
                         default:
                             System.out.println("Unknown type!!!");

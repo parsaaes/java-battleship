@@ -1,7 +1,6 @@
 package ir.ac.aut.ceit.ap.finalproject.logic;
 
 
-import com.sun.corba.se.spi.activation.Server;
 import ir.ac.aut.ceit.ap.finalproject.view.RequestsListFrame;
 
 import javax.swing.*;
@@ -97,6 +96,11 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         }
     }
 
+    public void sendChatMessage(String chatText){
+        ChatMessage chatMessage = new ChatMessage(chatText);
+        acceptedNetworkHandler.sendMessage(chatMessage);
+    }
+
     private void consumeRequestLogin(RequestLoginMessage message) {
         System.out.println("i am consumed :D " + message.getUsername() + " - " + message.getPassword() );
         LinkedList<NetworkHandler> linkedList = (LinkedList<NetworkHandler>)mNetworkHandlerList;
@@ -120,6 +124,11 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         iGUICallback.onHostAccepted(serverAcceptedMessage.getHostAccepted(),serverAcceptedMessage.getServerUserName());
     }
 
+    private void consumeChatMessage(ChatMessage chatMessage){
+        System.out.println("chat received");
+        iGUICallback.onChatReceived(chatMessage.getChatText());
+    }
+
     @Override
     public void onNewConnectionReceived(NetworkHandler networkHandler) {
         //networkHandler.setUsername("user1");
@@ -137,6 +146,9 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
             case MessageTypes.SERVER_ACCEPTED:
                 consumeServerAccepted((ServerAcceptedMessage) baseMessage);
                 break;
+            case MessageTypes.CHAT_MESSAGE:
+                consumeChatMessage((ChatMessage) baseMessage);
+                break;
 
         }
     }
@@ -151,6 +163,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
     public interface IGUICallback {
         void onHostAccepted(int status,String serverUserName);
+        void onChatReceived(String chatText);
         RequestsListFrame getRequestsListFrame();
     }
 }

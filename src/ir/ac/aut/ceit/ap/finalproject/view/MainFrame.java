@@ -18,6 +18,8 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     RequestsListFrame requestsListFrame = new RequestsListFrame(this);
     private String username;
     JFrame jFrame = new JFrame();
+    JTextArea chatArea = new JTextArea();
+
 
 
     public MainFrame() {
@@ -33,7 +35,6 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         JPanel chatPanel = new JPanel();
         chatPanel.setLayout(new BorderLayout());
 
-        JTextArea chatArea = new JTextArea();
         JTextField chatSendArea = new JTextField();
         JButton chatSendButton = new JButton("Send");
         chatSendButton.addActionListener(new ActionListener() {
@@ -103,6 +104,11 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             JOptionPane.showMessageDialog(null, "Server cancelled your request! \n try again later.");
             System.exit(1);
         }
+    }
+
+    @Override
+    public void onChatReceived(String chatText) {
+        chatArea.append(messageManager.getAcceptedNetworkHandler().getUsername() + " : " + chatText + "\n");
     }
 
     @Override
