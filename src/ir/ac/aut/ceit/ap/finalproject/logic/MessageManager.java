@@ -110,11 +110,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         }
         iGUICallback.getRequestsListFrame().updateList();
         // test
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         //sendServerAccepted(getmNetworkHandlerList().get(0).getUsername(),1);
 
     }
