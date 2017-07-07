@@ -87,6 +87,11 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
             System.out.println("[LIST] Device is connected name  : " + networkHandler.getUsername());
         }
         // test
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         sendServerAccepted(getmNetworkHandlerList().get(0).getUsername(),1);
 
     }

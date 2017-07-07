@@ -18,12 +18,13 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack,MessageManager.I
     @Override
     public void onMessageMangerCreated(MessageManager messageManager,String type) {
         this.messageManager = messageManager;
-        messageManager.setiGUICallback(this);
+        this.messageManager.setiGUICallback(this);
         if(type.equals("HOST")){
             System.out.println("gui list should be open");
         }
         else {
             guestWaitingFrame.runFrame();
+            this.messageManager.sendRequestLogin("server","user!!!","12345");
         }
     }
 
