@@ -28,6 +28,7 @@ public class ServerAcceptedMessage extends BaseMessage {
         byteBuffer.put(MessageTypes.PROTOCOL_VERSION);
         byteBuffer.put(MessageTypes.SERVER_ACCEPTED);
         byteBuffer.putInt(hostAccepted);
+        byteBuffer.putInt(serverUserNameLength);
         byteBuffer.put(serverUserName.getBytes());
         mSerialized = byteBuffer.array();
     }
