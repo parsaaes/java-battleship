@@ -21,7 +21,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
 
     public MainFrame() {
-        // loginFrame.runLoginFrame();
+       // loginFrame.runLoginFrame();
         //loginFrame should be closed
 
         jFrame.setSize(900, 550);
@@ -68,6 +68,12 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         jFrame.setVisible(true);
     }
 
+    public RequestsListFrame getRequestsListFrame() {
+        return requestsListFrame;
+    }
+
+
+
 
     @Override
     public void onMessageMangerCreated(MessageManager messageManager, String type, String name) {
@@ -83,15 +89,14 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         }
     }
 
-    public RequestsListFrame getRequestsListFrame() {
-        return requestsListFrame;
-    }
-
     @Override
     public void onHostAccepted(int status) {
         guestWaitingFrame.closeFrame();
         if (status == 1) {
             System.out.println("game is starting");
+            messageManager.setAcceptedNetworkHandler(messageManager.getmNetworkHandlerList().get(0));
+            loginFrame.closeFrame();
+            runFrame();
         } else {
             JOptionPane.showMessageDialog(null, "Server cancelled your request! \n try again later.");
             System.exit(1);
@@ -101,19 +106,21 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     @Override
     public void onServerRespondedRequest(int status, String name) {
         if (status == 1) {
-            for (NetworkHandler networkHandler : this.messageManager.getmNetworkHandlerList()) {
+            for (NetworkHandler networkHandler : messageManager.getmNetworkHandlerList()) {
                 if (networkHandler.getUsername().equals(name)) {
-                    this.messageManager.setAcceptedNetworkHandler(networkHandler);
-                    this.messageManager.sendServerAccepted(this.messageManager.getAcceptedNetworkHandler().getUsername(), 1);
+                    messageManager.setAcceptedNetworkHandler(networkHandler);
+                    messageManager.sendServerAccepted(messageManager.getAcceptedNetworkHandler().getUsername(), 1);
                     System.out.println("acceptednetwork set!!!");
+                    loginFrame.closeFrame();
+                    runFrame();
                     break;
                 }
             }
         } else if (status == -1) {
-            for (NetworkHandler networkHandler : this.messageManager.getmNetworkHandlerList()) {
+            for (NetworkHandler networkHandler : messageManager.getmNetworkHandlerList()) {
                 if (networkHandler.getUsername().equals(name)) {
                     System.out.println("Network handler was declined;;;;");
-                    this.messageManager.sendServerAccepted(networkHandler.getUsername(), -1);
+                    messageManager.sendServerAccepted(networkHandler.getUsername(), -1);
                     try {
                         Thread.sleep(500);
                     } catch (InterruptedException e) {
