@@ -7,6 +7,8 @@ import ir.ac.aut.ceit.ap.finalproject.logic.NetworkHandler;
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
 public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.IGUICallback, RequestsListFrame.IMainFrameServerRespondCallback {
@@ -19,10 +21,10 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
 
     public MainFrame() {
-       // loginFrame.runLoginFrame();
+        // loginFrame.runLoginFrame();
         //loginFrame should be closed
 
-        jFrame.setSize(900,550);
+        jFrame.setSize(900, 550);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         jFrame.setLayout(new BorderLayout());
@@ -34,38 +36,43 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         JTextArea chatArea = new JTextArea();
         JTextField chatSendArea = new JTextField();
         JButton chatSendButton = new JButton("Send");
-        chatSendButton.setPreferredSize(new Dimension(60,20));
+        chatSendButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(chatSendArea.getText());
+                chatArea.append(username + " : " + chatSendArea.getText() + "\n");
+                chatSendArea.setText("");
+            }
+        });
+        chatSendButton.setPreferredSize(new Dimension(60, 20));
         JPanel chatButtonAndField = new JPanel();
         chatButtonAndField.setLayout(new BorderLayout());
-        chatArea.setEnabled(false);
+        chatArea.setEditable(false);
         chatPanel.add(chatArea);
         chatButtonAndField.add(chatSendArea);
-        chatButtonAndField.add(chatSendButton,BorderLayout.EAST);
+        chatButtonAndField.add(chatSendButton, BorderLayout.EAST);
 
-        chatPanel.add(chatButtonAndField,BorderLayout.SOUTH);
+        chatPanel.add(chatButtonAndField, BorderLayout.SOUTH);
 
 
-        jFrame.add(gamePanel,BorderLayout.WEST);
-        chatPanel.setPreferredSize(new Dimension(275,550));
-        chatPanel.setBorder(new MatteBorder(0,1,0,0,Color.lightGray));
-        jFrame.add(chatPanel,BorderLayout.EAST);
-
+        jFrame.add(gamePanel, BorderLayout.WEST);
+        chatPanel.setPreferredSize(new Dimension(275, 550));
+        chatPanel.setBorder(new MatteBorder(0, 1, 0, 0, Color.lightGray));
+        jFrame.add(chatPanel, BorderLayout.EAST);
 
 
     }
 
 
-    public void runFrame(){
+    public void runFrame() {
         jFrame.setVisible(true);
     }
 
 
-
-
     @Override
-    public void onMessageMangerCreated(MessageManager messageManager, String type,String name) {
+    public void onMessageMangerCreated(MessageManager messageManager, String type, String name) {
         this.messageManager = messageManager;
-        this.username =name;
+        this.username = name;
         this.messageManager.setiGUICallback(this);
         if (type.equals("HOST")) {
             System.out.println("gui list should be open");
@@ -97,7 +104,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             for (NetworkHandler networkHandler : this.messageManager.getmNetworkHandlerList()) {
                 if (networkHandler.getUsername().equals(name)) {
                     this.messageManager.setAcceptedNetworkHandler(networkHandler);
-                    this.messageManager.sendServerAccepted(this.messageManager.getAcceptedNetworkHandler().getUsername(),1);
+                    this.messageManager.sendServerAccepted(this.messageManager.getAcceptedNetworkHandler().getUsername(), 1);
                     System.out.println("acceptednetwork set!!!");
                     break;
                 }
@@ -106,7 +113,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             for (NetworkHandler networkHandler : this.messageManager.getmNetworkHandlerList()) {
                 if (networkHandler.getUsername().equals(name)) {
                     System.out.println("Network handler was declined;;;;");
-                    this.messageManager.sendServerAccepted(networkHandler.getUsername(),-1);
+                    this.messageManager.sendServerAccepted(networkHandler.getUsername(), -1);
                     try {
                         Thread.sleep(500);
                     } catch (InterruptedException e) {
