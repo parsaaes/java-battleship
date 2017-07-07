@@ -125,9 +125,9 @@ public class NetworkHandler extends Thread {
                             break;
                         case MessageTypes.SERVER_ACCEPTED:
                             ServerAcceptedMessage serverAcceptedMessage = new ServerAcceptedMessage(messageBytes);
-                            if(serverAcceptedMessage.hostAccepted == 0){
-                                stopSelf();
-                            }
+//                            if(serverAcceptedMessage.hostAccepted == 0){
+//                                stopSelf();
+//                            }
                             iNetworkHandlerCallback.onMessageReceived(serverAcceptedMessage);
                             System.out.println("Server accepted");
                             break;

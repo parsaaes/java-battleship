@@ -63,6 +63,12 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
                 if (networkHandler.getUsername().equals(name)) {
                     System.out.println("Network handler was declined;;;;");
                     this.messageManager.sendServerAccepted(networkHandler.getUsername(),-1);
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    this.messageManager.getmNetworkHandlerList().remove(networkHandler);
                     networkHandler.stopSelf();
                     break;
                 }
