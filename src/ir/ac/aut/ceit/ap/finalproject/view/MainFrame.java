@@ -42,6 +42,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             public void actionPerformed(ActionEvent e) {
                 System.out.println(chatSendArea.getText());
                 chatArea.append(username + " : " + chatSendArea.getText() + "\n");
+                messageManager.sendChatMessage(chatSendArea.getText());
                 chatSendArea.setText("");
             }
         });
