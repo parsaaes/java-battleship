@@ -24,7 +24,7 @@ public class ChatMessage extends BaseMessage {
         ByteBuffer byteBuffer = ByteBuffer.allocate(messageLength);
         byteBuffer.putInt(messageLength);
         byteBuffer.put(MessageTypes.PROTOCOL_VERSION);
-        byteBuffer.put(MessageTypes.SERVER_ACCEPTED);
+        byteBuffer.put(MessageTypes.CHAT_MESSAGE);
         byteBuffer.putInt(chatTextLength);
         byteBuffer.put(chatText.getBytes());
         mSerialized = byteBuffer.array();
