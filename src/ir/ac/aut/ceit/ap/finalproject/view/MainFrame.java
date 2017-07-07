@@ -21,7 +21,6 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack,MessageManager.I
         messageManager.setiGUICallback(this);
         if(type.equals("HOST")){
             System.out.println("gui list should be open");
-            messageManager.sendServerAccepted(messageManager.getmNetworkHandlerList().get(0).getUsername(),1);
         }
         else {
             guestWaitingFrame.runFrame();

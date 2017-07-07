@@ -70,7 +70,9 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
     public void sendServerAccepted(String to , int hostAccepted){
         ServerAcceptedMessage serverAcceptedMessage = new ServerAcceptedMessage(hostAccepted);
         for (NetworkHandler networkHandler : mNetworkHandlerList) {
+            System.out.println("before if");
             if(networkHandler.getUsername().equals(to)){
+                System.out.println("it is equal");
                 networkHandler.sendMessage(serverAcceptedMessage);
                 break;
             }
@@ -84,6 +86,9 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         for (NetworkHandler networkHandler : mNetworkHandlerList) {
             System.out.println("[LIST] Device is connected name  : " + networkHandler.getUsername());
         }
+        // test
+        sendServerAccepted(getmNetworkHandlerList().get(0).getUsername(),1);
+
     }
 
     private void consumeServerAccepted(ServerAcceptedMessage serverAcceptedMessage){
@@ -106,7 +111,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
                 consumeRequestLogin((RequestLoginMessage) baseMessage);
                 break;
             case MessageTypes.SERVER_ACCEPTED:
-                //consume
+                consumeServerAccepted((ServerAcceptedMessage) baseMessage);
                 break;
 
         }
