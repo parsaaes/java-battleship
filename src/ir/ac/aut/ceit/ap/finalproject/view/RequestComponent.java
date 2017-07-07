@@ -20,15 +20,15 @@ public class RequestComponent extends JPanel {
 
     public RequestComponent(String name) {
         nameLabel = new JLabel(name);
-        acceptButton = new JButton("accept Button");
-        declineButton = new JButton("decline Button");
+        acceptButton = new JButton("Accept");
+        declineButton = new JButton("Decline");
         setLayout(new FlowLayout());
         add(nameLabel);
         add(declineButton);
         add(acceptButton);
         acceptButton.addActionListener(new ButtonHandler());
         declineButton.addActionListener(new ButtonHandler());
-        setBorder(BorderFactory.createLineBorder(Color.black));
+        setBorder(BorderFactory.createMatteBorder(0,0,1,0,Color.lightGray));
     }
 
     private class ButtonHandler implements ActionListener {

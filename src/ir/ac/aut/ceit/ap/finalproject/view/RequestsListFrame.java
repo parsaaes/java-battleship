@@ -8,34 +8,40 @@ import java.awt.*;
 import java.util.LinkedList;
 
 public class RequestsListFrame {
-    private JFrame jframe;
+    private JFrame jFrame;
     private JPanel jPanel;
     private LinkedList<NetworkHandler> networkHandlerList;
     public RequestsListFrame() {
-        jframe = new JFrame();
-        jframe.setSize(400, 800);
+        jFrame = new JFrame();
+        jFrame.setSize(400, 800);
         jPanel = new JPanel();
-        jframe.setLayout(new BorderLayout());
-        jframe.add(jPanel, BorderLayout.CENTER);
+        jFrame.setLayout(new BorderLayout());
+        jFrame.add(jPanel, BorderLayout.CENTER);
         jPanel.setLayout(new GridLayout(10, 1));
     }
 
     public void runFrame(LinkedList<NetworkHandler> networkHandlerList) {
         this.networkHandlerList = networkHandlerList;
-        jframe.setVisible(true);
+        jFrame.setVisible(true);
     }
     public void updateList() {
-        jframe.removeAll();
+        System.out.println("UPDATE LIST CALLED !!!");
+        jFrame.getContentPane().removeAll();
         jPanel = new JPanel();
-        jframe.add(jPanel, BorderLayout.CENTER);
+        jFrame.add(jPanel, BorderLayout.CENTER);
         jPanel.setLayout(new GridLayout(10, 1));
         if(networkHandlerList != null) {
             for (NetworkHandler networkHandler : networkHandlerList) {
                 if(networkHandler != null) {
                     RequestComponent requestComponent = new RequestComponent(networkHandler.getUsername());
+                    System.out.println(networkHandler.getUsername() + "IT SHOULD BE ADDED TO LIST");
                     jPanel.add(requestComponent);
                 }
             }
         }
+        jPanel.repaint();
+        jPanel.revalidate();
+        jFrame.repaint();
+        jFrame.revalidate();
     }
 }
