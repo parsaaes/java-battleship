@@ -34,6 +34,10 @@ public class NetworkHandler extends Thread {
         this.iNetworkHandlerCallback = iNetworkHandlerCallback;
     }
 
+    public String getRemoteIp(){
+        return mTcpChannel.getRemoteIp();
+    }
+
     public String getUsername() {
         return username;
     }

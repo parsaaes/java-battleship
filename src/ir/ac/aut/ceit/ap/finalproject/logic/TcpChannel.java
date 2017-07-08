@@ -36,6 +36,10 @@ public class TcpChannel {
         }
     }
 
+    public String getRemoteIp(){
+       return mSocket.getRemoteSocketAddress().toString();
+    }
+
     public boolean isConnected() {
         return mSocket.isConnected() && !mSocket.isClosed();
     }

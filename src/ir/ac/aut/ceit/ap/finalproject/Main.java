@@ -8,9 +8,7 @@ import ir.ac.aut.ceit.ap.finalproject.view.MainFrame;
 public class Main {
 
     public static void main(String[] args) {
-
         MainFrame mainFrame = new MainFrame();
-
-       // mainFrame.runFrame();
+        //mainFrame.runFrame();
     }
 }

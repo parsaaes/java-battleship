@@ -3,12 +3,17 @@ package ir.ac.aut.ceit.ap.finalproject.view;
 
 import ir.ac.aut.ceit.ap.finalproject.logic.MessageManager;
 import ir.ac.aut.ceit.ap.finalproject.logic.NetworkHandler;
+import ir.ac.aut.ceit.ap.finalproject.model.OutputFileWriter;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 
 public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.IGUICallback, RequestsListFrame.IMainFrameServerRespondCallback {
@@ -19,6 +24,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     private String username;
     JFrame jFrame = new JFrame();
     JTextArea chatArea = new JTextArea();
+    String jsonList;
 
 
 
@@ -30,6 +36,39 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         jFrame.setLayout(new BorderLayout());
+
+        JMenuBar jMenuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File");
+        JMenu helpMenu = new JMenu("Help");
+
+        JMenuItem saveChatMenuItem = new JMenuItem("Save Chat History");
+        JMenuItem showChatHistoryMenuItem = new JMenuItem("Conversations History");
+        fileMenu.add(saveChatMenuItem);
+        fileMenu.add(showChatHistoryMenuItem);
+        saveChatMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jsonList = "";
+                String chatToBeSaved = chatArea.getText();
+                String[] lines = chatToBeSaved.split("\r\n|\r|\n");
+                JSONObject savedChatJson = new JSONObject();
+                savedChatJson.put("Information",messageManager.getAcceptedNetworkHandler().getUsername()
+                        + " | " + messageManager.getAcceptedNetworkHandler().getRemoteIp() + " | " + new Date(System.currentTimeMillis()).toString().replace(":", "-"));
+                JSONArray jsonArray = new JSONArray();
+                for (String line : lines) {
+                    JSONObject chatTextLine = new JSONObject();
+                    chatTextLine.put("message",line + "\n");
+                    jsonArray.put(chatTextLine);
+                }
+                savedChatJson.put("chat messages",jsonArray);
+                jsonList = savedChatJson.toString();
+
+                OutputFileWriter.writeJsonIntoFile(jsonList,new Date(System.currentTimeMillis()).toString().replace(":", "-"),messageManager.getAcceptedNetworkHandler().getUsername());
+            }
+        });
+        jMenuBar.add(fileMenu);
+        jMenuBar.add(helpMenu);
+        jFrame.setJMenuBar(jMenuBar);
 
         JPanel gamePanel = new JPanel();
         JPanel chatPanel = new JPanel();
