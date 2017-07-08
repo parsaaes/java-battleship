@@ -20,10 +20,10 @@ public class ChatHistoryFrame {
 
     public ChatHistoryFrame(){
         chatHistoryListFrame.setLayout(new GridLayout(10,1));
-        chatHistoryListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //chatHistoryListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         chatHistoryListFrame.setSize(400,900);
         chatHistoryTextFrame.setLayout(new GridLayout(1,1));
-        chatHistoryTextFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //chatHistoryTextFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         chatHistoryTextFrame.setSize(400,900);
         chatHistoryArea.setEditable(false);
         chatHistoryTextFrame.add(chatHistoryArea);

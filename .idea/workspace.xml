@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28c64269-f78f-4e47-9c10-323dc589767b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/org.json-20130603.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/model/InputFileReader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/model/OutputFileWriter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/tools/JSONTools.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/ChatHistoryFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BattleShipFinalProject.iml" afterPath="$PROJECT_DIR$/BattleShipFinalProject.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/Main.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/NetworkHandler.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/NetworkHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/TcpChannel.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/TcpChannel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/ChatHistoryFrame.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/ChatHistoryFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,8 +29,8 @@
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="65" column="16" lean-forward="false" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+            <state relative-caret-position="102">
+              <caret line="51" column="44" lean-forward="false" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -68,15 +60,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatHistoryFrame.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChatHistoryFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/ChatHistoryFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-91">
-              <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+            <state relative-caret-position="493">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2091#2092#0" expanded="true" />
-                <element signature="e#2144#2145#0" expanded="true" />
+                <element signature="e#2095#2096#0" expanded="true" />
+                <element signature="e#2148#2149#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,7 +84,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -153,10 +145,10 @@
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/NetworkHandler.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/Main.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/model/OutputFileWriter.java" />
-        <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/model/InputFileReader.java" />
-        <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/ChatHistoryFrame.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/tools/JSONTools.java" />
+        <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/ChatHistoryFrame.java" />
       </list>
     </option>
   </component>
@@ -317,6 +309,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BattleShipFinalProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BattleShipFinalProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chathistory" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -768,7 +774,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499470326039</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="JSON Chat History Deployed">
+      <created>1499510132961</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1499510132962</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -867,7 +880,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
-    <MESSAGE value="ds store ban !" />
     <MESSAGE value="deployed some debugging message class ( RequestLogin )" />
     <MESSAGE value="ReceiveConsumer(NetworkHandler) + SendRequest/OnMessageReceived/ConsumeRequestLogin (MessageManger)" />
     <MESSAGE value="ReceiveConsumer(NetworkHandler) + SendRequest/OnMessageReceived/ConsumeRequestLogin (MessageManger) 2" />
@@ -892,7 +904,8 @@
     <MESSAGE value="deployed chat 3" />
     <MESSAGE value="deployed chat ( tested )" />
     <MESSAGE value="removed some debug things" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed some debug things" />
+    <MESSAGE value="JSON Chat History Deployed" />
+    <option name="LAST_COMMIT_MESSAGE" value="JSON Chat History Deployed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1268,32 +1281,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/ChatHistoryFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
-          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2091#2092#0" expanded="true" />
-            <element signature="e#2144#2145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="65" column="16" lean-forward="false" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="51" column="44" lean-forward="false" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/ChatHistoryFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2095#2096#0" expanded="true" />
+            <element signature="e#2148#2149#0" expanded="true" />
           </folding>
         </state>
       </provider>

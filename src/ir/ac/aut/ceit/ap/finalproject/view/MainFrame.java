@@ -45,6 +45,13 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         JMenuItem showChatHistoryMenuItem = new JMenuItem("Conversations History");
         fileMenu.add(saveChatMenuItem);
         fileMenu.add(showChatHistoryMenuItem);
+        showChatHistoryMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChatHistoryFrame chatHistoryFrame = new ChatHistoryFrame();
+                chatHistoryFrame.runFrame();
+            }
+        });
         saveChatMenuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
