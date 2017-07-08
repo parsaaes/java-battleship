@@ -96,7 +96,9 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         JPanel chatButtonAndField = new JPanel();
         chatButtonAndField.setLayout(new BorderLayout());
         chatArea.setEditable(false);
-        chatPanel.add(chatArea);
+        JScrollPane jScrollPane = new JScrollPane(chatArea);
+        jScrollPane.setBorder(BorderFactory.createEmptyBorder());
+        chatPanel.add(jScrollPane);
         chatButtonAndField.add(chatSendArea);
         chatButtonAndField.add(chatSendButton, BorderLayout.EAST);
 
