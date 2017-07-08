@@ -87,8 +87,8 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println(chatSendArea.getText());
-                chatArea.append(username + " : " + chatSendArea.getText() + "\n");
-                messageManager.sendChatMessage(chatSendArea.getText());
+                chatArea.append(username + " : " + chatSendArea.getText() + "   [" + new Date(System.currentTimeMillis()).toString().replace(":", "-") + "]" + "\n");
+                messageManager.sendChatMessage(chatSendArea.getText() + "   [" + new Date(System.currentTimeMillis()).toString().replace(":", "-") + "]" );
                 chatSendArea.setText("");
             }
         });
