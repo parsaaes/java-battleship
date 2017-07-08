@@ -36,7 +36,7 @@ public class ChatHistoryFrame {
                 jButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        JOptionPane.showMessageDialog(null,file1 + " --selected");
+                        //JOptionPane.showMessageDialog(null,file1 + " --selected");
                         json = InputFileReader.getJSON(file1.getAbsolutePath());
                         chatHistoryArea.setText("");
                         JSONTools.parseJSON(json,chatHistoryTextFrame,chatHistoryArea);
