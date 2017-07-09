@@ -322,7 +322,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        changeBoard(false);
+        changeBoard(true);
     }
 
     @Override
