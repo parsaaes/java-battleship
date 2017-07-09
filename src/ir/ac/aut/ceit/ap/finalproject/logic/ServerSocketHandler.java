@@ -33,7 +33,7 @@ public class ServerSocketHandler extends Thread {
                 if (socket.isConnected()) {
                     System.out.println("socket is conncted");
                     NetworkHandler networkHandler = new NetworkHandler(socket, iNetworkHandlerCallback);
-                    iServerSocketHandlerCallback.onNewConnectionReceived(networkHandler);
+                     iServerSocketHandlerCallback.onNewConnectionReceived(networkHandler);
                 } else {
                     Thread.sleep(100);
                 }
