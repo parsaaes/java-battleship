@@ -32,7 +32,12 @@ public class AttackMessage extends BaseMessage {
 
     @Override
     protected void deserialize() {
-
+        ByteBuffer byteBuffer = ByteBuffer.wrap(mSerialized);
+        int messageLength = byteBuffer.getInt();
+        byte protocolVersion = byteBuffer.get();
+        byte messageType = byteBuffer.get();
+        xCord = byteBuffer.getInt();
+        yCord = byteBuffer.getInt();
     }
 
     @Override
