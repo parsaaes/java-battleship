@@ -12,7 +12,6 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 
@@ -25,11 +24,14 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     JFrame jFrame = new JFrame();
     JTextArea chatArea = new JTextArea();
     String jsonList;
+    private Board yourBoard = new Board();
+    private JButton readyButton = new JButton("Ready");
+    private JButton resetButton = new JButton("Reset");
 
 
 
     public MainFrame() {
-        loginFrame.runLoginFrame();
+        //loginFrame.runLoginFrame();
         //loginFrame should be closed
 
         jFrame.setSize(900, 550);
@@ -104,7 +106,41 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
         chatPanel.add(chatButtonAndField, BorderLayout.SOUTH);
 
-
+        JPanel readyResetPanel = new JPanel();
+        readyResetPanel.setLayout(new GridLayout(2,1));
+        readyResetPanel.add(readyButton);
+        gamePanel.add(readyResetPanel);
+        gamePanel.setLayout(new FlowLayout());
+        gamePanel.add(yourBoard.runFrame());
+        readyButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(((JButton)(e.getSource())).getText().equals("Ready")) {
+                    if (yourBoard.canReady()) {
+                        yourBoard.setAddOrRemoveStatus(0);
+                        yourBoard.getButtonPanel().setVisible(false);
+                        ((JButton)(e.getSource())).setText("Cancel");
+                    }
+                }
+                else if(((JButton)(e.getSource())).getText().equals("Cancel")){
+                    yourBoard.getButtonPanel().setVisible(true);
+                    ((JButton)(e.getSource())).setText("Ready");
+                }
+            }
+        });
+        readyResetPanel.add(resetButton);
+        resetButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(readyButton.getText().equals("Ready")) {
+                    gamePanel.removeAll();
+                    gamePanel.add(readyResetPanel);
+                    yourBoard = new Board();
+                    gamePanel.add(yourBoard.runFrame());
+                    gamePanel.revalidate();
+                }
+            }
+        });
         jFrame.add(gamePanel, BorderLayout.WEST);
         chatPanel.setPreferredSize(new Dimension(275, 550));
         chatPanel.setBorder(new MatteBorder(0, 1, 0, 0, Color.lightGray));
@@ -115,7 +151,8 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
 
     public void runFrame() {
-        jFrame.setTitle("Playing with " + messageManager.getAcceptedNetworkHandler().getUsername());
+        //jFrame.setTitle("Playing with " + messageManager.getAcceptedNetworkHandler().getUsername());
+
         jFrame.setVisible(true);
     }
 

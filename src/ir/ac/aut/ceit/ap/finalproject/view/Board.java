@@ -11,8 +11,9 @@ import java.util.ArrayList;
 public class Board {
     JFrame jFrame;
     JPanel boardPanel;
+    JPanel buttonPanel;
     JPanel jPanel;
-    JButton[][] jButtons = new JButton[10][10];
+    private JButton[][] jButtons = new JButton[10][10];
     private ButtonHandler buttonHandler = new ButtonHandler();
 
     private boolean isRemoving = false;
@@ -40,9 +41,27 @@ public class Board {
     removing size -3
     removing size -4
      */
-    private int addOrRemoveStatus = 1;
+    private int addOrRemoveStatus = 0;
 
+    public void setAddOrRemoveStatus(int addOrRemoveStatus) {
+        this.addOrRemoveStatus = addOrRemoveStatus;
+    }
+
+    public boolean canReady(){
+        int check = numberOfOneBlockShipToDeploy + numberOfTwoBlockShipToDeploy + numberOfThreeBlockShipToDeploy + numberOfFourBlockShipToDeploy;
+        System.out.println(check);
+        if(check == 0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
     private ArrayList<Ship> shipsList = new ArrayList<>();
+
+    public JButton[][] getjButtons() {
+        return jButtons;
+    }
 
     public Board() {
         jPanel = new JPanel();
@@ -64,6 +83,7 @@ public class Board {
         }
         jPanel.setPreferredSize(new Dimension(500, 500));
     }
+
 
     public void addShip(Ship ship) {
         int xCord = ship.getxCord();
@@ -188,6 +208,10 @@ public class Board {
         }
     }
 
+    public JPanel getButtonPanel() {
+        return buttonPanel;
+    }
+
     private int getNumberOfAvailableShips(int size) {
         if (size == 1) {
             return numberOfOneBlockShipToDeploy;
@@ -249,15 +273,15 @@ public class Board {
         jPanel.repaint();
         jPanel.setFocusable(true);
         jPanel.requestFocusInWindow();
-        jFrame.revalidate();
-        jFrame.repaint();
+//        jFrame.revalidate();
+//        jFrame.repaint();
     }
 
-    public void runFrame() {
-        jFrame = new JFrame();
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFrame.setLayout(new FlowLayout());
-        JPanel buttonPanel = new JPanel();
+    public JPanel runFrame() {
+//        jFrame = new JFrame();
+//        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        jFrame.setLayout(new FlowLayout());
+        buttonPanel = new JPanel();
         oneShipField = new JTextField(2);
         twoShipField = new JTextField(2);
         threeShipField = new JTextField(2);
@@ -293,7 +317,7 @@ public class Board {
         removeFour.addActionListener(shipsAddingButton);
         addFour.addActionListener(shipsAddingButton);
 
-        jFrame.setSize(700, 700);
+//        jFrame.setSize(700, 700);
         jPanel.setFocusable(true);
         jPanel.requestFocusInWindow();
         jPanel.addKeyListener(new rotateKeyboardHandler());
@@ -303,10 +327,11 @@ public class Board {
         JPanel testPanel = new JPanel();
         testPanel.setLayout(new FlowLayout());
         testPanel.add(boardPanel);
-        jFrame.add(testPanel);
-        //jFrame.pack();
-
-        jFrame.setVisible(true);
+        return testPanel;
+//        jFrame.add(testPanel);
+//        //jFrame.pack();
+//
+//        jFrame.setVisible(true);
     }
 
     private void makeBorderForShips(int xCord, int yCord, int size, boolean isHorizontal) {
