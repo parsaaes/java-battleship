@@ -34,7 +34,7 @@ public class NetworkHandler extends Thread {
         this.iNetworkHandlerCallback = iNetworkHandlerCallback;
     }
 
-    public String getRemoteIp(){
+    public String getRemoteIp() {
         return mTcpChannel.getRemoteIp();
     }
 
@@ -78,8 +78,7 @@ public class NetworkHandler extends Thread {
         messageSizeInByte = mTcpChannel.read(4);
         if (messageSizeInByte == null) {
             return null;
-        }
-        else {
+        } else {
             ByteBuffer byteBuffer = ByteBuffer.wrap(messageSizeInByte);
             int size = byteBuffer.getInt();
             System.out.println("size is " + size);
@@ -102,6 +101,7 @@ public class NetworkHandler extends Thread {
                 case MessageTypes.SERVER_ACCEPTED:
                 case MessageTypes.CHAT_MESSAGE:
                 case MessageTypes.READYTO_PLAY:
+                case MessageTypes.ATTACK_MESSAGE:
                     return bytes[5];
                 default:
                     System.out.println("Unknown type!!!");
@@ -144,6 +144,11 @@ public class NetworkHandler extends Thread {
                         case MessageTypes.READYTO_PLAY:
                             ReadyToPlayMessage readyToPlayMessage = new ReadyToPlayMessage(messageBytes);
                             iNetworkHandlerCallback.onMessageReceived(readyToPlayMessage);
+                            break;
+
+                        case MessageTypes.ATTACK_MESSAGE:
+                            AttackMessage attackMessage = new AttackMessage(messageBytes);
+                            iNetworkHandlerCallback.onMessageReceived(attackMessage);
                             break;
                         default:
                             System.out.println("Unknown type!!!");
