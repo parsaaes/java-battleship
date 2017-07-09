@@ -199,11 +199,11 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             Random randomGenerator = new Random();
             int random = randomGenerator.nextInt(2);
             if(random == 1){
-                // send server is first
+                messageManager.sendTurnMessage(0);
                 myTurn = 1;
             }
             else {
-                // send guest is first
+                messageManager.sendTurnMessage(1);
                 myTurn = 0;
             }
         }
@@ -260,6 +260,12 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     public void onAttackReceived(int x, int y) {
 
         JOptionPane.showMessageDialog(null,x + "," + y);
+    }
+
+    @Override
+    public void onTurnReceived(int turn) {
+        myTurn = turn;
+        System.out.println("turn received : " + turn);
     }
 
     @Override
