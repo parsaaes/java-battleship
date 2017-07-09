@@ -377,6 +377,61 @@ public class Board {
         updateBoard();
 
     }
+    private boolean checkIfForwardIsReady(int xCord, int yCord, int size, boolean isHorizontal) {
+        if (isHorizontal) {
+            if (xCord + size <= 10) {
+                for (int x = xCord; x < xCord + size; x++) {
+                    if (((Block) jButtons[x][yCord]).getBlockStatus() == 0) {
+                        //do nothing
+                    } else {
+                        System.out.println("i returnd false");
+                        return false;
+                    }
+                }
+                return true;
+            }
+        } else {
+            if (yCord + size <= 10) {
+                for (int y = yCord; y < yCord + size; y++) {
+                    if (((Block) jButtons[xCord][y]).getBlockStatus() == 0) {
+                        //do nothing
+                    } else {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean checkIfForwardIsReadyForRemove(int xCord, int yCord, int size, boolean isHorizontal) {
+        if (isHorizontal) {
+            if (xCord + size <= 10) {
+                for (int x = xCord; x < xCord + size; x++) {
+                    if (((Block) jButtons[x][yCord]).getBlockStatus() == 1) {
+                        //do nothing
+                    } else {
+                        System.out.println("i returnd false");
+                        return false;
+                    }
+                }
+                return true;
+            }
+        } else {
+            if (yCord + size <= 10) {
+                for (int y = yCord; y < yCord + size; y++) {
+                    if (((Block) jButtons[xCord][y]).getBlockStatus() == 1) {
+                        //do nothing
+                    } else {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 }

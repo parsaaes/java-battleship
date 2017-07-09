@@ -103,8 +103,8 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2365">
-              <caret line="379" column="0" lean-forward="true" selection-start-line="379" selection-start-column="0" selection-end-line="379" selection-end-column="0" />
+            <state relative-caret-position="156">
+              <caret line="387" column="37" lean-forward="true" selection-start-line="387" selection-start-column="37" selection-end-line="387" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1100,11 +1100,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499583358825</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Board removeBorderForShip And makeBorderForShip deployed">
+      <created>1499583517970</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1499583517970</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20444000" />
+    <option name="totallyTimeSpent" value="20736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1220,7 +1227,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
-    <MESSAGE value="ds store ban !" />
     <MESSAGE value="deployed some debugging message class ( RequestLogin )" />
     <MESSAGE value="ReceiveConsumer(NetworkHandler) + SendRequest/OnMessageReceived/ConsumeRequestLogin (MessageManger)" />
     <MESSAGE value="ReceiveConsumer(NetworkHandler) + SendRequest/OnMessageReceived/ConsumeRequestLogin (MessageManger) 2" />
@@ -1245,7 +1251,8 @@
     <MESSAGE value="Board removeship and buttonHandler" />
     <MESSAGE value="Board extra methods added" />
     <MESSAGE value="Board update and runFrame methods added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Board update and runFrame methods added" />
+    <MESSAGE value="Board removeBorderForShip And makeBorderForShip deployed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Board removeBorderForShip And makeBorderForShip deployed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1670,8 +1677,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2365">
-          <caret line="379" column="0" lean-forward="true" selection-start-line="379" selection-start-column="0" selection-end-line="379" selection-end-column="0" />
+        <state relative-caret-position="156">
+          <caret line="387" column="37" lean-forward="true" selection-start-line="387" selection-start-column="37" selection-end-line="387" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
