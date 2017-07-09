@@ -33,6 +33,31 @@ public class Block extends JButton {
         super.setSize(new Dimension(32, 32));
     }
 
+    public int getxCord() {
+        return xCord;
+    }
+
+    public int getyCord() {
+        return yCord;
+    }
+
+    public int getBlockStatus() {
+        return blockStatus;
+    }
+
+    public void setBlockStatus(int blockStatus) {
+        this.blockStatus = blockStatus;
+    }
+
+    public void setColor() {
+        if (blockStatus == 0) {
+            super.setBackground(Color.CYAN);
+        } else if (blockStatus == 1) {
+            super.setBackground(Color.GRAY);
+        } else if (blockStatus == 2) {
+            super.setBackground(Color.WHITE);
+        }
+    }
 
 }
 
