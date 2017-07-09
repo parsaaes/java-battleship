@@ -1,8 +1,6 @@
 package ir.ac.aut.ceit.ap.finalproject.view;
 
-/**
- * Created by NP on 7/9/2017.
- */
+
 public class Ship {
     private int xCord;
     private int yCord;
@@ -35,26 +33,27 @@ public class Ship {
     public void setHorizontal(boolean horizontal) {
         isHorizontal = horizontal;
     }
+
     @Override
     public boolean equals(Object obj) {
-        if(xCord == ((Ship)(obj)).getxCord() && yCord == ((Ship)(obj)).getyCord() && size == ((Ship)(obj)).getSize()
-                && isHorizontal == ((Ship)(obj)).isHorizontal()){
+        if (xCord == ((Ship) (obj)).getxCord() && yCord == ((Ship) (obj)).getyCord() && size == ((Ship) (obj)).getSize()
+                && isHorizontal == ((Ship) (obj)).isHorizontal()) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
-    public boolean equalsStartPoint(Object obj){
-        if(xCord == ((Ship)(obj)).getxCord() && yCord == ((Ship)(obj)).getyCord() && size == ((Ship)(obj)).getSize()){
+
+    public boolean equalsStartPoint(Object obj) {
+        if (xCord == ((Ship) (obj)).getxCord() && yCord == ((Ship) (obj)).getyCord() && size == ((Ship) (obj)).getSize()) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
+
     @Override
     public String toString() {
-        return "("+xCord+","+yCord+")"+"[" + isHorizontal + "]" + "-" + size + "\n";
+        return "(" + xCord + "," + yCord + ")" + "[" + isHorizontal + "]" + "-" + size + "\n";
     }
 }
