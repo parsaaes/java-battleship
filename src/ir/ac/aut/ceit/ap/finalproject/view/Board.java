@@ -433,5 +433,43 @@ public class Board {
         return false;
     }
 
+    private void rotateLastShip() {
+        if (!shipsList.isEmpty()) {
+            Ship ship = shipsList.get(shipsList.size() - 1);
+            removeShip(ship);
+            if (checkIfForwardIsReady(ship.getxCord(), ship.getyCord(), ship.getSize(), !ship.isHorizontal())) {
+                ship.setHorizontal(!ship.isHorizontal());
+                addShip(ship);
+            } else {
+                addShip(ship);
+            }
+        }
+    }
+
+    private class ShipsAddingButton implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (((JButton) (e.getSource())).getText().equals("*")) {
+                addOrRemoveStatus = 1;
+            } else if (((JButton) (e.getSource())).getText().equals("- *")) {
+                addOrRemoveStatus = -1;
+            } else if (((JButton) (e.getSource())).getText().equals("**")) {
+                addOrRemoveStatus = 2;
+            } else if (((JButton) (e.getSource())).getText().equals("- **")) {
+                addOrRemoveStatus = -2;
+            } else if (((JButton) (e.getSource())).getText().equals("***")) {
+                addOrRemoveStatus = 3;
+            } else if (((JButton) (e.getSource())).getText().equals("- ***")) {
+                addOrRemoveStatus = -3;
+            } else if (((JButton) (e.getSource())).getText().equals("****")) {
+                addOrRemoveStatus = 4;
+            } else if (((JButton) (e.getSource())).getText().equals("- ****")) {
+                addOrRemoveStatus = -4;
+            }
+        }
+    }
+
+
 
 }
