@@ -284,17 +284,6 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
     @Override
     public void onAttackReceived(int x, int y) {
-        if (yourBoard.getDestroyedBlocks() == 20) {
-            //20 is number of all blocks
-            messageManager.sendILostMessage(1);
-            JOptionPane.showMessageDialog(null, "YOU LOST!");
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.exit(1);
-        }
         System.out.println("enemy attacked!" + x + "," + y);
         if (yourBoard.getBlock(x, y).getBlockStatus() == 1) {
             yourBoard.getBlock(x, y).setBlockStatus(4);
@@ -306,6 +295,18 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             yourBoard.getBlock(x, y).setColor();
             gamePanel.revalidate();
             messageManager.sendAttackResultMessage(0, x, y);
+        }
+
+        if (yourBoard.getDestroyedBlocks() == 20) {
+            //20 is number of all blocks
+            messageManager.sendILostMessage(1);
+            JOptionPane.showMessageDialog(null, "YOU LOST!");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.exit(1);
         }
 
         try {
