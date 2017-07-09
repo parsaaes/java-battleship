@@ -103,8 +103,8 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="315" column="5" lean-forward="false" selection-start-line="315" selection-start-column="5" selection-end-line="315" selection-end-column="5" />
+            <state relative-caret-position="2365">
+              <caret line="379" column="0" lean-forward="true" selection-start-line="379" selection-start-column="0" selection-end-line="379" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,6 +176,7 @@
       <find>requestslistframe</find>
       <find>send</find>
       <find>save</find>
+      <find>board</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1092,11 +1093,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499583205207</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Board update and runFrame methods added">
+      <created>1499583358825</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1499583358825</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20292000" />
+    <option name="totallyTimeSpent" value="20444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1236,7 +1244,8 @@
     <MESSAGE value="added Board removeShip method" />
     <MESSAGE value="Board removeship and buttonHandler" />
     <MESSAGE value="Board extra methods added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Board extra methods added" />
+    <MESSAGE value="Board update and runFrame methods added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Board update and runFrame methods added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1661,8 +1670,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="315" column="5" lean-forward="false" selection-start-line="315" selection-start-column="5" selection-end-line="315" selection-end-column="5" />
+        <state relative-caret-position="2365">
+          <caret line="379" column="0" lean-forward="true" selection-start-line="379" selection-start-column="0" selection-end-line="379" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

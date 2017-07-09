@@ -314,4 +314,69 @@ public class Board {
 
         jFrame.setVisible(true);
     }
+    private void makeBorderForShips(int xCord, int yCord, int size, boolean isHorizontal) {
+        if (isHorizontal) {
+            int borderStartX = xCord - 1;
+            int borderStartY = yCord - 1;
+            for (int y = borderStartY; y < borderStartY + 3; y++) {
+                for (int x = borderStartX; x < borderStartX + size + 2; x++) {
+                    if (0 <= y && y <= 9 && 0 <= x && x <= 9) {
+                        if (!(xCord <= x && x <= xCord + size - 1 && yCord == y)) {
+                            ((Block) (jButtons[x][y])).setBlockStatus(2);
+                            ((Block) (jButtons[x][y])).setColor();
+                        }
+                    }
+                }
+            }
+        } else {
+            int borderStartX = xCord - 1;
+            int borderStartY = yCord - 1;
+            for (int x = borderStartX; x < borderStartX + 3; x++) {
+                for (int y = borderStartY; y < borderStartY + size + 2; y++) {
+                    if (0 <= y && y <= 9 && 0 <= x && x <= 9) {
+                        if (!(yCord <= y && y <= yCord + size - 1 && xCord == x)) {
+                            ((Block) (jButtons[x][y])).setBlockStatus(2);
+                            ((Block) (jButtons[x][y])).setColor();
+                        }
+                    }
+                }
+            }
+        }
+        updateBoard();
+
+    }
+
+    private void removeBorderForShips(int xCord, int yCord, int size, boolean isHorizontal) {
+        if (isHorizontal) {
+            int borderStartX = xCord - 1;
+            int borderStartY = yCord - 1;
+            for (int y = borderStartY; y < borderStartY + 3; y++) {
+                for (int x = borderStartX; x < borderStartX + size + 2; x++) {
+                    if (0 <= y && y <= 9 && 0 <= x && x <= 9) {
+                        if (!(xCord <= x && x <= xCord + size - 1 && yCord == y)) {
+                            ((Block) (jButtons[x][y])).setBlockStatus(0);
+                            ((Block) (jButtons[x][y])).setColor();
+                        }
+                    }
+                }
+            }
+        } else {
+            int borderStartX = xCord - 1;
+            int borderStartY = yCord - 1;
+            for (int x = borderStartX; x < borderStartX + 3; x++) {
+                for (int y = borderStartY; y < borderStartY + size + 2; y++) {
+                    if (0 <= y && y <= 9 && 0 <= x && x <= 9) {
+                        if (!(yCord <= y && y <= yCord + size - 1 && xCord == x)) {
+                            ((Block) (jButtons[x][y])).setBlockStatus(0);
+                            ((Block) (jButtons[x][y])).setColor();
+                        }
+                    }
+                }
+            }
+        }
+        updateBoard();
+
+    }
+
+
 }
