@@ -209,6 +209,19 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         }
     }
 
+    private void changeBoard(boolean showMyBoard){
+        if(showMyBoard){
+            gamePanel.removeAll();
+            gamePanel.add(yourBoard.runFrame());
+            gamePanel.revalidate();
+        }
+        else {
+            gamePanel.removeAll();
+            gamePanel.add(enemyBoard.runFrame());
+            gamePanel.revalidate();
+        }
+    }
+
 
     @Override
     public void onMessageMangerCreated(MessageManager messageManager, String type, String name) {
@@ -266,6 +279,9 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     public void onTurnReceived(int turn) {
         myTurn = turn;
         System.out.println("turn received : " + turn);
+        if(myTurn == 1){
+            changeBoard(false);
+        }
     }
 
     @Override
