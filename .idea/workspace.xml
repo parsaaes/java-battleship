@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28c64269-f78f-4e47-9c10-323dc589767b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java-battleship" afterPath="$PROJECT_DIR$/java-battleship" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/AttackResultMessage.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/AttackResultMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/Block.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/Block.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Board.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/EnemyBoard.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/EnemyBoard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,11 +25,11 @@
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="214" column="17" lean-forward="false" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
+            <state relative-caret-position="185">
+              <caret line="280" column="47" lean-forward="true" selection-start-line="280" selection-start-column="47" selection-end-line="280" selection-end-column="47" />
               <folding>
-                <element signature="e#14023#14024#0" expanded="true" />
-                <element signature="e#14084#14085#0" expanded="true" />
+                <element signature="e#14022#14023#0" expanded="true" />
+                <element signature="e#14083#14084#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,7 +38,7 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
+            <state relative-caret-position="-383">
               <caret line="464" column="30" lean-forward="false" selection-start-line="464" selection-start-column="30" selection-end-line="464" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -68,7 +62,7 @@
       <file leaf-file-name="Block.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/Block.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
+            <state relative-caret-position="212">
               <caret line="57" column="44" lean-forward="false" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -92,7 +86,7 @@
       <file leaf-file-name="EnemyBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/EnemyBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
+            <state relative-caret-position="994">
               <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -138,6 +132,10 @@
       <find>sendAt</find>
       <find>getBlo</find>
       <find>getBloc</find>
+      <find>chan</find>
+      <find>sendAtt</find>
+      <find>cons</find>
+      <find>blockS</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -182,7 +180,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="-3" />
+    <option name="y" value="36" />
     <option name="width" value="1280" />
     <option name="height" value="773" />
   </component>
@@ -971,7 +970,21 @@
       <option name="project" value="LOCAL" />
       <updated>1499609839674</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="attacking and responding deployed ( not tested yet )">
+      <created>1499612081196</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1499612081197</updated>
+    </task>
+    <task id="LOCAL-00043" summary="attacking and responding deployed ( not tested yet ) 2">
+      <created>1499612307728</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1499612307728</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -987,7 +1000,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <frame x="-3" y="36" width="1280" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -999,8 +1012,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26068377" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21732746" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2599119" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21732746" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599118" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1078,8 +1091,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
-    <MESSAGE value="deployed Block constructor" />
-    <MESSAGE value="completed Block class" />
     <MESSAGE value="removed redundant comments" />
     <MESSAGE value="Ship class added + constructor and getters/setters added to it+Moved Block to logic package" />
     <MESSAGE value="Ship class completed" />
@@ -1103,7 +1114,9 @@
     <MESSAGE value="chooseTurn method completed + show enemyBoard for the first time" />
     <MESSAGE value="deployed some attacking ( not tested )" />
     <MESSAGE value="deployed some attacking ( not tested ) 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="deployed some attacking ( not tested ) 2" />
+    <MESSAGE value="attacking and responding deployed ( not tested yet )" />
+    <MESSAGE value="attacking and responding deployed ( not tested yet ) 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="attacking and responding deployed ( not tested yet ) 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1417,6 +1430,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1478,21 +1492,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="464" column="30" lean-forward="false" selection-start-line="464" selection-start-column="30" selection-end-line="464" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#18021#18022#0" expanded="true" />
-            <element signature="e#18073#18074#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/EnemyBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
+        <state relative-caret-position="994">
           <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1502,9 +1504,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-383">
+          <caret line="464" column="30" lean-forward="false" selection-start-line="464" selection-start-column="30" selection-end-line="464" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#18021#18022#0" expanded="true" />
+            <element signature="e#18073#18074#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/Block.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
+        <state relative-caret-position="212">
           <caret line="57" column="44" lean-forward="false" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1516,11 +1530,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="214" column="17" lean-forward="false" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
+        <state relative-caret-position="185">
+          <caret line="280" column="47" lean-forward="true" selection-start-line="280" selection-start-column="47" selection-end-line="280" selection-end-column="47" />
           <folding>
-            <element signature="e#14023#14024#0" expanded="true" />
-            <element signature="e#14084#14085#0" expanded="true" />
+            <element signature="e#14022#14023#0" expanded="true" />
+            <element signature="e#14083#14084#0" expanded="true" />
           </folding>
         </state>
       </provider>

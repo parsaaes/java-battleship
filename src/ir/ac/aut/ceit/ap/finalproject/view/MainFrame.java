@@ -283,7 +283,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             messageManager.sendAttackResultMessage(1,x,y);
         }
         else {
-            yourBoard.getBlock(x,y).setBlockStatus(4);
+            yourBoard.getBlock(x,y).setBlockStatus(3);
             yourBoard.getBlock(x,y).setColor();
             gamePanel.revalidate();
             messageManager.sendAttackResultMessage(0,x,y);
