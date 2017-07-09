@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28c64269-f78f-4e47-9c10-323dc589767b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/TurnMessage.java" />
+    <list default="true" id="28c64269-f78f-4e47-9c10-323dc589767b" name="Default" comment="Added TurnMessage">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageTypes.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageTypes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/TurnMessage.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/TurnMessage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +26,8 @@
       <file leaf-file-name="RequestsListFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/RequestsListFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
-              <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+            <state relative-caret-position="867">
+              <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -45,8 +46,8 @@
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-265">
-              <caret line="150" column="26" lean-forward="true" selection-start-line="150" selection-start-column="26" selection-end-line="150" selection-end-column="26" />
+            <state relative-caret-position="2329">
+              <caret line="150" column="26" lean-forward="false" selection-start-line="150" selection-start-column="26" selection-end-line="150" selection-end-column="26" />
               <folding>
                 <element signature="e#8126#8127#0" expanded="true" />
                 <element signature="e#8166#8167#0" expanded="true" />
@@ -58,12 +59,24 @@
       <file leaf-file-name="TurnMessage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/TurnMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+            <state relative-caret-position="285">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
-                <element signature="e#291#292#0" expanded="true" />
-                <element signature="e#315#316#0" expanded="true" />
+                <element signature="e#1077#1078#0" expanded="true" />
+                <element signature="e#1125#1126#0" expanded="true" />
+                <element signature="e#1153#1154#0" expanded="true" />
+                <element signature="e#1180#1181#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseMessage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/BaseMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,7 +84,7 @@
       <file leaf-file-name="EnemyBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/EnemyBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
+            <state relative-caret-position="1428">
               <caret line="92" column="13" lean-forward="false" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
               <folding />
             </state>
@@ -81,7 +94,7 @@
       <file leaf-file-name="MessageManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-330">
+            <state relative-caret-position="2397">
               <caret line="155" column="71" lean-forward="false" selection-start-line="155" selection-start-column="71" selection-end-line="155" selection-end-column="71" />
               <folding />
             </state>
@@ -91,7 +104,7 @@
       <file leaf-file-name="AttackMessage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/AttackMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="187">
               <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#198#199#0" expanded="true" />
@@ -99,6 +112,26 @@
                 <element signature="e#255#256#0" expanded="true" />
                 <element signature="e#283#284#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageTypes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageTypes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReadyToPlayMessage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/ReadyToPlayMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,11 +194,11 @@
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/Main.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/ReadyToPlayMessage.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/EnemyBoard.java" />
-        <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageTypes.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/NetworkHandler.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/AttackMessage.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageTypes.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/TurnMessage.java" />
       </list>
     </option>
@@ -179,7 +212,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1378" />
+    <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectView">
@@ -197,7 +230,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -206,16 +239,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java-battleship" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="java-battleship" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -235,50 +258,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="finalproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java-battleship" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java-battleship" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="finalproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java-battleship" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java-battleship" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="finalproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tools" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -304,141 +283,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java-battleship" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java-battleship" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/java-battleship</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -692,6 +545,7 @@
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
       <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -812,6 +666,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -847,6 +707,7 @@
       <option name="presentableId" value="Default" />
       <updated>1498310805506</updated>
       <workItem from="1499155911085" duration="1299000" />
+      <workItem from="1499606407590" duration="167000" />
     </task>
     <task id="LOCAL-00001" summary="ds store ban !">
       <created>1498316209172</created>
@@ -1128,68 +989,52 @@
       <option name="project" value="LOCAL" />
       <updated>1499604152504</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Added TurnMessage">
+      <created>1499605985407</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1499605985407</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22576000" />
+    <option name="totallyTimeSpent" value="23033000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31587562" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20458265" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2043551" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31721196" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599118" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29742032" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39941263" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30257186" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39941263" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2043551" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31721196" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599118" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29783693" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39941263" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1249,7 +1094,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
-    <MESSAGE value="added block class" />
     <MESSAGE value="deployed Block constructor" />
     <MESSAGE value="completed Block class" />
     <MESSAGE value="removed redundant comments" />
@@ -1274,7 +1118,8 @@
     <MESSAGE value="Attack message completed." />
     <MESSAGE value="made appropriate changes to Network Handler recieved messages consumer" />
     <MESSAGE value="Consume attack + send attack + onAttackRecieved deployed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Consume attack + send attack + onAttackRecieved deployed" />
+    <MESSAGE value="Added TurnMessage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added TurnMessage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1308,6 +1153,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1332,6 +1178,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1356,6 +1203,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1394,6 +1242,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1418,6 +1267,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1442,6 +1292,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1467,14 +1318,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1802">
           <caret line="121" column="21" lean-forward="false" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/RequestsListFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+        <state relative-caret-position="867">
+          <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1498,7 +1348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1506,7 +1355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1514,7 +1362,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1522,10 +1369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding>
-            <element signature="e#2150#2151#0" expanded="false" />
-            <element signature="e#2203#2204#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1565,6 +1408,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
           <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1572,6 +1416,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1579,44 +1424,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1499602418435" expanded="false" signature="1830:1841" ph=" { " />
-            <marker date="1499602418435" expanded="false" signature="1857:1863" ph=" }" />
-            <marker date="1499602418435" expanded="true" signature="1884:2754" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="2792:3796" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="3847:5394" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="5454:8161" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="5526:8155" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="5577:7466" ph="//..." />
-            <marker date="1499602418435" expanded="false" signature="8197:8208" ph=" { " />
-            <marker date="1499602418435" expanded="false" signature="8227:8233" ph=" }" />
-            <marker date="1499602418435" expanded="true" signature="8287:8664" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="8712:9069" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="9149:9927" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="9960:10465" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="10401:10459" ph="//..." />
-            <marker date="1499602418435" expanded="true" signature="10496:12812" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="10498:10641" ph="//..." />
-            <marker date="1499602418435" expanded="true" signature="12709:12806" ph="//..." />
-            <marker date="1499602418435" expanded="true" signature="12904:14190" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="14284:15570" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="15668:16543" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="16650:17525" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="17561:17973" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="18037:19077" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="18109:19071" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="19142:19630" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="19235:19247" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="19310:19322" ph="{...}" />
-            <marker date="1499602418435" expanded="true" signature="19386:19623" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/EnemyBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
+        <state relative-caret-position="1428">
           <caret line="92" column="13" lean-forward="false" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
           <folding />
         </state>
@@ -1626,17 +1439,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/BaseMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1647,13 +1450,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageTypes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1668,16 +1464,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="155" column="71" lean-forward="false" selection-start-line="155" selection-start-column="71" selection-end-line="155" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/ReadyToPlayMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state relative-caret-position="748">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/AttackMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="187">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="e#198#199#0" expanded="true" />
@@ -1688,18 +1493,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java">
+    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageTypes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330">
-          <caret line="155" column="71" lean-forward="false" selection-start-line="155" selection-start-column="71" selection-end-line="155" selection-end-column="71" />
+        <state relative-caret-position="289">
+          <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-265">
-          <caret line="150" column="26" lean-forward="true" selection-start-line="150" selection-start-column="26" selection-end-line="150" selection-end-column="26" />
+        <state relative-caret-position="2329">
+          <caret line="150" column="26" lean-forward="false" selection-start-line="150" selection-start-column="26" selection-end-line="150" selection-end-column="26" />
           <folding>
             <element signature="e#8126#8127#0" expanded="true" />
             <element signature="e#8166#8167#0" expanded="true" />
@@ -1707,13 +1512,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/BaseMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/TurnMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+        <state relative-caret-position="285">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <element signature="e#291#292#0" expanded="true" />
-            <element signature="e#315#316#0" expanded="true" />
+            <element signature="e#1077#1078#0" expanded="true" />
+            <element signature="e#1125#1126#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
           </folding>
         </state>
       </provider>
