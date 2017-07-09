@@ -25,10 +25,12 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     JTextArea chatArea = new JTextArea();
     String jsonList;
     private Board yourBoard = new Board();
+
     private JButton readyButton = new JButton("Ready");
     private JButton resetButton = new JButton("Reset");
     private int iAmReadyToPlay = 0;
     private int enemyReadyToPlay = 0;
+    private int myTurn;
     /*
     0 & 0 ---> cant start game
     1 & 0 ---> cant start game

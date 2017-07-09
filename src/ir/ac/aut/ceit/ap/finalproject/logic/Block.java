@@ -16,7 +16,7 @@ public class Block extends JButton {
     1 -> a ship is here [black]
     2 -> cant be sunk (around a ship) [white]
 
-    ------- enemy's board :
+    ------- enemy's board & (you board enemy's attack result)
     3 -> not approved attack
     4 -> approved attack
      */
@@ -54,6 +54,10 @@ public class Block extends JButton {
             super.setBackground(Color.GRAY);
         } else if (blockStatus == 2) {
             super.setBackground(Color.WHITE);
+        } else if (blockStatus == 3) {
+            super.setBackground(Color.RED);
+        } else if (blockStatus == 4) {
+            super.setBackground(Color.GREEN);
         }
     }
 
