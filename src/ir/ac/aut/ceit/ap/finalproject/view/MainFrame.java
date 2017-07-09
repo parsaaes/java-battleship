@@ -199,7 +199,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
 
     public void runFrame() {
-        //jFrame.setTitle("Playing with " + messageManager.getAcceptedNetworkHandler().getUsername());
+        jFrame.setTitle("Playing with " + messageManager.getAcceptedNetworkHandler().getUsername());
 
         jFrame.setVisible(true);
     }
