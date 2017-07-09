@@ -3,6 +3,7 @@ package ir.ac.aut.ceit.ap.finalproject.view;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -18,6 +19,12 @@ public class SplashScreen {
             bufferedImage = ImageIO.read(new File(path));
         } catch (IOException e) {
             System.out.println("No screen added");
+        }
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
         JPanel jPanel = new JPanel();
@@ -36,6 +43,8 @@ public class SplashScreen {
     }
 
     public void show(int time) {
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        jFrame.setLocation(dim.width/2-jFrame.getSize().width/2, dim.height/2-jFrame.getSize().height/2);
         jFrame.setVisible(true);
         try {
             Thread.sleep(time);
