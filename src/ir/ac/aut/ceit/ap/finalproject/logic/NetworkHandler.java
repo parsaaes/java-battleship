@@ -104,6 +104,7 @@ public class NetworkHandler extends Thread {
                 case MessageTypes.ATTACK_MESSAGE:
                 case MessageTypes.TURN_MESSAGE:
                 case MessageTypes.ATTACK_RESULT:
+                case MessageTypes.ILOST_MESSAGE:
                     return bytes[5];
                 default:
                     System.out.println("Unknown type!!!");
@@ -160,6 +161,10 @@ public class NetworkHandler extends Thread {
                         case MessageTypes.ATTACK_RESULT:
                             AttackResultMessage attackResultMessage = new AttackResultMessage(messageBytes);
                             iNetworkHandlerCallback.onMessageReceived(attackResultMessage);
+                            break;
+                        case MessageTypes.ILOST_MESSAGE:
+                            ILostMessage iLostMessage = new ILostMessage(messageBytes);
+                            iNetworkHandlerCallback.onMessageReceived(iLostMessage);
                             break;
                         default:
                             System.out.println("Unknown type!!!");
