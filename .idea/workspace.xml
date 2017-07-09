@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28c64269-f78f-4e47-9c10-323dc589767b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Ship.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Block.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Block.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/Block.java" />
+    <list default="true" id="28c64269-f78f-4e47-9c10-323dc589767b" name="Default" comment="Ship class added + constructor and getters/setters added to it+Moved Block to logic package">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Ship.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Ship.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,8 +81,8 @@
       <file leaf-file-name="Ship.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="381">
+              <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
               <folding>
                 <element signature="e#436#437#0" expanded="true" />
                 <element signature="e#464#465#0" expanded="true" />
@@ -95,6 +94,8 @@
                 <element signature="e#648#649#0" expanded="true" />
                 <element signature="e#701#702#0" expanded="true" />
                 <element signature="e#742#743#0" expanded="true" />
+                <element signature="e#1376#1377#0" expanded="true" />
+                <element signature="e#1467#1468#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1041,11 +1042,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499580788906</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Ship class added + constructor and getters/setters added to it+Moved Block to logic package">
+      <created>1499581025685</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1499581025685</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17925000" />
+    <option name="totallyTimeSpent" value="18313000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1178,7 +1186,8 @@
     <MESSAGE value="deployed Block constructor" />
     <MESSAGE value="completed Block class" />
     <MESSAGE value="removed redundant comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed redundant comments" />
+    <MESSAGE value="Ship class added + constructor and getters/setters added to it+Moved Block to logic package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ship class added + constructor and getters/setters added to it+Moved Block to logic package" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1590,8 +1599,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="381">
+          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
           <folding>
             <element signature="e#436#437#0" expanded="true" />
             <element signature="e#464#465#0" expanded="true" />
@@ -1603,6 +1612,8 @@
             <element signature="e#648#649#0" expanded="true" />
             <element signature="e#701#702#0" expanded="true" />
             <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#1376#1377#0" expanded="true" />
+            <element signature="e#1467#1468#0" expanded="true" />
           </folding>
         </state>
       </provider>

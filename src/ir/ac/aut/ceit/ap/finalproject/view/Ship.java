@@ -35,5 +35,26 @@ public class Ship {
     public void setHorizontal(boolean horizontal) {
         isHorizontal = horizontal;
     }
-
+    @Override
+    public boolean equals(Object obj) {
+        if(xCord == ((Ship)(obj)).getxCord() && yCord == ((Ship)(obj)).getyCord() && size == ((Ship)(obj)).getSize()
+                && isHorizontal == ((Ship)(obj)).isHorizontal()){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    public boolean equalsStartPoint(Object obj){
+        if(xCord == ((Ship)(obj)).getxCord() && yCord == ((Ship)(obj)).getyCord() && size == ((Ship)(obj)).getSize()){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    @Override
+    public String toString() {
+        return "("+xCord+","+yCord+")"+"[" + isHorizontal + "]" + "-" + size + "\n";
+    }
 }
