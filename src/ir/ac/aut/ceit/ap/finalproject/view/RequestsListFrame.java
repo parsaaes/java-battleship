@@ -5,6 +5,8 @@ import ir.ac.aut.ceit.ap.finalproject.logic.NetworkHandler;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.LinkedList;
 
 public class RequestsListFrame implements RequestComponent.IRequestListFrameCallback {
@@ -38,6 +40,16 @@ public class RequestsListFrame implements RequestComponent.IRequestListFrameCall
         jPanel = new JPanel();
         jFrame.add(jPanel, BorderLayout.CENTER);
         jPanel.setLayout(new GridLayout(10, 1));
+
+        jFrame.addWindowListener(new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent e)
+            {
+                JOptionPane.showMessageDialog(null,"exiting ...");
+                // should send a message to server to close [callback]
+            }
+        });
+
         if (networkHandlerList != null) {
             for (NetworkHandler networkHandler : networkHandlerList) {
                 if (networkHandler != null) {

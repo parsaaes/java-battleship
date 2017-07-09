@@ -12,6 +12,8 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.Random;
@@ -56,6 +58,14 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         jFrame.setLayout(new BorderLayout());
+        jFrame.addWindowListener(new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent e)
+            {
+                JOptionPane.showMessageDialog(null,"exiting ...");
+                //should send i am leaving message
+            }
+        });
 
         JMenuBar jMenuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("File");
@@ -270,7 +280,17 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
     @Override
     public void onAttackReceived(int x, int y) {
-
+        if(yourBoard.getDestroyedBlocks() == 20){
+            //20 is number of all blocks
+            messageManager.sendILostMessage(1);
+            JOptionPane.showMessageDialog(null,"YOU LOST!");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.exit(1);
+        }
         System.out.println("enemy attacked!" + x + "," + y);
         if (yourBoard.getBlock(x, y).getBlockStatus() == 1) {
             yourBoard.getBlock(x, y).setBlockStatus(4);
@@ -324,7 +344,8 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
     @Override
     public void onILostReceived(int iLost) {
-        //Opponent lost
+        JOptionPane.showMessageDialog(null,"YOU WON!");
+        System.exit(1);
     }
 
     @Override
