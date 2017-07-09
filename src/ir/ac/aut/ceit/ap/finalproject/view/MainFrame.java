@@ -122,6 +122,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
                         yourBoard.setAddOrRemoveStatus(0);
                         yourBoard.getButtonPanel().setVisible(false);
                         ((JButton)(e.getSource())).setText("Cancel");
+                        messageManager.sendReadyToPlayMessage(1);
                     }
                 }
                 else if(((JButton)(e.getSource())).getText().equals("Cancel")){
@@ -202,7 +203,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     @Override
     public void onReadyToPlayReceived(int status) {
         enemyReadyToPlay = status;
-        JOptionPane.showMessageDialog(null,username + ": enemy is ready");
+        JOptionPane.showMessageDialog(null,username + ": enemy is ready-> " + status);
     }
 
     @Override
