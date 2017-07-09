@@ -6,6 +6,14 @@ public class AttackMessage extends BaseMessage {
     private int xCord;
     private int yCord;
 
+    public int getxCord() {
+        return xCord;
+    }
+
+    public int getyCord() {
+        return yCord;
+    }
+
     public AttackMessage(int xCord, int yCord) {
         this.xCord = xCord;
         this.yCord = yCord;

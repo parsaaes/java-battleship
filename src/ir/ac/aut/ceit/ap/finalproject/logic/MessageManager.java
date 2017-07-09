@@ -17,6 +17,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
     private IGUICallback iGUICallback;
     private NetworkHandler acceptedNetworkHandler;
+
     public void setiGUICallback(IGUICallback iGUICallback) {
         this.iGUICallback = iGUICallback;
     }
@@ -52,28 +53,24 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
             NetworkHandler networkHandler = new NetworkHandler(socket, this);
             mNetworkHandlerList.add(networkHandler);
             networkHandler.start();
-        }
-        catch (ConnectException e){
-            JOptionPane.showMessageDialog(null,"No Host Found !");
+        } catch (ConnectException e) {
+            JOptionPane.showMessageDialog(null, "No Host Found !");
             System.exit(1);
-        }
-        catch (UnknownHostException e){
-            JOptionPane.showMessageDialog(null,"No Host Found !");
+        } catch (UnknownHostException e) {
+            JOptionPane.showMessageDialog(null, "No Host Found !");
             System.exit(1);
-        }
-        catch (NoRouteToHostException e){
-            JOptionPane.showMessageDialog(null,"No Host Found !");
+        } catch (NoRouteToHostException e) {
+            JOptionPane.showMessageDialog(null, "No Host Found !");
             System.exit(1);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
 
         }
 
     }
 
-    public void sendRequestLogin(String to, String username, String password){
-        RequestLoginMessage requestLoginMessage = new RequestLoginMessage(username,password);
+    public void sendRequestLogin(String to, String username, String password) {
+        RequestLoginMessage requestLoginMessage = new RequestLoginMessage(username, password);
         // s
         for (NetworkHandler networkHandler : mNetworkHandlerList) {
             System.out.println(networkHandler.getUsername());
@@ -84,11 +81,11 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         }
     }
 
-    public void sendServerAccepted(String to , int hostAccepted , String serverUserName){
-        ServerAcceptedMessage serverAcceptedMessage = new ServerAcceptedMessage(hostAccepted,serverUserName);
+    public void sendServerAccepted(String to, int hostAccepted, String serverUserName) {
+        ServerAcceptedMessage serverAcceptedMessage = new ServerAcceptedMessage(hostAccepted, serverUserName);
         for (NetworkHandler networkHandler : mNetworkHandlerList) {
             System.out.println("before if");
-            if(networkHandler.getUsername().equals(to)){
+            if (networkHandler.getUsername().equals(to)) {
                 System.out.println("it is equal");
                 networkHandler.sendMessage(serverAcceptedMessage);
                 break;
@@ -96,20 +93,25 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         }
     }
 
-    public void sendChatMessage(String chatText){
+    public void sendChatMessage(String chatText) {
         ChatMessage chatMessage = new ChatMessage(chatText);
         acceptedNetworkHandler.sendMessage(chatMessage);
     }
 
-    public void sendReadyToPlayMessage(int status){
+    public void sendReadyToPlayMessage(int status) {
         ReadyToPlayMessage readyToPlayMessage = new ReadyToPlayMessage(status);
         acceptedNetworkHandler.sendMessage(readyToPlayMessage);
 
     }
 
+    public void sendAttackMessage(int xCord, int yCord) {
+        AttackMessage attackMessage = new AttackMessage(xCord, yCord);
+        acceptedNetworkHandler.sendMessage(attackMessage);
+    }
+
     private void consumeRequestLogin(RequestLoginMessage message) {
-        System.out.println("i am consumed :D " + message.getUsername() + " - " + message.getPassword() );
-        LinkedList<NetworkHandler> linkedList = (LinkedList<NetworkHandler>)mNetworkHandlerList;
+        System.out.println("i am consumed :D " + message.getUsername() + " - " + message.getPassword());
+        LinkedList<NetworkHandler> linkedList = (LinkedList<NetworkHandler>) mNetworkHandlerList;
         linkedList.getLast().setUsername(message.getUsername());
         for (NetworkHandler networkHandler : mNetworkHandlerList) {
             System.out.println("[LIST] Device is connected name  : " + networkHandler.getUsername());
@@ -121,18 +123,22 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
     }
 
-    private void consumeServerAccepted(ServerAcceptedMessage serverAcceptedMessage){
+    private void consumeServerAccepted(ServerAcceptedMessage serverAcceptedMessage) {
         System.out.println("server accepted message received ");
-        iGUICallback.onHostAccepted(serverAcceptedMessage.getHostAccepted(),serverAcceptedMessage.getServerUserName());
+        iGUICallback.onHostAccepted(serverAcceptedMessage.getHostAccepted(), serverAcceptedMessage.getServerUserName());
     }
 
-    private void consumeChatMessage(ChatMessage chatMessage){
+    private void consumeChatMessage(ChatMessage chatMessage) {
         System.out.println("chat received");
         iGUICallback.onChatReceived(chatMessage.getChatText());
     }
 
-    private void consumeReadyToPlayMessage(ReadyToPlayMessage readyToPlayMessage){
+    private void consumeReadyToPlayMessage(ReadyToPlayMessage readyToPlayMessage) {
         iGUICallback.onReadyToPlayReceived(readyToPlayMessage.getEnemyReadyStatus());
+    }
+
+    private void consumeAttackMessage(AttackMessage attackMessage) {
+        iGUICallback.onAttackRecieved(attackMessage.getxCord(),attackMessage.getyCord());
     }
 
     @Override
@@ -156,24 +162,28 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
                 consumeChatMessage((ChatMessage) baseMessage);
                 break;
             case MessageTypes.READYTO_PLAY:
-                consumeReadyToPlayMessage((ReadyToPlayMessage)baseMessage);
+                consumeReadyToPlayMessage((ReadyToPlayMessage) baseMessage);
                 break;
 
         }
     }
 
 
-
     @Override
     public void onSocketClosed() {
         System.out.println("Called onsocketclosed()");
-        JOptionPane.showMessageDialog(null,"Disconnected");
+        JOptionPane.showMessageDialog(null, "Disconnected");
     }
 
     public interface IGUICallback {
-        void onHostAccepted(int status,String serverUserName);
+        void onHostAccepted(int status, String serverUserName);
+
         void onChatReceived(String chatText);
+
         void onReadyToPlayReceived(int status);
+
+        void onAttackRecieved(int x, int y);
+
         RequestsListFrame getRequestsListFrame();
     }
 }
