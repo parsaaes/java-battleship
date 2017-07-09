@@ -25,11 +25,11 @@
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="281" column="25" lean-forward="false" selection-start-line="281" selection-start-column="25" selection-end-line="281" selection-end-column="25" />
+            <state relative-caret-position="203">
+              <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
-                <element signature="e#12837#12838#0" expanded="true" />
                 <element signature="e#12898#12899#0" expanded="true" />
+                <element signature="e#12959#12960#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,10 +178,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="35" />
+    <option name="x" value="30" />
+    <option name="y" value="90" />
     <option name="width" value="1244" />
-    <option name="height" value="689" />
+    <option name="height" value="560" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -832,7 +832,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499608788895</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="deployed some attacking ( not tested )">
+      <created>1499609555555</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1499609555555</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -848,7 +855,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="35" width="1244" height="689" extended-state="0" />
+    <frame x="30" y="90" width="1244" height="560" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -860,7 +867,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2043551" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26068377" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31721196" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32599118" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -939,7 +946,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
-    <MESSAGE value="RequestList Connected to network" />
     <MESSAGE value="added block class" />
     <MESSAGE value="deployed Block constructor" />
     <MESSAGE value="completed Block class" />
@@ -964,7 +970,8 @@
     <MESSAGE value="chooseTurn method completed" />
     <MESSAGE value="chooseTurn method completed 2 ( not tested yet )" />
     <MESSAGE value="chooseTurn method completed + show enemyBoard for the first time" />
-    <option name="LAST_COMMIT_MESSAGE" value="chooseTurn method completed + show enemyBoard for the first time" />
+    <MESSAGE value="deployed some attacking ( not tested )" />
+    <option name="LAST_COMMIT_MESSAGE" value="deployed some attacking ( not tested )" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1378,11 +1385,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="281" column="25" lean-forward="false" selection-start-line="281" selection-start-column="25" selection-end-line="281" selection-end-column="25" />
+        <state relative-caret-position="203">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <element signature="e#12837#12838#0" expanded="true" />
             <element signature="e#12898#12899#0" expanded="true" />
+            <element signature="e#12959#12960#0" expanded="true" />
           </folding>
         </state>
       </provider>

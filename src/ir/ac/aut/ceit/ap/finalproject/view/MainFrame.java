@@ -50,6 +50,8 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     public MainFrame() {
         loginFrame.runLoginFrame();
         //loginFrame should be closed
+        enemyBoard.setiMainFrameToEnemyBoardCallback(this);
+
 
         jFrame.setSize(900, 550);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
