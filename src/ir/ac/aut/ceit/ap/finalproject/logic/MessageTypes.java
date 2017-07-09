@@ -15,5 +15,7 @@ public class MessageTypes {
     public static final byte SERVER_ACCEPTED = 2;
     public static final byte CHAT_MESSAGE = 3;
     public static final byte READYTO_PLAY = 4;
+    public static final byte ATTACK_MESSAGE = 5;
+
 
 }
