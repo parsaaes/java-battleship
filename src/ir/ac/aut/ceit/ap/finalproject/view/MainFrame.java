@@ -202,6 +202,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     @Override
     public void onReadyToPlayReceived(int status) {
         enemyReadyToPlay = status;
+        JOptionPane.showMessageDialog(null,username + ": enemy is ready");
     }
 
     @Override
