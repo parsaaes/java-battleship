@@ -3,9 +3,7 @@ package ir.ac.aut.ceit.ap.finalproject.view;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by NP on 7/9/2017.
- */
+
 public class Block extends JButton {
     private int blockStatus;
     private int xCord;
