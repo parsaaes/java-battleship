@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.IGUICallback, RequestsListFrame.IMainFrameServerRespondCallback , EnemyBoard.IMainFrameToEnemyBoardCallback{
     LoginFrame loginFrame = new LoginFrame(this);
@@ -22,15 +23,22 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     RequestsListFrame requestsListFrame = new RequestsListFrame(this);
     private String username;
     JFrame jFrame = new JFrame();
+    private JPanel gamePanel = new JPanel();
     JTextArea chatArea = new JTextArea();
     String jsonList;
     private Board yourBoard = new Board();
+    private EnemyBoard enemyBoard = new EnemyBoard();
 
     private JButton readyButton = new JButton("Ready");
     private JButton resetButton = new JButton("Reset");
     private int iAmReadyToPlay = 0;
     private int enemyReadyToPlay = 0;
     private int myTurn;
+    private boolean amIHost;
+    /*
+    0 -> not my turn
+    1 -> my turn
+     */
     /*
     0 & 0 ---> cant start game
     1 & 0 ---> cant start game
@@ -88,7 +96,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         jMenuBar.add(helpMenu);
         jFrame.setJMenuBar(jMenuBar);
 
-        JPanel gamePanel = new JPanel();
+        gamePanel = new JPanel();
         JPanel chatPanel = new JPanel();
         chatPanel.setLayout(new BorderLayout());
 
@@ -186,7 +194,20 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         return requestsListFrame;
     }
 
-
+    public void chooseTurn(){
+        if(amIHost){
+            Random randomGenerator = new Random();
+            int random = randomGenerator.nextInt(2);
+            if(random == 1){
+                // send server is first
+                myTurn = 1;
+            }
+            else {
+                // send guest is first
+                myTurn = 0;
+            }
+        }
+    }
 
 
     @Override
@@ -196,8 +217,10 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         this.messageManager.setiGUICallback(this);
         if (type.equals("HOST")) {
             System.out.println("gui list should be open");
+            amIHost = true;
             requestsListFrame.runFrame((LinkedList<NetworkHandler>) this.messageManager.getmNetworkHandlerList());
         } else {
+            amIHost = false;
             guestWaitingFrame.runFrame();
             this.messageManager.sendRequestLogin("server", name, "12345");
         }
