@@ -47,7 +47,21 @@ public class EnemyBoard {
     }
 
 
+    public void disableClicking(){
+        for(int y = 0 ; y < 10 ; y++){
+            for(int x = 0 ; x < 10 ; x++){
+                jButtons[x][y].removeActionListener(buttonHandler);
+            }
+        }
+    }
 
+    public void enableClicking(){
+        for(int y = 0 ; y < 10 ; y++){
+            for(int x = 0 ; x < 10 ; x++){
+                jButtons[x][y].addActionListener(buttonHandler);
+            }
+        }
+    }
 
 
     private class ButtonHandler implements ActionListener {

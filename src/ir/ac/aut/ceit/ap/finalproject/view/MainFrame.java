@@ -288,6 +288,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             gamePanel.revalidate();
             messageManager.sendAttackResultMessage(0,x,y);
         }
+
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -317,12 +318,14 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             enemyBoard.getBlock(xCord,yCord).setColor();
             gamePanel.revalidate();
         }
+        enemyBoard.disableClicking();
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         changeBoard(true);
+        enemyBoard.enableClicking();
     }
 
     @Override
