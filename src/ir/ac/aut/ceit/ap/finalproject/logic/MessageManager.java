@@ -126,6 +126,17 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         acceptedNetworkHandler.sendMessage(iLostMessage);
     }
 
+    public void sendILeftMessage(int iLeft) {
+        ILeftTheGameMessage iLeftTheGameMessage = new ILeftTheGameMessage(iLeft);
+        if (mNetworkHandlerList != null) {
+            for (NetworkHandler networkHandler : mNetworkHandlerList) {
+                if (networkHandler != null) {
+                    networkHandler.sendMessage(iLeftTheGameMessage);
+                }
+            }
+        }
+    }
+
     private void consumeRequestLogin(RequestLoginMessage message) {
         System.out.println("i am consumed :D " + message.getUsername() + " - " + message.getPassword());
         LinkedList<NetworkHandler> linkedList = (LinkedList<NetworkHandler>) mNetworkHandlerList;
@@ -170,6 +181,10 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         iGUICallback.onILostReceived(iLostMessage.getiLost());
     }
 
+    private void consumeILeftMessage(ILeftTheGameMessage iLeftTheGameMessage) {
+        iGUICallback.onILeftReceived(iLeftTheGameMessage.getiLeft());
+    }
+
     @Override
     public void onNewConnectionReceived(NetworkHandler networkHandler) {
         //networkHandler.setUsername("user1");
@@ -205,6 +220,9 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
             case MessageTypes.ILOST_MESSAGE:
                 consumeILostMessage((ILostMessage) baseMessage);
                 break;
+            case MessageTypes.ILEFT_MESSAGE:
+                consumeILeftMessage((ILeftTheGameMessage) baseMessage);
+                break;
 
         }
     }
@@ -228,7 +246,10 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         void onTurnReceived(int turn);
 
         void onAttackResultMessageReceived(int attackResult, int xCord, int yCord);
+
         void onILostReceived(int iLost);
+
+        void onILeftReceived(int iLeft);
 
         RequestsListFrame getRequestsListFrame();
     }
