@@ -49,7 +49,7 @@ public class Board {
 
     public boolean canReady(){
         int check = numberOfOneBlockShipToDeploy + numberOfTwoBlockShipToDeploy + numberOfThreeBlockShipToDeploy + numberOfFourBlockShipToDeploy;
-        System.out.println(check);
+        //System.out.println(check);
         if(check == 0){
             return true;
         }

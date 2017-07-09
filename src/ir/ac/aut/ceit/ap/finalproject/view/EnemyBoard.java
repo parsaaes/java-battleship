@@ -75,7 +75,7 @@ public class EnemyBoard {
     public JPanel runFrame() {
 
         boardPanel.add(jPanel);
-        boardPanel.add(buttonPanel, BorderLayout.SOUTH);
+        //boardPanel.add(buttonPanel, BorderLayout.SOUTH);
         boardPanel.setPreferredSize(new Dimension(500, 500));
         JPanel testPanel = new JPanel();
         testPanel.setLayout(new FlowLayout());

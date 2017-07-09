@@ -125,16 +125,25 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(((JButton)(e.getSource())).getText().equals("Ready")) {
+//                    try {
+//                        Thread.sleep(3000);
+//                    } catch (InterruptedException e1) {
+//                        e1.printStackTrace();
+//                    }
+//                    gamePanel.removeAll();
+//                    EnemyBoard enemyBoard = new EnemyBoard();
+//                    gamePanel.add(enemyBoard.runFrame());
+//                    gamePanel.revalidate();
                     if (yourBoard.canReady()) {
                         yourBoard.setAddOrRemoveStatus(0);
                         yourBoard.getButtonPanel().setVisible(false);
                         ((JButton)(e.getSource())).setText("Cancel");
-                        iAmReadyToPlay = 1;
-                        messageManager.sendReadyToPlayMessage(1);
-                        if(enemyReadyToPlay == 1){
-                            JOptionPane.showMessageDialog(null,"Game is started [2]");
-                            //Game Started
-                        }
+//                        iAmReadyToPlay = 1;
+//                        messageManager.sendReadyToPlayMessage(1);
+//                        if(enemyReadyToPlay == 1){
+//                            JOptionPane.showMessageDialog(null,"Game is started [2]");
+//                            //Game Started
+//                        }
                     }
                 }
                 else if(((JButton)(e.getSource())).getText().equals("Cancel")){
