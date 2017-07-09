@@ -467,6 +467,10 @@ public class Board {
         }
     }
 
+    public Block getBlock(int xCord,int yCord){
+        return (Block)jButtons[xCord][yCord];
+    }
+
     private class ShipsAddingButton implements ActionListener {
 
         @Override

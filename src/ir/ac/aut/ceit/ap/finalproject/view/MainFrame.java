@@ -275,7 +275,19 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     @Override
     public void onAttackReceived(int x, int y) {
 
-        JOptionPane.showMessageDialog(null,"enemy attacked!" + x + "," + y);
+        System.out.println("enemy attacked!" + x + "," + y);
+        if(yourBoard.getBlock(x,y).getBlockStatus() == 1){
+            yourBoard.getBlock(x,y).setBlockStatus(4);
+            yourBoard.getBlock(x,y).setColor();
+            gamePanel.revalidate();
+            messageManager.sendAttackResultMessage(1,x,y);
+        }
+        else {
+            yourBoard.getBlock(x,y).setBlockStatus(4);
+            yourBoard.getBlock(x,y).setColor();
+            gamePanel.revalidate();
+            messageManager.sendAttackResultMessage(0,x,y);
+        }
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -294,8 +306,23 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     }
 
     @Override
-    public void onAttackResultMessageReceived(int attackResult) {
-        //check results
+    public void onAttackResultMessageReceived(int attackResult , int xCord , int yCord) {
+        if(attackResult == 1){
+            enemyBoard.getBlock(xCord,yCord).setBlockStatus(4);
+            enemyBoard.getBlock(xCord,yCord).setColor();
+            gamePanel.revalidate();
+        }
+        else {
+            enemyBoard.getBlock(xCord,yCord).setBlockStatus(3);
+            enemyBoard.getBlock(xCord,yCord).setColor();
+            gamePanel.revalidate();
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        changeBoard(false);
     }
 
     @Override

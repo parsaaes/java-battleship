@@ -115,8 +115,8 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
     }
 
-    public void sendAttackResultMessage(int attackResult) {
-        AttackResultMessage attackResultMessage = new AttackResultMessage(attackResult);
+    public void sendAttackResultMessage(int attackResult , int xCord , int yCord) {
+        AttackResultMessage attackResultMessage = new AttackResultMessage(attackResult,xCord,yCord);
         acceptedNetworkHandler.sendMessage(attackResultMessage);
 
     }
@@ -158,7 +158,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
     }
 
     private void consumeAttackResultMessage(AttackResultMessage attackResultMessage) {
-        iGUICallback.onAttackResultMessageReceived(attackResultMessage.getAttackResult());
+        iGUICallback.onAttackResultMessageReceived(attackResultMessage.getAttackResult(),attackResultMessage.getxCord(),attackResultMessage.getyCord());
     }
 
     @Override
@@ -215,7 +215,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
         void onTurnReceived(int turn);
 
-        void onAttackResultMessageReceived(int attackResult);
+        void onAttackResultMessageReceived(int attackResult , int xCord , int yCord);
 
         RequestsListFrame getRequestsListFrame();
     }

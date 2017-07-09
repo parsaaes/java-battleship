@@ -68,7 +68,9 @@ public class EnemyBoard {
     }
 
 
-
+    public Block getBlock(int xCord,int yCord){
+        return (Block)jButtons[xCord][yCord];
+    }
 
 
     private void updateBoard() {

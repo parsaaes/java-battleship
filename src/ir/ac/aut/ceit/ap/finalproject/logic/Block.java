@@ -55,9 +55,9 @@ public class Block extends JButton {
         } else if (blockStatus == 2) {
             super.setBackground(Color.WHITE);
         } else if (blockStatus == 3) {
-            super.setBackground(Color.RED);
+            super.setBackground(Color.ORANGE);
         } else if (blockStatus == 4) {
-            super.setBackground(Color.GREEN);
+            super.setBackground(Color.RED);
         }
     }
 

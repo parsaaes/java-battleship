@@ -5,9 +5,13 @@ import java.nio.ByteBuffer;
 
 public class AttackResultMessage extends BaseMessage {
     private int attackResult;
+    private int xCord;
+    private int yCord;
 
-    public AttackResultMessage(int attackResult) {
+    public AttackResultMessage(int attackResult , int xCord , int yCord) {
         this.attackResult = attackResult;
+        this.xCord = xCord;
+        this.yCord = yCord;
         serialize();
     }
 
@@ -18,12 +22,14 @@ public class AttackResultMessage extends BaseMessage {
 
     @Override
     protected void serialize() {
-        int messageLength = 4 + 1 + 1 + 4;
+        int messageLength = 4 + 1 + 1 + 4 + 4 + 4;
         ByteBuffer byteBuffer = ByteBuffer.allocate(messageLength);
         byteBuffer.putInt(messageLength);
         byteBuffer.put(MessageTypes.PROTOCOL_VERSION);
         byteBuffer.put(MessageTypes.ATTACK_RESULT);
         byteBuffer.putInt(attackResult);
+        byteBuffer.putInt(xCord);
+        byteBuffer.putInt(yCord);
         mSerialized = byteBuffer.array();
     }
 
@@ -34,6 +40,8 @@ public class AttackResultMessage extends BaseMessage {
         byte protocolVersion = byteBuffer.get();
         byte messageType = byteBuffer.get();
         attackResult = byteBuffer.getInt();
+        xCord = byteBuffer.getInt();
+        yCord = byteBuffer.getInt();
 
     }
 
@@ -44,5 +52,13 @@ public class AttackResultMessage extends BaseMessage {
 
     public int getAttackResult() {
         return attackResult;
+    }
+
+    public int getxCord() {
+        return xCord;
+    }
+
+    public int getyCord() {
+        return yCord;
     }
 }
