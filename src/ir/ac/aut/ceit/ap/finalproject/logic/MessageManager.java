@@ -108,7 +108,11 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         AttackMessage attackMessage = new AttackMessage(xCord, yCord);
         acceptedNetworkHandler.sendMessage(attackMessage);
     }
+    public void sendTurnMessage(int turn) {
+        TurnMessage turnMessage = new TurnMessage(turn);
+        acceptedNetworkHandler.sendMessage(turnMessage);
 
+    }
     private void consumeRequestLogin(RequestLoginMessage message) {
         System.out.println("i am consumed :D " + message.getUsername() + " - " + message.getPassword());
         LinkedList<NetworkHandler> linkedList = (LinkedList<NetworkHandler>) mNetworkHandlerList;
@@ -138,9 +142,11 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
     }
 
     private void consumeAttackMessage(AttackMessage attackMessage) {
-        iGUICallback.onAttackRecieved(attackMessage.getxCord(),attackMessage.getyCord());
+        iGUICallback.onAttackReceived(attackMessage.getxCord(),attackMessage.getyCord());
     }
-
+    private void consumeTurnMessage(TurnMessage turnMessage) {
+        iGUICallback.onTurnReceived(turnMessage.getTurn());
+    }
     @Override
     public void onNewConnectionReceived(NetworkHandler networkHandler) {
         //networkHandler.setUsername("user1");
@@ -164,6 +170,12 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
             case MessageTypes.READYTO_PLAY:
                 consumeReadyToPlayMessage((ReadyToPlayMessage) baseMessage);
                 break;
+            case MessageTypes.ATTACK_MESSAGE:
+                consumeAttackMessage((AttackMessage) baseMessage);
+                break;
+            case MessageTypes.TURN_MESSAGE:
+                consumeTurnMessage((TurnMessage) baseMessage);
+                break;
 
         }
     }
@@ -182,8 +194,8 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
         void onReadyToPlayReceived(int status);
 
-        void onAttackRecieved(int x, int y);
-
+        void onAttackReceived(int x, int y);
+        void onTurnReceived(int turn);
         RequestsListFrame getRequestsListFrame();
     }
 }

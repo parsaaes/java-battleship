@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28c64269-f78f-4e47-9c10-323dc589767b" name="Default" comment="Made appropriate changes to Network Handler">
+    <list default="true" id="28c64269-f78f-4e47-9c10-323dc589767b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/NetworkHandler.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/NetworkHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,7 +61,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NetworkHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NetworkHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/NetworkHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="387">
@@ -87,17 +88,24 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1428">
               <caret line="92" column="13" lean-forward="false" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#818#819#0" expanded="false" />
+                <element signature="e#849#850#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageManager.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MessageManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2397">
-              <caret line="155" column="71" lean-forward="false" selection-start-line="155" selection-start-column="71" selection-end-line="155" selection-end-column="71" />
-              <folding />
+            <state relative-caret-position="-1632">
+              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+              <folding>
+                <element signature="e#5550#5551#0" expanded="true" />
+                <element signature="e#5616#5617#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,7 +164,6 @@
       <find>runfra</find>
       <find>CONS</find>
       <find>requestslistframe</find>
-      <find>send</find>
       <find>save</find>
       <find>board</find>
       <find>run</find>
@@ -166,6 +173,7 @@
       <find>readybutt</find>
       <find>sen</find>
       <find>re</find>
+      <find>send</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -196,11 +204,11 @@
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/ReadyToPlayMessage.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/EnemyBoard.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/AttackMessage.java" />
-        <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageTypes.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/TurnMessage.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/NetworkHandler.java" />
+        <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java" />
       </list>
     </option>
   </component>
@@ -708,7 +716,7 @@
       <option name="presentableId" value="Default" />
       <updated>1498310805506</updated>
       <workItem from="1499155911085" duration="1299000" />
-      <workItem from="1499606407590" duration="512000" />
+      <workItem from="1499606407590" duration="1009000" />
     </task>
     <task id="LOCAL-00001" summary="ds store ban !">
       <created>1498316209172</created>
@@ -1011,11 +1019,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499606664831</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Made appropriate changes to Network Handler.">
+      <created>1499606973901</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1499606973901</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23378000" />
+    <option name="totallyTimeSpent" value="23875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1109,7 +1124,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
-    <MESSAGE value="removed redundant comments" />
     <MESSAGE value="Ship class added + constructor and getters/setters added to it+Moved Block to logic package" />
     <MESSAGE value="Ship class completed" />
     <MESSAGE value="removed Ship class comments" />
@@ -1134,7 +1148,8 @@
     <MESSAGE value="Added TurnMessage" />
     <MESSAGE value="Completed Turn Message" />
     <MESSAGE value="Turn Message 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Turn Message 2" />
+    <MESSAGE value="Made appropriate changes to Network Handler." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made appropriate changes to Network Handler." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1323,6 +1338,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1802">
           <caret line="121" column="21" lean-forward="false" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1374,6 +1390,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+          <folding>
+            <element signature="e#2150#2151#0" expanded="false" />
+            <element signature="e#2203#2204#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1436,7 +1456,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1428">
           <caret line="92" column="13" lean-forward="false" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#818#819#0" expanded="false" />
+            <element signature="e#849#850#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1455,14 +1479,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2397">
-          <caret line="155" column="71" lean-forward="false" selection-start-line="155" selection-start-column="71" selection-end-line="155" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1541,6 +1557,17 @@
           <caret line="162" column="25" lean-forward="false" selection-start-line="162" selection-start-column="25" selection-end-line="162" selection-end-column="25" />
           <folding>
             <marker date="1499606921861" expanded="true" signature="5710:6657" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1632">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding>
+            <element signature="e#5550#5551#0" expanded="true" />
+            <element signature="e#5616#5617#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -257,7 +257,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     }
 
     @Override
-    public void onAttackRecieved(int x, int y) {
+    public void onAttackReceived(int x, int y) {
 
         JOptionPane.showMessageDialog(null,x + "," + y);
     }
