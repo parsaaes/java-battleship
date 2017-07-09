@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.Random;
 
-public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.IGUICallback, RequestsListFrame.IMainFrameServerRespondCallback , EnemyBoard.IMainFrameToEnemyBoardCallback{
+public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.IGUICallback, RequestsListFrame.IMainFrameServerRespondCallback, EnemyBoard.IMainFrameToEnemyBoardCallback {
     LoginFrame loginFrame = new LoginFrame(this);
     MessageManager messageManager;
     GuestWaitingFrame guestWaitingFrame = new GuestWaitingFrame();
@@ -44,7 +44,6 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     1 & 0 ---> cant start game
     1 & 1 ---> can :D
      */
-
 
 
     public MainFrame() {
@@ -80,18 +79,18 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
                 String chatToBeSaved = chatArea.getText();
                 String[] lines = chatToBeSaved.split("\r\n|\r|\n");
                 JSONObject savedChatJson = new JSONObject();
-                savedChatJson.put("Information",messageManager.getAcceptedNetworkHandler().getUsername()
+                savedChatJson.put("Information", messageManager.getAcceptedNetworkHandler().getUsername()
                         + " | " + messageManager.getAcceptedNetworkHandler().getRemoteIp() + " | " + new Date(System.currentTimeMillis()).toString().replace(":", "-"));
                 JSONArray jsonArray = new JSONArray();
                 for (String line : lines) {
                     JSONObject chatTextLine = new JSONObject();
-                    chatTextLine.put("message",line + "\n");
+                    chatTextLine.put("message", line + "\n");
                     jsonArray.put(chatTextLine);
                 }
-                savedChatJson.put("chat messages",jsonArray);
+                savedChatJson.put("chat messages", jsonArray);
                 jsonList = savedChatJson.toString();
 
-                OutputFileWriter.writeJsonIntoFile(jsonList,new Date(System.currentTimeMillis()).toString().replace(":", "-"),messageManager.getAcceptedNetworkHandler().getUsername());
+                OutputFileWriter.writeJsonIntoFile(jsonList, new Date(System.currentTimeMillis()).toString().replace(":", "-"), messageManager.getAcceptedNetworkHandler().getUsername());
             }
         });
         jMenuBar.add(fileMenu);
@@ -109,7 +108,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             public void actionPerformed(ActionEvent e) {
                 System.out.println(chatSendArea.getText());
                 chatArea.append(username + " : " + chatSendArea.getText() + "   [" + new Date(System.currentTimeMillis()).toString().replace(":", "-") + "]" + "\n");
-                messageManager.sendChatMessage(chatSendArea.getText() + "   [" + new Date(System.currentTimeMillis()).toString().replace(":", "-") + "]" );
+                messageManager.sendChatMessage(chatSendArea.getText() + "   [" + new Date(System.currentTimeMillis()).toString().replace(":", "-") + "]");
                 chatSendArea.setText("");
             }
         });
@@ -126,7 +125,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         chatPanel.add(chatButtonAndField, BorderLayout.SOUTH);
 
         JPanel readyResetPanel = new JPanel();
-        readyResetPanel.setLayout(new GridLayout(2,1));
+        readyResetPanel.setLayout(new GridLayout(2, 1));
         readyResetPanel.add(readyButton);
         gamePanel.add(readyResetPanel);
         gamePanel.setLayout(new FlowLayout());
@@ -134,7 +133,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         readyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(((JButton)(e.getSource())).getText().equals("Ready")) {
+                if (((JButton) (e.getSource())).getText().equals("Ready")) {
 //                    try {
 //                        Thread.sleep(3000);
 //                    } catch (InterruptedException e1) {
@@ -147,18 +146,17 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
                     if (yourBoard.canReady()) {
                         yourBoard.setAddOrRemoveStatus(0);
                         yourBoard.getButtonPanel().setVisible(false);
-                        ((JButton)(e.getSource())).setText("Cancel");
+                        ((JButton) (e.getSource())).setText("Cancel");
                         iAmReadyToPlay = 1;
                         messageManager.sendReadyToPlayMessage(1);
-                        if(enemyReadyToPlay == 1){
-                            JOptionPane.showMessageDialog(null,"Game is started [2]");
-                        chooseTurn();
+                        if (enemyReadyToPlay == 1) {
+                            JOptionPane.showMessageDialog(null, "Game is started [2]");
+                            chooseTurn();
                         }
                     }
-                }
-                else if(((JButton)(e.getSource())).getText().equals("Cancel")){
+                } else if (((JButton) (e.getSource())).getText().equals("Cancel")) {
                     yourBoard.getButtonPanel().setVisible(true);
-                    ((JButton)(e.getSource())).setText("Ready");
+                    ((JButton) (e.getSource())).setText("Ready");
                     iAmReadyToPlay = 0;
                     messageManager.sendReadyToPlayMessage(0);
                 }
@@ -168,7 +166,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         resetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(readyButton.getText().equals("Ready")) {
+                if (readyButton.getText().equals("Ready")) {
                     gamePanel.removeAll();
                     gamePanel.add(readyResetPanel);
                     yourBoard = new Board();
@@ -196,29 +194,27 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         return requestsListFrame;
     }
 
-    public void chooseTurn(){
-        if(amIHost){
+    public void chooseTurn() {
+        if (amIHost) {
             Random randomGenerator = new Random();
             int random = randomGenerator.nextInt(2);
-            if(random == 1){
+            if (random == 1) {
                 messageManager.sendTurnMessage(0);
                 myTurn = 1;
                 changeBoard(false);
-            }
-            else {
+            } else {
                 messageManager.sendTurnMessage(1);
                 myTurn = 0;
             }
         }
     }
 
-    private void changeBoard(boolean showMyBoard){
-        if(showMyBoard){
+    private void changeBoard(boolean showMyBoard) {
+        if (showMyBoard) {
             gamePanel.removeAll();
             gamePanel.add(yourBoard.runFrame());
             gamePanel.revalidate();
-        }
-        else {
+        } else {
             gamePanel.removeAll();
             gamePanel.add(enemyBoard.runFrame());
             gamePanel.revalidate();
@@ -243,7 +239,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     }
 
     @Override
-    public void onHostAccepted(int status,String serverUserName) {
+    public void onHostAccepted(int status, String serverUserName) {
         guestWaitingFrame.closeFrame();
         if (status == 1) {
             System.out.println("game is starting");
@@ -265,9 +261,9 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     @Override
     public void onReadyToPlayReceived(int status) {
         enemyReadyToPlay = status;
-        JOptionPane.showMessageDialog(null,username + " 's ready status " + status);
-        if(iAmReadyToPlay == 1 && enemyReadyToPlay == 1){
-            JOptionPane.showMessageDialog(null,"Game is started");
+        JOptionPane.showMessageDialog(null, username + " 's ready status " + status);
+        if (iAmReadyToPlay == 1 && enemyReadyToPlay == 1) {
+            JOptionPane.showMessageDialog(null, "Game is started");
             chooseTurn();
         }
     }
@@ -276,17 +272,16 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     public void onAttackReceived(int x, int y) {
 
         System.out.println("enemy attacked!" + x + "," + y);
-        if(yourBoard.getBlock(x,y).getBlockStatus() == 1){
-            yourBoard.getBlock(x,y).setBlockStatus(4);
-            yourBoard.getBlock(x,y).setColor();
+        if (yourBoard.getBlock(x, y).getBlockStatus() == 1) {
+            yourBoard.getBlock(x, y).setBlockStatus(4);
+            yourBoard.getBlock(x, y).setColor();
             gamePanel.revalidate();
-            messageManager.sendAttackResultMessage(1,x,y);
-        }
-        else {
-            yourBoard.getBlock(x,y).setBlockStatus(3);
-            yourBoard.getBlock(x,y).setColor();
+            messageManager.sendAttackResultMessage(1, x, y);
+        } else {
+            yourBoard.getBlock(x, y).setBlockStatus(3);
+            yourBoard.getBlock(x, y).setColor();
             gamePanel.revalidate();
-            messageManager.sendAttackResultMessage(0,x,y);
+            messageManager.sendAttackResultMessage(0, x, y);
         }
 
         try {
@@ -301,21 +296,20 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     public void onTurnReceived(int turn) {
         myTurn = turn;
         System.out.println("turn received : " + turn);
-        if(myTurn == 1){
+        if (myTurn == 1) {
             changeBoard(false);
         }
     }
 
     @Override
-    public void onAttackResultMessageReceived(int attackResult , int xCord , int yCord) {
-        if(attackResult == 1){
-            enemyBoard.getBlock(xCord,yCord).setBlockStatus(4);
-            enemyBoard.getBlock(xCord,yCord).setColor();
+    public void onAttackResultMessageReceived(int attackResult, int xCord, int yCord) {
+        if (attackResult == 1) {
+            enemyBoard.getBlock(xCord, yCord).setBlockStatus(4);
+            enemyBoard.getBlock(xCord, yCord).setColor();
             gamePanel.revalidate();
-        }
-        else {
-            enemyBoard.getBlock(xCord,yCord).setBlockStatus(3);
-            enemyBoard.getBlock(xCord,yCord).setColor();
+        } else {
+            enemyBoard.getBlock(xCord, yCord).setBlockStatus(3);
+            enemyBoard.getBlock(xCord, yCord).setColor();
             gamePanel.revalidate();
         }
         enemyBoard.disableClicking();
@@ -329,12 +323,17 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     }
 
     @Override
+    public void onILostReceived(int iLost) {
+        //Opponent lost
+    }
+
+    @Override
     public void onServerRespondedRequest(int status, String name) {
         if (status == 1) {
             for (NetworkHandler networkHandler : messageManager.getmNetworkHandlerList()) {
                 if (networkHandler.getUsername().equals(name)) {
                     messageManager.setAcceptedNetworkHandler(networkHandler);
-                    messageManager.sendServerAccepted(messageManager.getAcceptedNetworkHandler().getUsername(), 1,username);
+                    messageManager.sendServerAccepted(messageManager.getAcceptedNetworkHandler().getUsername(), 1, username);
                     System.out.println("acceptednetwork set!!!");
                     loginFrame.closeFrame();
                     requestsListFrame.closeFrame();
@@ -346,7 +345,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             for (NetworkHandler networkHandler : messageManager.getmNetworkHandlerList()) {
                 if (networkHandler.getUsername().equals(name)) {
                     System.out.println("Network handler was declined;;;;");
-                    messageManager.sendServerAccepted(networkHandler.getUsername(), -1,username);
+                    messageManager.sendServerAccepted(networkHandler.getUsername(), -1, username);
                     try {
                         Thread.sleep(500);
                     } catch (InterruptedException e) {
@@ -362,6 +361,6 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
     @Override
     public void onBlockAttacked(int xCord, int yCord) {
-        messageManager.sendAttackMessage(xCord,yCord);
+        messageManager.sendAttackMessage(xCord, yCord);
     }
 }

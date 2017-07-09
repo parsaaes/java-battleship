@@ -115,10 +115,15 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
     }
 
-    public void sendAttackResultMessage(int attackResult , int xCord , int yCord) {
-        AttackResultMessage attackResultMessage = new AttackResultMessage(attackResult,xCord,yCord);
+    public void sendAttackResultMessage(int attackResult, int xCord, int yCord) {
+        AttackResultMessage attackResultMessage = new AttackResultMessage(attackResult, xCord, yCord);
         acceptedNetworkHandler.sendMessage(attackResultMessage);
 
+    }
+
+    public void sendILostMessage(int iLost) {
+        ILostMessage iLostMessage = new ILostMessage(iLost);
+        acceptedNetworkHandler.sendMessage(iLostMessage);
     }
 
     private void consumeRequestLogin(RequestLoginMessage message) {
@@ -158,7 +163,11 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
     }
 
     private void consumeAttackResultMessage(AttackResultMessage attackResultMessage) {
-        iGUICallback.onAttackResultMessageReceived(attackResultMessage.getAttackResult(),attackResultMessage.getxCord(),attackResultMessage.getyCord());
+        iGUICallback.onAttackResultMessageReceived(attackResultMessage.getAttackResult(), attackResultMessage.getxCord(), attackResultMessage.getyCord());
+    }
+
+    private void consumeILostMessage(ILostMessage iLostMessage) {
+        iGUICallback.onILostReceived(iLostMessage.getiLost());
     }
 
     @Override
@@ -193,6 +202,9 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
             case MessageTypes.ATTACK_RESULT:
                 consumeAttackResultMessage((AttackResultMessage) baseMessage);
                 break;
+            case MessageTypes.ILOST_MESSAGE:
+                consumeILostMessage((ILostMessage) baseMessage);
+                break;
 
         }
     }
@@ -215,7 +227,8 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
 
         void onTurnReceived(int turn);
 
-        void onAttackResultMessageReceived(int attackResult , int xCord , int yCord);
+        void onAttackResultMessageReceived(int attackResult, int xCord, int yCord);
+        void onILostReceived(int iLost);
 
         RequestsListFrame getRequestsListFrame();
     }
