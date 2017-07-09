@@ -101,6 +101,7 @@ public class NetworkHandler extends Thread {
                 case MessageTypes.REQUEST_LOGIN:
                 case MessageTypes.SERVER_ACCEPTED:
                 case MessageTypes.CHAT_MESSAGE:
+                case MessageTypes.READYTO_PLAY:
                     return bytes[5];
                 default:
                     System.out.println("Unknown type!!!");
@@ -125,7 +126,7 @@ public class NetworkHandler extends Thread {
                             RequestLoginMessage requestLoginMessage = new RequestLoginMessage(messageBytes);
                             username = requestLoginMessage.getUsername();
                             iNetworkHandlerCallback.onMessageReceived(requestLoginMessage);
-                            System.out.println("Request");
+                            //System.out.println("Request");
                             break;
                         case MessageTypes.SERVER_ACCEPTED:
                             ServerAcceptedMessage serverAcceptedMessage = new ServerAcceptedMessage(messageBytes);
@@ -133,12 +134,16 @@ public class NetworkHandler extends Thread {
 //                                stopSelf();
 //                            }
                             iNetworkHandlerCallback.onMessageReceived(serverAcceptedMessage);
-                            System.out.println("Server accepted");
+                            //System.out.println("Server accepted");
                             break;
                         case MessageTypes.CHAT_MESSAGE:
                             ChatMessage chatMessage = new ChatMessage(messageBytes);
                             iNetworkHandlerCallback.onMessageReceived(chatMessage);
                             System.out.println("Chat!");
+                            break;
+                        case MessageTypes.READYTO_PLAY:
+                            ReadyToPlayMessage readyToPlayMessage = new ReadyToPlayMessage(messageBytes);
+                            iNetworkHandlerCallback.onMessageReceived(readyToPlayMessage);
                             break;
                         default:
                             System.out.println("Unknown type!!!");

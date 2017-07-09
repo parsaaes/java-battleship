@@ -42,7 +42,7 @@ public class ReadyToPlayMessage extends BaseMessage {
         return MessageTypes.READYTO_PLAY;
     }
 
-    public int isEnemyReadyStatus() {
+    public int getEnemyReadyStatus() {
         return enemyReadyStatus;
     }
 }

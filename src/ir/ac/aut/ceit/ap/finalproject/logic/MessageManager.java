@@ -101,6 +101,12 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         acceptedNetworkHandler.sendMessage(chatMessage);
     }
 
+    public void sendReadyToPlayMessage(int status){
+        ReadyToPlayMessage readyToPlayMessage = new ReadyToPlayMessage(status);
+        acceptedNetworkHandler.sendMessage(readyToPlayMessage);
+
+    }
+
     private void consumeRequestLogin(RequestLoginMessage message) {
         System.out.println("i am consumed :D " + message.getUsername() + " - " + message.getPassword() );
         LinkedList<NetworkHandler> linkedList = (LinkedList<NetworkHandler>)mNetworkHandlerList;
@@ -125,6 +131,10 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
         iGUICallback.onChatReceived(chatMessage.getChatText());
     }
 
+    private void consumeReadyToPlayMessage(ReadyToPlayMessage readyToPlayMessage){
+        iGUICallback.onReadyToPlayReceived(readyToPlayMessage.getEnemyReadyStatus());
+    }
+
     @Override
     public void onNewConnectionReceived(NetworkHandler networkHandler) {
         //networkHandler.setUsername("user1");
@@ -145,6 +155,9 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
             case MessageTypes.CHAT_MESSAGE:
                 consumeChatMessage((ChatMessage) baseMessage);
                 break;
+            case MessageTypes.READYTO_PLAY:
+                consumeReadyToPlayMessage((ReadyToPlayMessage)baseMessage);
+                break;
 
         }
     }
@@ -160,6 +173,7 @@ public class MessageManager implements ServerSocketHandler.IServerSocketHandlerC
     public interface IGUICallback {
         void onHostAccepted(int status,String serverUserName);
         void onChatReceived(String chatText);
+        void onReadyToPlayReceived(int status);
         RequestsListFrame getRequestsListFrame();
     }
 }

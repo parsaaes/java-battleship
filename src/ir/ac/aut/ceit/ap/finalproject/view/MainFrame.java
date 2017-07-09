@@ -27,11 +27,13 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     private Board yourBoard = new Board();
     private JButton readyButton = new JButton("Ready");
     private JButton resetButton = new JButton("Reset");
+    private int iAmReadyToPlay = 0;
+    private int enemyReadyToPlay = 0;
 
 
 
     public MainFrame() {
-        //loginFrame.runLoginFrame();
+        loginFrame.runLoginFrame();
         //loginFrame should be closed
 
         jFrame.setSize(900, 550);
@@ -195,6 +197,11 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     @Override
     public void onChatReceived(String chatText) {
         chatArea.append(messageManager.getAcceptedNetworkHandler().getUsername() + " : " + chatText + "\n");
+    }
+
+    @Override
+    public void onReadyToPlayReceived(int status) {
+        enemyReadyToPlay = status;
     }
 
     @Override
