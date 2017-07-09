@@ -1,4 +1,4 @@
-package ir.ac.aut.ceit.ap.finalproject.view;
+package ir.ac.aut.ceit.ap.finalproject.logic;
 
 
 public class Ship {
