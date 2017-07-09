@@ -29,6 +29,11 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     private JButton resetButton = new JButton("Reset");
     private int iAmReadyToPlay = 0;
     private int enemyReadyToPlay = 0;
+    /*
+    0 & 0 ---> cant start game
+    1 & 0 ---> cant start game
+    1 & 1 ---> can :D
+     */
 
 
 
@@ -122,12 +127,19 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
                         yourBoard.setAddOrRemoveStatus(0);
                         yourBoard.getButtonPanel().setVisible(false);
                         ((JButton)(e.getSource())).setText("Cancel");
+                        iAmReadyToPlay = 1;
                         messageManager.sendReadyToPlayMessage(1);
+                        if(enemyReadyToPlay == 1){
+                            JOptionPane.showMessageDialog(null,"Game is started [2]");
+                            //Game Started
+                        }
                     }
                 }
                 else if(((JButton)(e.getSource())).getText().equals("Cancel")){
                     yourBoard.getButtonPanel().setVisible(true);
                     ((JButton)(e.getSource())).setText("Ready");
+                    iAmReadyToPlay = 0;
+                    messageManager.sendReadyToPlayMessage(0);
                 }
             }
         });
@@ -203,7 +215,11 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     @Override
     public void onReadyToPlayReceived(int status) {
         enemyReadyToPlay = status;
-        JOptionPane.showMessageDialog(null,username + ": enemy is ready-> " + status);
+        JOptionPane.showMessageDialog(null,username + " 's ready status " + status);
+        if(iAmReadyToPlay == 1 && enemyReadyToPlay == 1){
+            JOptionPane.showMessageDialog(null,"Game is started");
+            // Game Started
+        }
     }
 
     @Override
