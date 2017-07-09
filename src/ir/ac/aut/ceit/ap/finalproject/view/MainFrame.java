@@ -201,6 +201,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             if(random == 1){
                 messageManager.sendTurnMessage(0);
                 myTurn = 1;
+                changeBoard(false);
             }
             else {
                 messageManager.sendTurnMessage(1);
@@ -272,7 +273,13 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     @Override
     public void onAttackReceived(int x, int y) {
 
-        JOptionPane.showMessageDialog(null,x + "," + y);
+        JOptionPane.showMessageDialog(null,"enemy attacked!" + x + "," + y);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        changeBoard(false);
     }
 
     @Override
@@ -318,7 +325,6 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
     @Override
     public void onBlockAttacked(int xCord, int yCord) {
-        //Send coords by message
-
+        messageManager.sendAttackMessage(xCord,yCord);
     }
 }
