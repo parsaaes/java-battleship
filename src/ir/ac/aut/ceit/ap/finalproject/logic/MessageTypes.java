@@ -19,6 +19,7 @@ public class MessageTypes {
     public static final byte TURN_MESSAGE = 6;
     public static final byte ATTACK_RESULT = 7;
     public static final byte ILOST_MESSAGE = 8;
+    public static final byte ILEFT_MESSAGE = 9;
 
 
 }
