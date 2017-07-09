@@ -96,6 +96,10 @@ public class NetworkHandler extends Thread {
 
     private class ReceivedMessageConsumer extends Thread {
         public byte getType(byte[] bytes) {
+            if(bytes[4] != MessageTypes.PROTOCOL_VERSION){
+                System.out.println("Protocol is different");
+                return -1;
+            }
             switch (bytes[5]) {
                 case MessageTypes.REQUEST_LOGIN:
                 case MessageTypes.SERVER_ACCEPTED:
