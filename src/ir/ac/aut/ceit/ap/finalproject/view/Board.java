@@ -5,18 +5,16 @@ import ir.ac.aut.ceit.ap.finalproject.logic.Ship;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 
-/**
- * Created by NP on 7/9/2017.
- */
 public class Board {
     JFrame jFrame;
     JPanel boardPanel;
     JPanel jPanel;
     JButton[][] jButtons = new JButton[10][10];
+    private ButtonHandler buttonHandler = new ButtonHandler();
+
     private boolean isRemoving = false;
     private int numberOfOneBlockShipToDeploy = 4;
     private int numberOfTwoBlockShipToDeploy = 3;
@@ -33,7 +31,6 @@ public class Board {
     private final int numberOfAllThreeBlockShip = 2;
     private final int numberOfAllFourBlockShip = 1;
     /*
-    addOrRemoveStatus :
     adding size 1
     adding size 2
     adding size 3
@@ -52,11 +49,9 @@ public class Board {
         boardPanel = new JPanel();
         boardPanel.setLayout(new BorderLayout());
         jPanel.setLayout(new GridLayout(10, 10));
-        jPanel.setPreferredSize(new Dimension(400,400));
-        jPanel.setSize(new Dimension(400,400));
+        jPanel.setPreferredSize(new Dimension(400, 400));
+        jPanel.setSize(new Dimension(400, 400));
         //jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ButtonHandler buttonHandler = new ButtonHandler();
-
         for (int y = 0; y < 10; y++) {
             for (int x = 0; x < 10; x++) {
                 jButtons[x][y] = new Block(x + "," + y, x, y, 0);
@@ -90,7 +85,7 @@ public class Board {
                     block.setColor();
                 }
             }
-            changeNumberOfAvailableShips(ship.getSize(),false);
+            changeNumberOfAvailableShips(ship.getSize(), false);
             makeBorderForShips(xCord, yCord, size, isHorizontal);
             shipsList.add(ship);
             System.out.println("added " + ship);
@@ -117,7 +112,7 @@ public class Board {
         int size = ship.getSize();
         boolean isHorizontal = ship.isHorizontal();
         shipsList.remove(shipsList.indexOf(ship));
-        changeNumberOfAvailableShips(ship.getSize(),true);
+        changeNumberOfAvailableShips(ship.getSize(), true);
         System.out.println(shipsList);
         if (checkIfForwardIsReadyForRemove(xCord, yCord, size, isHorizontal)) {
             if (isHorizontal) {
@@ -193,7 +188,6 @@ public class Board {
         }
     }
 
-
     private int getNumberOfAvailableShips(int size) {
         if (size == 1) {
             return numberOfOneBlockShipToDeploy;
@@ -207,6 +201,7 @@ public class Board {
             return -1;
         }
     }
+
     private int getNumberOfAllShips(int size) {
         if (size == 1) {
             return numberOfAllOneBlockShip;
@@ -221,8 +216,8 @@ public class Board {
         }
     }
 
-    private void changeNumberOfAvailableShips(int size , boolean isIncreasing) {
-        if(isIncreasing) {
+    private void changeNumberOfAvailableShips(int size, boolean isIncreasing) {
+        if (isIncreasing) {
             if (size == 1) {
                 numberOfOneBlockShipToDeploy += 1;
             } else if (size == 2) {
@@ -232,8 +227,7 @@ public class Board {
             } else if (size == 4) {
                 numberOfFourBlockShipToDeploy += 1;
             }
-        }
-        else  {
+        } else {
             if (size == 1) {
                 numberOfOneBlockShipToDeploy -= 1;
             } else if (size == 2) {
@@ -276,7 +270,7 @@ public class Board {
         JButton addThree = new JButton("***");
         JButton removeFour = new JButton("- ****");
         JButton addFour = new JButton("****");
-        buttonPanel.setLayout(new GridLayout(2,1));
+        buttonPanel.setLayout(new GridLayout(2, 1));
         buttonPanel.add(oneShipField);
         buttonPanel.add(addOne);
         buttonPanel.add(twoShipField);
@@ -304,8 +298,8 @@ public class Board {
         jPanel.requestFocusInWindow();
         jPanel.addKeyListener(new rotateKeyboardHandler());
         boardPanel.add(jPanel);
-        boardPanel.add(buttonPanel,BorderLayout.SOUTH);
-        boardPanel.setPreferredSize(new Dimension(500,500));
+        boardPanel.add(buttonPanel, BorderLayout.SOUTH);
+        boardPanel.setPreferredSize(new Dimension(500, 500));
         JPanel testPanel = new JPanel();
         testPanel.setLayout(new FlowLayout());
         testPanel.add(boardPanel);
@@ -314,6 +308,7 @@ public class Board {
 
         jFrame.setVisible(true);
     }
+
     private void makeBorderForShips(int xCord, int yCord, int size, boolean isHorizontal) {
         if (isHorizontal) {
             int borderStartX = xCord - 1;
@@ -377,6 +372,7 @@ public class Board {
         updateBoard();
 
     }
+
     private boolean checkIfForwardIsReady(int xCord, int yCord, int size, boolean isHorizontal) {
         if (isHorizontal) {
             if (xCord + size <= 10) {
@@ -470,6 +466,28 @@ public class Board {
         }
     }
 
+    private class rotateKeyboardHandler implements KeyListener {
+        boolean rDown = false;
 
+        @Override
+        public void keyTyped(KeyEvent e) {
 
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            if (e.getModifiers() == InputEvent.CTRL_MASK) {
+                if (e.getKeyCode() == 82) {
+                    System.out.println("CTRL + R");
+                    rotateLastShip();
+                }
+            }
+        }
+
+    }
 }
