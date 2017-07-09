@@ -95,4 +95,46 @@ public class Board {
         //updateBoard();
     }
 
+    public void removeShip(Ship shipToBeRemoved) {
+        Ship removingShip = null;
+        for (Ship ship : shipsList) {
+            if (ship.equalsStartPoint(shipToBeRemoved)) {
+                removingShip = ship;
+                System.out.println("equals :D");
+                break;
+            }
+        }
+        if (removingShip == null) {
+            return;
+        }
+        Ship ship = removingShip;
+        int xCord = ship.getxCord();
+        int yCord = ship.getyCord();
+        int size = ship.getSize();
+        boolean isHorizontal = ship.isHorizontal();
+        shipsList.remove(shipsList.indexOf(ship));
+        changeNumberOfAvailableShips(ship.getSize(),true);
+        System.out.println(shipsList);
+        if (checkIfForwardIsReadyForRemove(xCord, yCord, size, isHorizontal)) {
+            if (isHorizontal) {
+                for (int i = xCord; i < xCord + size; i++) {
+                    Block block = (Block) jButtons[i][yCord];
+                    block.setBlockStatus(0);
+                    block.setColor();
+                }
+            } else {
+                for (int i = yCord; i < yCord + size; i++) {
+                    Block block = (Block) jButtons[xCord][i];
+                    block.setBlockStatus(0);
+                    block.setColor();
+                }
+            }
+            removeBorderForShips(xCord, yCord, size, isHorizontal);
+            for (Ship aShip : shipsList) {
+                makeBorderForShips(aShip.getxCord(), aShip.getyCord(), aShip.getSize(), aShip.isHorizontal());
+            }
+        }
+        //updateBoard();
+    }
+
 }
