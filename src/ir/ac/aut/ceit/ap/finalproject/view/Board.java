@@ -6,6 +6,7 @@ import ir.ac.aut.ceit.ap.finalproject.logic.Ship;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
@@ -54,6 +55,8 @@ public class Board {
         jPanel.setPreferredSize(new Dimension(400,400));
         jPanel.setSize(new Dimension(400,400));
         //jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ButtonHandler buttonHandler = new ButtonHandler();
+
         for (int y = 0; y < 10; y++) {
             for (int x = 0; x < 10; x++) {
                 jButtons[x][y] = new Block(x + "," + y, x, y, 0);
@@ -243,4 +246,72 @@ public class Board {
         }
     }
 
+    private void updateBoard() {
+        oneShipField.setText(String.valueOf(numberOfOneBlockShipToDeploy));
+        twoShipField.setText(String.valueOf(numberOfTwoBlockShipToDeploy));
+        threeShipField.setText(String.valueOf(numberOfThreeBlockShipToDeploy));
+        fourShipField.setText(String.valueOf(numberOfFourBlockShipToDeploy));
+        jPanel.revalidate();
+        jPanel.repaint();
+        jPanel.setFocusable(true);
+        jPanel.requestFocusInWindow();
+        jFrame.revalidate();
+        jFrame.repaint();
+    }
+
+    public void runFrame() {
+        jFrame = new JFrame();
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jFrame.setLayout(new FlowLayout());
+        JPanel buttonPanel = new JPanel();
+        oneShipField = new JTextField(2);
+        twoShipField = new JTextField(2);
+        threeShipField = new JTextField(2);
+        fourShipField = new JTextField(2);
+        JButton removeOne = new JButton("- *");
+        JButton addOne = new JButton("*");
+        JButton removeTwo = new JButton("- **");
+        JButton addTwo = new JButton("**");
+        JButton removeThree = new JButton("- ***");
+        JButton addThree = new JButton("***");
+        JButton removeFour = new JButton("- ****");
+        JButton addFour = new JButton("****");
+        buttonPanel.setLayout(new GridLayout(2,1));
+        buttonPanel.add(oneShipField);
+        buttonPanel.add(addOne);
+        buttonPanel.add(twoShipField);
+        buttonPanel.add(addTwo);
+        buttonPanel.add(threeShipField);
+        buttonPanel.add(addThree);
+        buttonPanel.add(fourShipField);
+        buttonPanel.add(addFour);
+        buttonPanel.add(removeOne);
+        buttonPanel.add(removeTwo);
+        buttonPanel.add(removeThree);
+        buttonPanel.add(removeFour);
+        ShipsAddingButton shipsAddingButton = new ShipsAddingButton();
+        removeOne.addActionListener(shipsAddingButton);
+        addOne.addActionListener(shipsAddingButton);
+        removeTwo.addActionListener(shipsAddingButton);
+        addTwo.addActionListener(shipsAddingButton);
+        removeThree.addActionListener(shipsAddingButton);
+        addThree.addActionListener(shipsAddingButton);
+        removeFour.addActionListener(shipsAddingButton);
+        addFour.addActionListener(shipsAddingButton);
+
+        jFrame.setSize(700, 700);
+        jPanel.setFocusable(true);
+        jPanel.requestFocusInWindow();
+        jPanel.addKeyListener(new rotateKeyboardHandler());
+        boardPanel.add(jPanel);
+        boardPanel.add(buttonPanel,BorderLayout.SOUTH);
+        boardPanel.setPreferredSize(new Dimension(500,500));
+        JPanel testPanel = new JPanel();
+        testPanel.setLayout(new FlowLayout());
+        testPanel.add(boardPanel);
+        jFrame.add(testPanel);
+        //jFrame.pack();
+
+        jFrame.setVisible(true);
+    }
 }
