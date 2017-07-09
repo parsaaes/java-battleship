@@ -18,7 +18,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.Random;
 
-public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.IGUICallback, RequestsListFrame.IMainFrameServerRespondCallback, EnemyBoard.IMainFrameToEnemyBoardCallback {
+public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.IGUICallback, RequestsListFrame.IMainFrameServerRespondCallback, EnemyBoard.IMainFrameToEnemyBoardCallback, GuestWaitingFrame.IMainFrameGuestWaitingCallback {
     LoginFrame loginFrame = new LoginFrame(this);
     MessageManager messageManager;
     GuestWaitingFrame guestWaitingFrame = new GuestWaitingFrame();
@@ -58,11 +58,9 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         jFrame.setLayout(new BorderLayout());
-        jFrame.addWindowListener(new WindowAdapter()
-        {
-            public void windowClosing(WindowEvent e)
-            {
-                JOptionPane.showMessageDialog(null,"exiting ...");
+        jFrame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                JOptionPane.showMessageDialog(null, "exiting ...");
                 //should send i am leaving message
             }
         });
@@ -280,10 +278,10 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
     @Override
     public void onAttackReceived(int x, int y) {
-        if(yourBoard.getDestroyedBlocks() == 20){
+        if (yourBoard.getDestroyedBlocks() == 20) {
             //20 is number of all blocks
             messageManager.sendILostMessage(1);
-            JOptionPane.showMessageDialog(null,"YOU LOST!");
+            JOptionPane.showMessageDialog(null, "YOU LOST!");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -344,7 +342,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
     @Override
     public void onILostReceived(int iLost) {
-        JOptionPane.showMessageDialog(null,"YOU WON!");
+        JOptionPane.showMessageDialog(null, "YOU WON!");
         System.exit(1);
     }
 
@@ -386,7 +384,17 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     }
 
     @Override
+    public void onRequestListClosed() {
+        //He left :(
+    }
+
+    @Override
     public void onBlockAttacked(int xCord, int yCord) {
         messageManager.sendAttackMessage(xCord, yCord);
+    }
+
+    @Override
+    public void onGuestWaitingClosed() {
+        //He left...
     }
 }

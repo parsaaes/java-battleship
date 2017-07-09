@@ -47,6 +47,7 @@ public class RequestsListFrame implements RequestComponent.IRequestListFrameCall
             {
                 JOptionPane.showMessageDialog(null,"exiting ...");
                 // should send a message to server to close [callback]
+                iMainFrameServerRespondCallback.onRequestListClosed();
             }
         });
 
@@ -71,6 +72,8 @@ public class RequestsListFrame implements RequestComponent.IRequestListFrameCall
     }
 
     public interface IMainFrameServerRespondCallback {
-        public void onServerRespondedRequest(int status, String name);
+        void onServerRespondedRequest(int status, String name);
+        void onRequestListClosed();
     }
+
 }
