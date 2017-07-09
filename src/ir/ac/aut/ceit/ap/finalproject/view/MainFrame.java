@@ -234,6 +234,12 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
     }
 
     @Override
+    public void onAttackRecieved(int x, int y) {
+
+        JOptionPane.showMessageDialog(null,x + "," + y);
+    }
+
+    @Override
     public void onServerRespondedRequest(int status, String name) {
         if (status == 1) {
             for (NetworkHandler networkHandler : messageManager.getmNetworkHandlerList()) {

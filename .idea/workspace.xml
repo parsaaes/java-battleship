@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="28c64269-f78f-4e47-9c10-323dc589767b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/AttackMessage.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/AttackMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,10 +22,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MessageManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="236" column="48" lean-forward="true" selection-start-line="236" selection-start-column="48" selection-end-line="236" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="-330">
               <caret line="155" column="71" lean-forward="true" selection-start-line="155" selection-start-column="71" selection-end-line="155" selection-end-column="71" />
               <folding />
             </state>
@@ -105,12 +114,12 @@
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Board.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/Main.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/ReadyToPlayMessage.java" />
-        <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/EnemyBoard.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageTypes.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/NetworkHandler.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/AttackMessage.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java" />
+        <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" />
       </list>
     </option>
   </component>
@@ -953,11 +962,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499603850973</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Consume attack + send attack + onAttackRecieved deployed">
+      <created>1499604152504</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1499604152504</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22420000" />
+    <option name="totallyTimeSpent" value="22530000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
@@ -966,6 +982,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1002,7 +1019,6 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39941263" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1073,7 +1089,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
-    <MESSAGE value="RequestList Connected to network" />
     <MESSAGE value="added block class" />
     <MESSAGE value="deployed Block constructor" />
     <MESSAGE value="completed Block class" />
@@ -1098,7 +1113,8 @@
     <MESSAGE value="Added Constructors and serialize() to AttackMessage" />
     <MESSAGE value="Attack message completed." />
     <MESSAGE value="made appropriate changes to Network Handler recieved messages consumer" />
-    <option name="LAST_COMMIT_MESSAGE" value="made appropriate changes to Network Handler recieved messages consumer" />
+    <MESSAGE value="Consume attack + send attack + onAttackRecieved deployed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Consume attack + send attack + onAttackRecieved deployed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1409,14 +1425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="270" column="0" lean-forward="false" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/RequestLoginMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
@@ -1543,8 +1551,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="-330">
           <caret line="155" column="71" lean-forward="true" selection-start-line="155" selection-start-column="71" selection-end-line="155" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="236" column="48" lean-forward="true" selection-start-line="236" selection-start-column="48" selection-end-line="236" selection-end-column="48" />
           <folding />
         </state>
       </provider>
