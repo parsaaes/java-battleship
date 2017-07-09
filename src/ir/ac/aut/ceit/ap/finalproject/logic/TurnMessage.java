@@ -34,7 +34,6 @@ public class TurnMessage extends BaseMessage {
         byte protocolVersion = byteBuffer.get();
         byte messageType = byteBuffer.get();
         turn = byteBuffer.getInt();
-
     }
 
     @Override
