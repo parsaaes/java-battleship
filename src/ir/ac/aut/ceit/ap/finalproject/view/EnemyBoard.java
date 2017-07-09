@@ -9,14 +9,17 @@ import java.awt.event.*;
 import java.util.ArrayList;
 
 public class EnemyBoard {
-    JFrame jFrame;
-    JPanel boardPanel;
-    JPanel buttonPanel;
-    JPanel jPanel;
+    private JFrame jFrame;
+    private JPanel boardPanel;
+    private JPanel buttonPanel;
+    private JPanel jPanel;
     private JButton[][] jButtons = new JButton[10][10];
     private ButtonHandler buttonHandler = new ButtonHandler();
+    private IMainFrameToEnemyBoardCallback iMainFrameToEnemyBoardCallback;
 
-
+    public void setiMainFrameToEnemyBoardCallback(IMainFrameToEnemyBoardCallback iMainFrameToEnemyBoardCallback) {
+        this.iMainFrameToEnemyBoardCallback = iMainFrameToEnemyBoardCallback;
+    }
 
     public JButton[][] getjButtons() {
         return jButtons;
@@ -52,6 +55,7 @@ public class EnemyBoard {
         @Override
         public void actionPerformed(ActionEvent e) {
             Block block = (Block) e.getSource();
+            iMainFrameToEnemyBoardCallback.onBlockAttacked(block.getxCord(),block.getyCord());
             /*
             here ---> mainframe [callback]
             mainframe ---> messageManager
@@ -85,7 +89,9 @@ public class EnemyBoard {
     }
 
 
-
+    public interface IMainFrameToEnemyBoardCallback {
+        void onBlockAttacked(int xCord,int yCord);
+    }
     }
 
 

@@ -41,7 +41,7 @@ public class ServerAcceptedMessage extends BaseMessage {
         byte messageType = byteBuffer.get();
         hostAccepted = byteBuffer.getInt();
         int usernameLength = byteBuffer.getInt();
-        byte[] usernameBytes = new byte[usernameLength];
+        byte[] usernameBytes = new byte[usernameLength] ;
         byteBuffer.get(usernameBytes);
         serverUserName = new String(usernameBytes);
     }

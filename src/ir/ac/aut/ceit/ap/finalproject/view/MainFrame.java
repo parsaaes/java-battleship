@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.LinkedList;
 
-public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.IGUICallback, RequestsListFrame.IMainFrameServerRespondCallback {
+public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.IGUICallback, RequestsListFrame.IMainFrameServerRespondCallback , EnemyBoard.IMainFrameToEnemyBoardCallback{
     LoginFrame loginFrame = new LoginFrame(this);
     MessageManager messageManager;
     GuestWaitingFrame guestWaitingFrame = new GuestWaitingFrame();
@@ -263,5 +263,11 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
                 }
             }
         }
+    }
+
+    @Override
+    public void onBlockAttacked(int xCord, int yCord) {
+        //Send coords by message
+
     }
 }
