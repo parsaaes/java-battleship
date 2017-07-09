@@ -103,8 +103,8 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="185" column="35" lean-forward="false" selection-start-line="185" selection-start-column="35" selection-end-line="185" selection-end-column="35" />
+            <state relative-caret-position="217">
+              <caret line="227" column="52" lean-forward="true" selection-start-line="227" selection-start-column="52" selection-end-line="227" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1078,11 +1078,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499582728210</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Board removeship and buttonHandler">
+      <created>1499583115091</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1499583115091</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20000000" />
+    <option name="totallyTimeSpent" value="20124000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1220,7 +1227,8 @@
     <MESSAGE value="removed Ship class comments" />
     <MESSAGE value="Added Board+ its constructors + addShip method" />
     <MESSAGE value="added Board removeShip method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Board removeShip method" />
+    <MESSAGE value="Board removeship and buttonHandler" />
+    <option name="LAST_COMMIT_MESSAGE" value="Board removeship and buttonHandler" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1645,8 +1653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="185" column="35" lean-forward="false" selection-start-line="185" selection-start-column="35" selection-end-line="185" selection-end-column="35" />
+        <state relative-caret-position="217">
+          <caret line="227" column="52" lean-forward="true" selection-start-line="227" selection-start-column="52" selection-end-line="227" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

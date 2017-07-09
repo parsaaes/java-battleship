@@ -191,4 +191,56 @@ public class Board {
     }
 
 
+    private int getNumberOfAvailableShips(int size) {
+        if (size == 1) {
+            return numberOfOneBlockShipToDeploy;
+        } else if (size == 2) {
+            return numberOfTwoBlockShipToDeploy;
+        } else if (size == 3) {
+            return numberOfThreeBlockShipToDeploy;
+        } else if (size == 4) {
+            return numberOfFourBlockShipToDeploy;
+        } else {
+            return -1;
+        }
+    }
+    private int getNumberOfAllShips(int size) {
+        if (size == 1) {
+            return numberOfAllOneBlockShip;
+        } else if (size == 2) {
+            return numberOfAllTwoBlockShip;
+        } else if (size == 3) {
+            return numberOfAllThreeBlockShip;
+        } else if (size == 4) {
+            return numberOfAllFourBlockShip;
+        } else {
+            return -1;
+        }
+    }
+
+    private void changeNumberOfAvailableShips(int size , boolean isIncreasing) {
+        if(isIncreasing) {
+            if (size == 1) {
+                numberOfOneBlockShipToDeploy += 1;
+            } else if (size == 2) {
+                numberOfTwoBlockShipToDeploy += 1;
+            } else if (size == 3) {
+                numberOfThreeBlockShipToDeploy += 1;
+            } else if (size == 4) {
+                numberOfFourBlockShipToDeploy += 1;
+            }
+        }
+        else  {
+            if (size == 1) {
+                numberOfOneBlockShipToDeploy -= 1;
+            } else if (size == 2) {
+                numberOfTwoBlockShipToDeploy -= 1;
+            } else if (size == 3) {
+                numberOfThreeBlockShipToDeploy -= 1;
+            } else if (size == 4) {
+                numberOfFourBlockShipToDeploy -= 1;
+            }
+        }
+    }
+
 }
