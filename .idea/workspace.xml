@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="28c64269-f78f-4e47-9c10-323dc589767b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" afterPath="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,21 +22,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="275" column="48" lean-forward="true" selection-start-line="275" selection-start-column="48" selection-end-line="275" selection-end-column="48" />
+            <state relative-caret-position="228">
+              <caret line="297" column="23" lean-forward="false" selection-start-line="297" selection-start-column="23" selection-end-line="297" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MessageManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="188" column="22" lean-forward="true" selection-start-line="188" selection-start-column="22" selection-end-line="188" selection-end-column="22" />
+            <state relative-caret-position="-680">
+              <caret line="11" column="128" lean-forward="false" selection-start-line="11" selection-start-column="128" selection-end-line="11" selection-end-column="128" />
               <folding />
             </state>
           </provider>
@@ -104,12 +104,12 @@
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/ReadyToPlayMessage.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/EnemyBoard.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/AttackMessage.java" />
-        <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/TurnMessage.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageTypes.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/AttackResultMessage.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/NetworkHandler.java" />
         <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java" />
+        <option value="$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java" />
       </list>
     </option>
   </component>
@@ -1075,11 +1075,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499610616658</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="AttackResult Message related methods in MessageManager completed">
+      <created>1499610944429</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1499610944429</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24626000" />
+    <option name="totallyTimeSpent" value="24711000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1195,7 +1202,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
-    <MESSAGE value="removed Ship class comments" />
     <MESSAGE value="Added Board+ its constructors + addShip method" />
     <MESSAGE value="added Board removeShip method" />
     <MESSAGE value="Board removeship and buttonHandler" />
@@ -1220,7 +1226,8 @@
     <MESSAGE value="Made appropriate changes to Network Handler." />
     <MESSAGE value="Added AttackResultMessage" />
     <MESSAGE value="Made appropriate changes to Network handler" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made appropriate changes to Network handler" />
+    <MESSAGE value="AttackResult Message related methods in MessageManager completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="AttackResult Message related methods in MessageManager completed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1546,6 +1553,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1625,18 +1633,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="275" column="48" lean-forward="true" selection-start-line="275" selection-start-column="48" selection-end-line="275" selection-end-column="48" />
+        <state relative-caret-position="-680">
+          <caret line="11" column="128" lean-forward="false" selection-start-line="11" selection-start-column="128" selection-end-line="11" selection-end-column="128" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/logic/MessageManager.java">
+    <entry file="file://$PROJECT_DIR$/src/ir/ac/aut/ceit/ap/finalproject/view/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="188" column="22" lean-forward="true" selection-start-line="188" selection-start-column="22" selection-end-line="188" selection-end-column="22" />
+        <state relative-caret-position="228">
+          <caret line="297" column="23" lean-forward="false" selection-start-line="297" selection-start-column="23" selection-end-line="297" selection-end-column="23" />
           <folding />
         </state>
       </provider>
