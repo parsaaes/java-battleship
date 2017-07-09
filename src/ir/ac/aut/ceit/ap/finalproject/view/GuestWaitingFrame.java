@@ -14,7 +14,8 @@ public class GuestWaitingFrame {
         this.iMainFrameGuestWaitingCallback = iMainFrameGuestWaitingCallback;
     }
 
-    public GuestWaitingFrame(){
+    public GuestWaitingFrame(IMainFrameGuestWaitingCallback iMainFrameGuestWaitingCallback){
+        this.iMainFrameGuestWaitingCallback = iMainFrameGuestWaitingCallback;
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setSize(300,70);
         jFrame.setLayout(new FlowLayout());
@@ -36,6 +37,7 @@ public class GuestWaitingFrame {
     }
 
     public void runFrame(){
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setVisible(true);
     }
     public interface IMainFrameGuestWaitingCallback {

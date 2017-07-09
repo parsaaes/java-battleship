@@ -27,6 +27,7 @@ public class RequestsListFrame implements RequestComponent.IRequestListFrameCall
 
     public void runFrame(LinkedList<NetworkHandler> networkHandlerList) {
         this.networkHandlerList = networkHandlerList;
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setVisible(true);
     }
 

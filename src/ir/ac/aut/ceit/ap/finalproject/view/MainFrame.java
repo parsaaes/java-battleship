@@ -21,7 +21,7 @@ import java.util.Random;
 public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.IGUICallback, RequestsListFrame.IMainFrameServerRespondCallback, EnemyBoard.IMainFrameToEnemyBoardCallback, GuestWaitingFrame.IMainFrameGuestWaitingCallback {
     LoginFrame loginFrame = new LoginFrame(this);
     MessageManager messageManager;
-    GuestWaitingFrame guestWaitingFrame = new GuestWaitingFrame();
+    GuestWaitingFrame guestWaitingFrame = new GuestWaitingFrame(this);
     RequestsListFrame requestsListFrame = new RequestsListFrame(this);
     private String username;
     JFrame jFrame = new JFrame();
@@ -62,6 +62,12 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
             public void windowClosing(WindowEvent e) {
                 JOptionPane.showMessageDialog(null, "exiting ...");
                 //should send i am leaving message
+                messageManager.sendILeftMessage(1);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
 
@@ -348,7 +354,8 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
     @Override
     public void onILeftReceived(int iLeft) {
-        //He left. :(
+        JOptionPane.showMessageDialog(null,"Opponent Left , exiting...");
+        System.exit(1);
     }
 
     @Override
@@ -385,7 +392,14 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
     @Override
     public void onRequestListClosed() {
-        //He left :(
+        JOptionPane.showMessageDialog(null,"exiting ...");
+        messageManager.sendILeftMessage(1);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.exit(1);
     }
 
     @Override
@@ -395,6 +409,13 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
 
     @Override
     public void onGuestWaitingClosed() {
-        //He left...
+        JOptionPane.showMessageDialog(null,"exiting ...");
+        messageManager.sendILeftMessage(1);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.exit(1);
     }
 }
