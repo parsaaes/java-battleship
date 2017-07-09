@@ -43,6 +43,7 @@ public class Block extends JButton {
         return blockStatus;
     }
 
+
     public void setBlockStatus(int blockStatus) {
         this.blockStatus = blockStatus;
     }

@@ -495,6 +495,34 @@ public class Board {
         }
     }
 
+    public int getDestroyedBlocks(){
+        int result = 0;
+        for(int y = 0 ; y < 10 ; y++){
+            for(int x = 0 ; x < 10 ; x++){
+                if(((Block)jButtons[x][y]).getBlockStatus() == 4){
+                    //4 is destroyed status
+                    result++;
+                }
+            }
+        }
+        return result;
+    }
+
+    public void disableClicking(){
+        for(int y = 0 ; y < 10 ; y++){
+            for(int x = 0 ; x < 10 ; x++){
+                jButtons[x][y].removeActionListener(buttonHandler);
+            }
+        }
+    }
+
+    public void enableClicking(){
+        for(int y = 0 ; y < 10 ; y++){
+            for(int x = 0 ; x < 10 ; x++){
+                jButtons[x][y].addActionListener(buttonHandler);
+            }
+        }
+    }
     private class rotateKeyboardHandler implements KeyListener {
         boolean rDown = false;
 
