@@ -5,6 +5,7 @@ import ir.ac.aut.ceit.ap.finalproject.logic.Ship;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 /**
@@ -136,5 +137,58 @@ public class Board {
         }
         //updateBoard();
     }
+
+    private class ButtonHandler implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Block block = (Block) e.getSource();
+//            if (addOrRemoveStatus == 1) {
+//                addShip(new Ship(block.getxCord(), block.getyCord(), 1, true));
+//                System.out.println("called by " + ((Block) e.getSource()).getText());
+//                System.out.println(shipsList);
+//            } else if (addOrRemoveStatus == -1) {
+//                //System.out.println(shipsList);
+//                    removeShip(new Ship(block.getxCord(), block.getyCord(), 1, true));
+//
+//            }
+//            else if (addOrRemoveStatus == 2) {
+//                addShip(new Ship(block.getxCord(), block.getyCord(), 2, true));
+//                System.out.println("called by " + ((Block) e.getSource()).getText());
+//                System.out.println(shipsList);
+//            } else if (addOrRemoveStatus == -2) {
+//                //System.out.println(shipsList);
+//                removeShip(new Ship(block.getxCord(), block.getyCord(), 2, true));
+//            }
+//            else if (addOrRemoveStatus == 3) {
+//                addShip(new Ship(block.getxCord(), block.getyCord(), 3, true));
+//                System.out.println("called by " + ((Block) e.getSource()).getText());
+//                System.out.println(shipsList);
+//            } else if (addOrRemoveStatus == -3) {
+//                //System.out.println(shipsList);
+//                removeShip(new Ship(block.getxCord(), block.getyCord(), 3, true));
+//            }
+//            else if (addOrRemoveStatus == 4) {
+//                addShip(new Ship(block.getxCord(), block.getyCord(), 4, true));
+//                System.out.println("called by " + ((Block) e.getSource()).getText());
+//                System.out.println(shipsList);
+//            } else if (addOrRemoveStatus == -4) {
+//                //System.out.println(shipsList);
+//                removeShip(new Ship(block.getxCord(), block.getyCord(), 4, true));
+//            }
+            if (addOrRemoveStatus > 0) {
+                if (0 < getNumberOfAvailableShips(addOrRemoveStatus)) {
+                    addShip(new Ship(block.getxCord(), block.getyCord(), addOrRemoveStatus, true));
+                    System.out.println("called by " + ((Block) e.getSource()).getText());
+                    System.out.println(shipsList);
+                }
+            } else if (addOrRemoveStatus < 0) {
+                if (getNumberOfAllShips(-1 * addOrRemoveStatus) > getNumberOfAvailableShips(-1 * addOrRemoveStatus)) {
+                    removeShip(new Ship(block.getxCord(), block.getyCord(), addOrRemoveStatus * -1, true));
+                }
+            }
+        }
+    }
+
 
 }
