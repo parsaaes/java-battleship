@@ -146,12 +146,12 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
                         yourBoard.setAddOrRemoveStatus(0);
                         yourBoard.getButtonPanel().setVisible(false);
                         ((JButton)(e.getSource())).setText("Cancel");
-//                        iAmReadyToPlay = 1;
-//                        messageManager.sendReadyToPlayMessage(1);
-//                        if(enemyReadyToPlay == 1){
-//                            JOptionPane.showMessageDialog(null,"Game is started [2]");
-//                            //Game Started
-//                        }
+                        iAmReadyToPlay = 1;
+                        messageManager.sendReadyToPlayMessage(1);
+                        if(enemyReadyToPlay == 1){
+                            JOptionPane.showMessageDialog(null,"Game is started [2]");
+                        chooseTurn();
+                        }
                     }
                 }
                 else if(((JButton)(e.getSource())).getText().equals("Cancel")){
@@ -252,7 +252,7 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
         JOptionPane.showMessageDialog(null,username + " 's ready status " + status);
         if(iAmReadyToPlay == 1 && enemyReadyToPlay == 1){
             JOptionPane.showMessageDialog(null,"Game is started");
-            // Game Started
+            chooseTurn();
         }
     }
 
