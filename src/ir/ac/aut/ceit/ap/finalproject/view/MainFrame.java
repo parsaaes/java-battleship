@@ -302,7 +302,17 @@ public class MainFrame implements LoginFrame.IMainFrameCallBack, MessageManager.
                 System.exit(1);
             }
 
-        } else {
+        }
+        else if(yourBoard.getBlock(x, y).getBlockStatus() == 3 || yourBoard.getBlock(x, y).getBlockStatus() == 4){
+            messageManager.sendAttackResultMessage(0, x, y);
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            changeBoard(false);
+        }
+        else {
             yourBoard.getBlock(x, y).setBlockStatus(3);
             yourBoard.getBlock(x, y).setColor();
             gamePanel.revalidate();
